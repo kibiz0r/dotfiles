@@ -16,6 +16,7 @@
   - [brew unlink python, "Unlinking Python for MacVim's sake (https://github.com/Valloric/YouCompleteMe/issues/18)"]
   - [./install_iterm2, Installing iTerm2]
   - [./change_shell_to_zsh, Changing shell to zsh]
+  - [./install_vim_bundles, Installing vim bundles]
   - [./configure_finder_favorites, Configuring Finder favorites]
   - [./install_unaphy_dependencies, Installing Unaphy dependencies]
   - [./install_vscode, Installing VSCode]
