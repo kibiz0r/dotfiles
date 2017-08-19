@@ -7,5 +7,5 @@ else
   system "unzip -ofd /Applications iTerm2.zip"
 end
 
-defaults write ~/Library/Preferences/com.googlecode.iterm2.plist PrefsCustomFolder -string "$HOME/.iTerm2"
-defaults write ~/Library/Preferences/com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool YES
+system 'defaults write ~/Library/Preferences/com.googlecode.iterm2.plist PrefsCustomFolder -string "$HOME/.iTerm2"'
+system 'defaults write ~/Library/Preferences/com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool YES'

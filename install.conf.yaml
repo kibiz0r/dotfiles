@@ -1,7 +1,7 @@
 # Default options for dotbot commands like "link"
 - defaults:
-  link:
-    relink: true
+    link:
+      relink: true
 
 # Cleans up dead symlinks in ~
 - clean: ['~']
@@ -10,31 +10,34 @@
   - [git submodule update --init --recursive, Downloading submodules]
   - [./write_defaults, Setting OS X defaults]
   - [./remap_caps_lock_to_esc, Remapping Caps Lock to Esc]
-  - [/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)", Installing Homebrew]
+  - [./install_homebrew, Installing Homebrew]
   - [brew tap homebrew/bundle, Installing Homebrew formulae]
   - [brew bundle, Installing Homebrew formulae]
-  - [brew unlink python, Unlinking Python for MacVim's sake (https://github.com/Valloric/YouCompleteMe/issues/18)]
+  - [brew unlink python, "Unlinking Python for MacVim's sake (https://github.com/Valloric/YouCompleteMe/issues/18)"]
   - [./install_iterm2, Installing iTerm2]
-  - [chsh -s /usr/local/bin/zsh, Changing shell to zsh]
+  - [./change_shell_to_zsh, Changing shell to zsh]
   - [./configure_finder_favorites, Configuring Finder favorites]
   - [./install_unaphy_dependencies, Installing Unaphy dependencies]
   - [./install_vscode, Installing VSCode]
   - [./install_vscode_extensions, Installing VSCode extensions]
   - [./configure_omnisharp, Configuring OmniSharp]
   - [./install_app_store_apps, Installing App Store apps (in background)]
+  - [killall Finder, Relaunching Finder]
+  - [killall Dock, Relaunching Dock]
+  - [killall SystemUIServer, Relaunching SystemUIServer]
 
 - link:
-  ~/.oh-my-zsh: oh-my-zsh
-  /usr/local/bin/mvim: /Applications/MacVim.app/Contents/bin/mvim
-  ~/.vim: vim
-  ~/.vimrc: vimrc
-  ~/.zshrc: zshrc
-  ~/.zsh_custom: zsh_custom
-  ~/bin: bin
-  ~/.omnisharp: omnisharp
-  ~/Library/Application Support/Code/User: vscode
-  ~/.gitconfig: gitconfig
-  ~/.gitignore_global: gitignore_global
-  ~/.iTerm2: iTerm2
-  ~/Library/Preferences/com.hegenberg.BetterSnapTool.plist: BetterSnapTool.plist
-  ~/Library/Application Support/BetterSnapTool: BetterSnapTool
+    ~/.oh-my-zsh: oh-my-zsh
+    /usr/local/bin/mvim: /Applications/MacVim.app/Contents/bin/mvim
+    ~/.vim: vim
+    ~/.vimrc: vimrc
+    ~/.zshrc: zshrc
+    ~/.zsh_custom: zsh_custom
+    ~/bin: bin
+    ~/.omnisharp: omnisharp
+    ~/Library/Application Support/Code/User: vscode
+    ~/.gitconfig: gitconfig
+    ~/.gitignore_global: gitignore_global
+    ~/.iTerm2: iTerm2
+    ~/Library/Preferences/com.hegenberg.BetterSnapTool.plist: BetterSnapTool.plist
+    ~/Library/Application Support/BetterSnapTool: BetterSnapTool

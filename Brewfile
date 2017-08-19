@@ -157,7 +157,6 @@ brew "gdk-pixbuf"
 brew "harfbuzz"
 brew "libgphoto2"
 brew "log4cxx"
-brew "osquery"
 brew "ruby-build"
 brew "urdfdom"
 

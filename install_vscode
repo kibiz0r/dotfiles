@@ -3,6 +3,6 @@
 if Dir.exists? "/Applications/Visual Studio Code.app"
   puts "VSCode already installed"
 else
-  curl -Lo vscode.zip https://go.microsoft.com/fwlink/?LinkID=620882
-  unzip -d /Applications vscode.zip
+  system "curl -Lo vscode.zip https://go.microsoft.com/fwlink/?LinkID=620882"
+  system "unzip -d /Applications vscode.zip"
 end
