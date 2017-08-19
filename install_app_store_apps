@@ -1,7 +1,6 @@
 #!/usr/bin/env sh
 
 nohup mas install \
-497799835 `# Xcode` \
 425424353 `# The Unarchiver` \
 407951449 `# Things` \
 803453959 `# Slack` \
