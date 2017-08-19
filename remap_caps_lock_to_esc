@@ -1,0 +1,9 @@
+#!/usr/bin/env sh
+
+#plutil -p ~/Library/Preferences/ByHost/.GlobalPreferences.00236214-8E89-5686-A484-8BE09CEFC5B1.plist
+#"com.apple.keyboard.modifiermapping.1452-632-0" => [
+#    0 => {
+#      "HIDKeyboardModifierMappingSrc" => 30064771129
+#      "HIDKeyboardModifierMappingDst" => 30064771113
+#    }
+#  ]

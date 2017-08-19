@@ -1,0 +1,29 @@
+{
+    "vim.disableAnnoyingNeovimMessage": true,
+    "git.countBadge": "off",
+    "macros": {
+        "openAndKeep": [
+            "list.select",
+            "workbench.action.keepEditor"
+        ],
+        "mergeAllGroups": [
+            "workbench.action.joinTwoGroups",
+            "workbench.action.joinTwoGroups",
+            "workbench.action.joinTwoGroups",
+            "workbench.action.joinTwoGroups",
+            "workbench.action.joinTwoGroups",
+            "workbench.action.joinTwoGroups",
+            "workbench.action.joinTwoGroups",
+            "workbench.action.joinTwoGroups",
+            "workbench.action.joinTwoGroups",
+            "workbench.action.joinTwoGroups",
+            "workbench.action.joinTwoGroups"
+        ]
+    },
+    "editor.minimap.enabled": false,
+    "editor.codeLens": false,
+    "editor.rulers": [
+        80
+    ],
+    "editor.tabSize": 2
+}

@@ -1,0 +1,6 @@
+#!/usr/bin/env sh
+
+curl -Lo Roslynator.VisualStudio.vsix https://visualstudiogallery.msdn.microsoft.com/89857b61-82c5-46b7-b8a0-b4c7054d80bb/file/240629/29/Roslynator.VisualStudio.1.4.55.vsix
+rm -rf omnisharp/Roslynator.VisualStudio
+unzip -d omnisharp/Roslynator.VisualStudio Roslynator.VisualStudio.vsix
+rm omnisharp/Roslynator.VisualStudio/Roslynator.VisualStudio.Core.dll omnisharp/Roslynator.VisualStudio/Roslynator.VisualStudio.dll

@@ -1,0 +1,11 @@
+#!/usr/bin/env ruby
+
+if Dir.exists? "/Applications/iTerm.app"
+  puts "iTerm2 already installed"
+else
+  system "curl -Lo iTerm2.zip https://iterm2.com/downloads/stable/latest"
+  system "unzip -ofd /Applications iTerm2.zip"
+end
+
+defaults write ~/Library/Preferences/com.googlecode.iterm2.plist PrefsCustomFolder -string "$HOME/.iTerm2"
+defaults write ~/Library/Preferences/com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool YES

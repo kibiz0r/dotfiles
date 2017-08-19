@@ -1,0 +1,12 @@
+[submodule "dotbot"]
+	path = dotbot
+	url = https://github.com/anishathalye/dotbot
+[submodule "oh-my-zsh"]
+	path = oh-my-zsh
+	url = git@github.com:robbyrussell/oh-my-zsh.git
+[submodule "vim"]
+	path = vim
+	url = git@github.com:kibiz0r/kibiz0r-vim.git
+[submodule "UnaToggl"]
+	path = UnaToggl
+	url = git@github.com:kibiz0r/UnaToggl.git

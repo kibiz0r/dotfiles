@@ -1,0 +1,31 @@
+#!/usr/bin/env sh
+
+# Start new Finder windows at $HOME
+defaults write com.apple.finder.plist NewWindowTargetPath -string file://$HOME/
+
+# Expand dock immediately
+defaults write com.apple.Dock autohide-delay -float 0
+
+# Render hidden apps in dock as transparent
+defaults write com.apple.Dock showhidden -bool YES
+
+# Enable selecting text in QuickLook
+defaults write com.apple.finder QLEnableTextSelection -bool YES
+
+# Show hidden files
+defaults write com.apple.finder AppleShowAllFiles -bool YES
+
+# Hide desktop icons
+defaults write com.apple.finder CreateDesktop -bool NO
+
+# Disable auto-correct
+defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool NO
+
+# Enable full keyboard access for all controls
+defaults write NSGlobalDomain AppleKeyboardUIMode 3
+
+# Autohide the dock
+defaults write com.apple.dock autohide -bool YES
+
+# Disable creation of .DS_Store files on network drives.
+defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool YES

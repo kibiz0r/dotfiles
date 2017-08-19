@@ -1,0 +1,3 @@
+#!/usr/bin/env sh
+
+/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code --install-extension donjayamanne.githistory --install-extension geddski.macros --install-extension ms-vscode.csharp --install-extension vscodevim.vim

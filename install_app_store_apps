@@ -1,0 +1,11 @@
+#!/usr/bin/env sh
+
+nohup mas install \
+497799835 `# Xcode` \
+425424353 `# The Unarchiver` \
+407951449 `# Things` \
+803453959 `# Slack` \
+407963104 `# Pixelmator` \
+447661441 `# xScope` \
+417375580 `# BetterSnapTool` \
+411643860 `# DaisyDisk` &>/dev/null &
