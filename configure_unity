@@ -1,0 +1,4 @@
+#!/usr/bin/env sh
+
+plutil -replace kScriptsDefaultApp -string "/Applications/Visual Studio Code.app" ~/Library/Preferences/com.unity3d.UnityEditor5.x.plist
+plutil -replace "kScriptEditorArgs_/Applications/Visual Studio Code\.app" -string '' ~/Library/Preferences/com.unity3d.UnityEditor5.x.plist

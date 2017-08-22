@@ -18,14 +18,21 @@ defaults write com.apple.finder AppleShowAllFiles -bool YES
 # Hide desktop icons
 defaults write com.apple.finder CreateDesktop -bool NO
 
-# Disable auto-correct
-defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool NO
-
-# Enable full keyboard access for all controls
-defaults write NSGlobalDomain AppleKeyboardUIMode 3
-
 # Autohide the dock
 defaults write com.apple.dock autohide -bool YES
 
 # Disable creation of .DS_Store files on network drives.
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool YES
+
+# Allow key-repeat
+defaults write -g ApplePressAndHoldEnabled -bool false
+
+# Set key-repeat
+defaults write -g KeyRepeat -int 2
+defaults write -g InitialKeyRepeat -int 15
+
+# Disable auto-correct
+defaults write -g NSAutomaticSpellingCorrectionEnabled -bool NO
+
+# Enable full keyboard access for all controls
+defaults write -g AppleKeyboardUIMode 3

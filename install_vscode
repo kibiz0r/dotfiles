@@ -1,8 +1,16 @@
 #!/usr/bin/env ruby
 
+# Temporarily using bleeding edge until this is resolved:
+# https://github.com/Microsoft/vscode/issues/32381
+UseBleedingEdge = true
+
 if Dir.exists? "/Applications/Visual Studio Code.app"
   puts "VSCode already installed"
 else
-  system "curl -Lo vscode.zip https://go.microsoft.com/fwlink/?LinkID=620882"
+  if UseBleedingEdge
+    system "curl -Lo vscode.zip https://go.microsoft.com/fwlink/?LinkId=723966"
+  else
+    system "curl -Lo vscode.zip https://go.microsoft.com/fwlink/?LinkID=620882"
+  end
   system "unzip -d /Applications vscode.zip"
 end
