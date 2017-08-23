@@ -1,0 +1,10 @@
+#!/usr/bin/env sh
+
+brewfile=Brewfile.$USER.`hostname`
+
+if [ ! -f $brewfile ]; then
+  echo "No custom Brewfile found: $brewfile"
+  exit 0
+fi
+
+brew bundle --file=Brewfile.$USER.`hostname`
