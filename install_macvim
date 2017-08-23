@@ -8,3 +8,12 @@ else
   cp -r /Volumes/MacVim/MacVim.app /Applications/MacVim.app
   hdiutil detach /Volumes/MacVim
 fi
+
+# TODO: Set non-native fullscreen; this is not enough to get it to init the plist
+# if [ ! -f ~/Library/Preferences/org.vim.MacVim.plist ]; then
+#   open /Applications/MacVim.app
+#   sleep 10
+#   killall MacVim
+# fi
+#
+# plutil -replace MMNativeFullScreen -int 0 ~/Library/Preferences/org.vim.MacVim.plist
