@@ -1,3 +1,10 @@
 #!/usr/bin/env sh
 
-ln -s /usr/local/Cellar/macvim/*/MacVim.app /Applications/MacVim.app
+if [ -d /Applications/MacVim.app ]; then
+  echo "MacVim already installed"
+else
+  curl -Lo MacVim.dmg https://github.com/macvim-dev/macvim/releases/download/snapshot-136/MacVim.dmg
+  hdiutil attach MacVim.dmg
+  cp -r /Volumes/MacVim/MacVim.app /Applications/MacVim.app
+  hdiutil detach /Volumes/MacVim
+fi

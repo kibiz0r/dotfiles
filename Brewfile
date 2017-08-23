@@ -13,7 +13,6 @@ tap "ros/deps"
 
 brew "nuget"
 brew "mas"
-brew "macvim"
 brew "apr"
 brew "cvs"
 brew "gettext"

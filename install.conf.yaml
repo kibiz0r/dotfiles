@@ -35,8 +35,7 @@
 
 - link:
     ~/.oh-my-zsh: oh-my-zsh
-    # Provided by brew now
-    # /usr/local/bin/mvim: /Applications/MacVim.app/Contents/bin/mvim
+    /usr/local/bin/mvim: /Applications/MacVim.app/Contents/bin/mvim
     ~/.vim: vim
     ~/.vimrc: vimrc
     ~/.zshrc: zshrc
