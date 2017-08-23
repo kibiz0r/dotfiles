@@ -1,8 +1,8 @@
 #!/usr/bin/env sh
 
 
-if echo $SHELL | grep zsh; then
+if echo $SHELL | grep /bin/zsh; then
   echo "zsh already selected"
 else
-  chsh -s /usr/local/bin/zsh || true
+  chsh -s /bin/zsh
 fi
