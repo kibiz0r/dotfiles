@@ -161,6 +161,7 @@ brew "ruby-build"
 brew "urdfdom"
 
 cask "android-file-transfer"
+cask "google-chrome"
 cask "dotnet-sdk"
 cask "java"
 cask "qlstephen"

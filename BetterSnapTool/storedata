@@ -128,7 +128,7 @@
         <attribute name="resolution" type="string">{1920, 1080}</attribute>
         <attribute name="model" type="int32">3123</attribute>
         <attribute name="maindisplay" type="int32">1</attribute>
-        <attribute name="displayid" type="int32">1925385411</attribute>
+        <attribute name="displayid" type="int32">1925385413</attribute>
         <attribute name="builtin" type="bool">0</attribute>
         <relationship name="displayeddragpoints" type="0/0" destination="BSTDRAGPOINT"></relationship>
     </object>
