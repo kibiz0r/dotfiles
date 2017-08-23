@@ -1,7 +1,13 @@
 #!/usr/bin/env sh
 
+os_version=`defaults read loginwindow SystemVersionStampAsString`
+if echo $os_version | grep 10.12; then
+  nohup mas install 497799835 #Xcode
+else
+  echo "Since your OS version is $os_version, I'll assume you can't install the latest Xcode (it requires Sierra or above)"
+fi
+
 nohup mas install \
-497799835 `#Xcode` \
 425424353 `# The Unarchiver` \
 407951449 `# Things` \
 803453959 `# Slack` \
