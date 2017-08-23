@@ -26,6 +26,7 @@
   - [./install_vscode_extensions, Installing VSCode extensions]
   - [./configure_omnisharp, Configuring OmniSharp]
   - [./configure_unity, Configuring Unity]
+  - [./configure_desktop, Configuring desktop]
   - [killall Finder, Relaunching Finder]
   - [killall Dock, Relaunching Dock]
   - [killall SystemUIServer, Relaunching SystemUIServer]
