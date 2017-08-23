@@ -30,6 +30,7 @@
   - [killall Finder, Relaunching Finder]
   - [killall Dock, Relaunching Dock]
   - [killall SystemUIServer, Relaunching SystemUIServer]
+# TODO: Remote Login, Remote Management
 
 - link:
     ~/.oh-my-zsh: oh-my-zsh
