@@ -39,6 +39,9 @@
   # - Remote Management
   # - Insomnia configuration, and run immediately and on start, and grant security permissions
   # - Run BetterSnapTool immediately and on start, and grant security permissions
+  # - Chrome extensions:
+  #   - 1Password
+  #   - Gleebox
 
 - link:
     ~/.oh-my-zsh: oh-my-zsh
