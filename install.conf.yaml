@@ -23,6 +23,7 @@
   - [./install_vim_bundles, Installing vim bundles]
   - [./configure_finder_favorites, Configuring Finder favorites]
   - [./install_unaphy_dependencies, Installing Unaphy dependencies]
+  - [./install_dotnet_sdk, Installing .NET SDK]
   - [./install_vscode, Installing VSCode]
   - [./install_vscode_extensions, Installing VSCode extensions]
   - [./configure_omnisharp, Configuring OmniSharp]
