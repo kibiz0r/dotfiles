@@ -37,7 +37,8 @@
   # TODO:
   # - Remote Login
   # - Remote Management
-  # - Insomnia configuration
+  # - Insomnia configuration, and run immediately and on start, and grant security permissions
+  # - Run BetterSnapTool immediately and on start, and grant security permissions
 
 - link:
     ~/.oh-my-zsh: oh-my-zsh

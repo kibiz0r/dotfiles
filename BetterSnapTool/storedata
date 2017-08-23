@@ -10,7 +10,7 @@
             <plist version="1.0">
                 <dict>
                     <key>NSPersistenceFrameworkVersion</key>
-                    <integer>754</integer>
+                    <integer>641</integer>
                     <key>NSStoreModelVersionHashes</key>
                     <dict>
                         <key>BSTCDisplay</key>
@@ -90,9 +90,9 @@
         <attribute name="screensize" type="string">{329.51350856471709, 207.81817869706586}</attribute>
         <attribute name="screenframe" type="string">{{0, 0}, {1440, 900}}</attribute>
         <attribute name="resolution" type="string">{1440, 900}</attribute>
-        <attribute name="model" type="int32">41008</attribute>
+        <attribute name="model" type="int32">40099</attribute>
         <attribute name="maindisplay" type="int32">1</attribute>
-        <attribute name="displayid" type="int32">69733378</attribute>
+        <attribute name="displayid" type="int32">69675200</attribute>
         <attribute name="builtin" type="bool">1</attribute>
         <relationship name="displayeddragpoints" type="0/0" destination="BSTDRAGPOINT"></relationship>
     </object>
