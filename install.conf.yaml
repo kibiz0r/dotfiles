@@ -2,6 +2,9 @@
 - defaults:
     link:
       relink: true
+    shell:
+      stdout: true
+      stderr: true
 
 # Cleans up dead symlinks in ~
 - clean: ['~']

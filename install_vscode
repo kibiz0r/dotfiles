@@ -4,8 +4,15 @@
 # https://github.com/Microsoft/vscode/issues/32381
 UseBleedingEdge = true
 
-if Dir.exists? "/Applications/Visual Studio Code.app"
-  puts "VSCode already installed"
+vscode_dir =
+  if UseBleedingEdge
+    "/Applications/Visual Studio Code - Insiders.app"
+  else
+    "/Applications/Visual Studio Code.app"
+  end
+
+if Dir.exists? vscode_dir
+  puts "VSCode#{if UseBleedingEdge then " Bleeding Edge" else "" end} already installed"
 else
   if UseBleedingEdge
     system "curl -Lo vscode.zip https://go.microsoft.com/fwlink/?LinkId=723966"
