@@ -58,6 +58,9 @@
     ~/Library/Application Support/Code/User:
       create: true
       path: vscode
+    ~/Library/Application Support/Code - Insiders/User:
+      create: true
+      path: vscode
     ~/.gitconfig: gitconfig
     ~/.gitignore_global: gitignore_global
     ~/.iTerm2: iTerm2
