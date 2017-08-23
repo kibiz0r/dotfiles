@@ -6,5 +6,14 @@ if [ ! -f ~/Library/Preferences/com.unity3d.UnityEditor5.x.plist ]; then
   killall Unity
 fi
 
-plutil -replace kScriptsDefaultApp -string "/Applications/Visual Studio Code.app" ~/Library/Preferences/com.unity3d.UnityEditor5.x.plist
-plutil -replace "kScriptEditorArgs_/Applications/Visual Studio Code\.app" -string '' ~/Library/Preferences/com.unity3d.UnityEditor5.x.plist
+vscode="/Applications/Visual Studio Code.app"
+if [ -d "/Applications/Visual Studio Code - Insiders.app" ]; then
+  vscode="/Applications/Visual Studio Code - Insiders.app"
+fi
+
+plutil -replace kScriptsDefaultApp -string "$vscode" ~/Library/Preferences/com.unity3d.UnityEditor5.x.plist
+
+# Don't ask me why this requires so many escapes
+vscodeEscaped=`echo $vscode | sed s/\.app/\\\\\\\.app/`
+argsKey="kScriptEditorArgs_$vscodeEscaped"
+plutil -replace "$argsKey" -string '' ~/Library/Preferences/com.unity3d.UnityEditor5.x.plist

@@ -16,7 +16,7 @@
   - [brew install mas, Installing mas]
   - [./install_app_store_apps, Installing App Store apps (in background)]
   - [xcode-select --install || true, Installing Xcode command line tools]
-  - [brew bundle, Installing Homebrew formulae]
+  - [brew bundle -v, Installing Homebrew formulae]
   - [./install_extra_brews, Installing extra Homebrew formulae]
   - [brew unlink python, "Unlinking Python for MacVim's sake (https://github.com/Valloric/YouCompleteMe/issues/18)"]
   - [./install_iterm2, Installing iTerm2]

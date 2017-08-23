@@ -1,8 +1,10 @@
 #!/usr/bin/env sh
 
 os_version=`defaults read loginwindow SystemVersionStampAsString`
-if echo $os_version | grep 10.12; then
-  nohup mas install 497799835 #Xcode
+if echo $os_version | grep 10.12 &>/dev/null; then
+  if [ -d /Application/Xcode.app ]; then
+    nohup mas install 497799835 &>/dev/null &
+  fi
 else
   echo "Since your OS version is $os_version, I'll assume you can't install the latest Xcode (it requires Sierra or above)"
 fi
