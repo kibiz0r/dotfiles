@@ -8,7 +8,7 @@ ZSH_CUSTOM=$HOME/.zsh_custom
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-export ZSH_THEME=$USER.`hostname`
+export ZSH_THEME=$USER.`hostname | sed s/\.local//`
 if [ ! -f $ZSH_CUSTOM/themes/$ZSH_THEME.zsh-theme ]; then
   ZSH_THEME="kibiyama.hekapoo"
 fi
