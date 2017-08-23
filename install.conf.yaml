@@ -19,6 +19,7 @@
   - [brew unlink python, "Unlinking Python for MacVim's sake (https://github.com/Valloric/YouCompleteMe/issues/18)"]
   - [./install_iterm2, Installing iTerm2]
   - [./change_shell_to_zsh, Changing shell to zsh]
+    [./install_macvim, Installing MacVim]
   - [./install_vim_bundles, Installing vim bundles]
   - [./configure_finder_favorites, Configuring Finder favorites]
   - [./install_unaphy_dependencies, Installing Unaphy dependencies]
@@ -34,14 +35,17 @@
 
 - link:
     ~/.oh-my-zsh: oh-my-zsh
-    /usr/local/bin/mvim: /Applications/MacVim.app/Contents/bin/mvim
+    # Provided by brew now
+    # /usr/local/bin/mvim: /Applications/MacVim.app/Contents/bin/mvim
     ~/.vim: vim
     ~/.vimrc: vimrc
     ~/.zshrc: zshrc
     ~/.zsh_custom: zsh_custom
     ~/bin: bin
     ~/.omnisharp: omnisharp
-    ~/Library/Application Support/Code/User: vscode
+    ~/Library/Application Support/Code/User:
+      create: true
+      path: vscode
     ~/.gitconfig: gitconfig
     ~/.gitignore_global: gitignore_global
     ~/.iTerm2: iTerm2

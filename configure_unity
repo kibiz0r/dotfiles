@@ -1,4 +1,10 @@
 #!/usr/bin/env sh
 
+if [ ! -f ~/Library/Preferences/com.unity3d.UnityEditor5.x.plist ]; then
+  open /Applications/Unity/Unity.app
+  sleep 10
+  killall Unity
+fi
+
 plutil -replace kScriptsDefaultApp -string "/Applications/Visual Studio Code.app" ~/Library/Preferences/com.unity3d.UnityEditor5.x.plist
 plutil -replace "kScriptEditorArgs_/Applications/Visual Studio Code\.app" -string '' ~/Library/Preferences/com.unity3d.UnityEditor5.x.plist
