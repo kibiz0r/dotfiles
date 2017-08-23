@@ -1,0 +1,3 @@
+#!/usr/bin/env sh
+
+defaults write com.apple.AppleMultitouchTrackpad Clicking -int 1

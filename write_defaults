@@ -36,3 +36,7 @@ defaults write -g NSAutomaticSpellingCorrectionEnabled -bool NO
 
 # Enable full keyboard access for all controls
 defaults write -g AppleKeyboardUIMode 3
+
+if [ -f write_defaults.$USER.$HOST ]; then
+  ./write_defaults.$USER.$HOST
+fi
