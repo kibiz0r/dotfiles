@@ -11,6 +11,7 @@ tap "homebrew/versions"
 tap "osrf/simulation"
 tap "ros/deps"
 
+brew "cocoapods"
 brew "nuget"
 brew "mas"
 brew "apr"
