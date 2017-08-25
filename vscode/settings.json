@@ -4,7 +4,8 @@
     "macros": {
         "openAndKeep": [
             "list.select",
-            "workbench.action.keepEditor"
+            "workbench.action.keepEditor",
+            "workbench.action.toggleSidebarVisibility"
         ],
         "mergeAllGroups": [
             "workbench.action.joinTwoGroups",
@@ -25,5 +26,15 @@
     "editor.rulers": [
         80
     ],
-    "editor.tabSize": 2
+    "editor.tabSize": 2,
+    "editor.acceptSuggestionOnCommitCharacter": false,
+    "vim.useSystemClipboard": true,
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/*.meta": true
+    }
 }
