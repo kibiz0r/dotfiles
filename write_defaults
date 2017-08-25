@@ -34,6 +34,9 @@ defaults write -g InitialKeyRepeat -int 15
 # Disable auto-correct
 defaults write -g NSAutomaticSpellingCorrectionEnabled -bool NO
 
+# Disable text replacements
+plutil -replace NSUserDictionaryReplacementItems -json '[]' ~/Library/Preferences/.GlobalPreferences.plist
+
 # Enable full keyboard access for all controls
 defaults write -g AppleKeyboardUIMode 3
 

@@ -45,6 +45,8 @@
   # - Chrome extensions:
   #   - 1Password
   #   - Gleebox
+  # - nvALT and prefs
+  # iMessage text/emoji replacement
 
 - link:
     ~/.oh-my-zsh: oh-my-zsh
