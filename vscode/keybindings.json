@@ -103,7 +103,7 @@
     },
     {
         "key": "shift+cmd+o",
-        "command": "macros.mergeAllGroups"
+        "command": "macros.mergeGroupsAndHideSidebar"
     },
     {
         "key": "ctrl+w h",

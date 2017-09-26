@@ -7,7 +7,7 @@
             "workbench.action.keepEditor",
             "workbench.action.toggleSidebarVisibility"
         ],
-        "mergeAllGroups": [
+        "mergeGroupsAndHideSidebar": [
             "workbench.action.joinTwoGroups",
             "workbench.action.joinTwoGroups",
             "workbench.action.joinTwoGroups",
@@ -18,7 +18,8 @@
             "workbench.action.joinTwoGroups",
             "workbench.action.joinTwoGroups",
             "workbench.action.joinTwoGroups",
-            "workbench.action.joinTwoGroups"
+            "workbench.action.joinTwoGroups",
+            "workbench.action.maximizeEditor"
         ]
     },
     "editor.minimap.enabled": false,
