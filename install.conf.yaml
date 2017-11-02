@@ -10,6 +10,7 @@
 - clean: ['~']
 
 - shell:
+  - [export USE_VSCODE_INSIDERS=yes]
   - [git submodule update --init --recursive, Downloading submodules]
   - [./write_defaults, Setting OS X defaults]
   # TODO: Fix this

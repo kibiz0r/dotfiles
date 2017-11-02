@@ -2,7 +2,7 @@
 
 # Temporarily using bleeding edge until this is resolved:
 # https://github.com/Microsoft/vscode/issues/32381
-UseBleedingEdge = true
+UseBleedingEdge = ENV["USE_VSCODE_INSIDERS"]
 
 vscode_dir =
   if UseBleedingEdge

@@ -58,8 +58,10 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
-# User configuration
+# rbenv
+export PATH="$HOME/.rbenv/shims:$PATH"
 
+# User configuration
 export PATH="$PATH:$HOME/bin"
 export EDITOR="mvim -f"
 
@@ -81,6 +83,7 @@ function docker-shell() {
 
 alias be='bundle exec'
 alias git=hub
+alias mvim='/usr/local/bin/mvim $@ > /dev/null 2>&1'
 
 alias cd-garten="cd ~/git/kindergarten"
 alias cd-kin="cd ~/git/kin"

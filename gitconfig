@@ -2,6 +2,7 @@
   name = Michael Harrington
   email = kibiz0r@gmail.com
 [alias]
+  on = "!git checkout -b \"$1\" && git config branch.\"$1\".remote origin && git config branch.\"$1\".merge \"refs/heads/$1\" #"
   b = branch
   ba = branch -a
   bd = branch -d
@@ -14,15 +15,15 @@
   rbc = rebase --continue
   rbs = rebase --skip
   rba = rebase --abort
-	pull-reset = !git fetch && git reset --hard FETCH_HEAD
-	sa = submodule add
-	remotes = remote -v
+  pull-reset = !git fetch && git reset --hard FETCH_HEAD
+  sa = submodule add
+  remotes = remote -v
   pullr = pull --rebase
   out = merge --abort
   gud = git reset --hard HEAD
   ma = merge --abort
-	submodules = submodule foreach git status
-	bruh = branch -vv
+  submodules = submodule foreach git status
+  bruh = branch -vv
   logp = log --graph --decorate
   loga = log --graph --decorate --all
   logs = log --graph --decorate --all --max-count=16
@@ -30,10 +31,6 @@
   lg1 = !"git lg1-specific --all"
   lg2 = !"git lg2-specific --all"
   lg3 = !"git lg3-specific --all"
-  ; lg1-specific = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)'
-  ; lg2-specific = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)'
-  ; lg3-specific = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset) %C(bold cyan)(committed: %cD)%C(reset) %C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset)%n''          %C(dim white)- %an <%ae> %C(reset) %C(dim white)(committer: %cn <%ce>)%C(reset)'
-
   lg1-specific = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)'
   lg2-specific = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)'
   lg3-specific = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset) %C(bold cyan)(committed: %cD)%C(reset) %C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset)%n''          %C(dim white)- %an <%ae> %C(reset) %C(dim white)(committer: %cn <%ce>)%C(reset)'
@@ -45,21 +42,3 @@
   mergeoptions = --no-edit
 [merge]
   tool = opendiff
-[difftool "flash"]
-  cmd = cat \"$REMOTE\" | dos2unix -c mac | diff -u \"$LOCAL\" -
-[difftool "Kaleidoscope"]
-  cmd = ksdiff-wrapper git \"$LOCAL\" \"$REMOTE\"
-[difftool]
-  prompt = false
-[diff]
-  tool = flash
-[difftool "sourcetree"]
-  cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-  path = 
-[mergetool "sourcetree"]
-  cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-  trustExitCode = true
-[push]
-  default = current
-[branch]
-	autosetupmerge = always
