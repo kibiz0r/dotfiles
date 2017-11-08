@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+
+defaults write -g AppleICUForce24HourTime -boolean YES
+defaults write -g NSNavPanelFileLastListModeForOpenModeKey -int 2
+defaults write -g WebAutomaticSpellingCorrectionEnabled -boolean NO

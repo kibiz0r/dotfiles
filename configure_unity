@@ -7,7 +7,7 @@ if [ ! -f ~/Library/Preferences/com.unity3d.UnityEditor5.x.plist ]; then
 fi
 
 vscode="/Applications/Visual Studio Code.app"
-if [ "$USE_VSCODE_INSIDERS" -eq "yes" ]; then
+if [ "$USE_VSCODE_INSIDERS" = "yes" ]; then
   vscode="/Applications/Visual Studio Code - Insiders.app"
 fi
 
