@@ -33,6 +33,7 @@
   - [./configure_omnisharp, Configuring OmniSharp]
   - [./configure_unity, Configuring Unity]
   - [./configure_dash, Configuring Dash]
+  - [./configure_chrome, Configuring Chrome]
   - [./configure_global_preferences, Configuring global preferences]
   - [./configure_by_host_global_preferences, Configuring by-host global preferences]
   - [./configure_power_management, Configuring power management]
