@@ -1,0 +1,108 @@
+{
+   "checksum": "ca4ebda7beb3ce3907cf3c1945c883ac",
+   "roots": {
+      "bookmark_bar": {
+         "children": [ {
+            "date_added": "13134846160478926",
+            "id": "6",
+            "name": "The Kalman Filter",
+            "type": "url",
+            "url": "http://www.cs.unc.edu/~welch/kalman/"
+         }, {
+            "date_added": "13135290305289167",
+            "id": "9",
+            "name": "The 30 Basic Vim Commands You'll Use Every Day",
+            "type": "url",
+            "url": "https://spin.atomicobject.com/2016/04/19/vim-commands-cheat-sheet/"
+         }, {
+            "date_added": "13135887882865888",
+            "id": "12",
+            "name": "fsharp/vim-fsharp: F# bindings for vim",
+            "type": "url",
+            "url": "https://github.com/fsharp/vim-fsharp"
+         }, {
+            "date_added": "13136487609494063",
+            "id": "15",
+            "name": "Camera Calibration Toolbox for Matlab",
+            "type": "url",
+            "url": "http://www.vision.caltech.edu/bouguetj/calib_doc/"
+         }, {
+            "date_added": "13136653694651345",
+            "id": "16",
+            "name": "OpenSLAM/awesome-SLAM-list",
+            "type": "url",
+            "url": "https://github.com/OpenSLAM/awesome-SLAM-list"
+         }, {
+            "date_added": "13139304439419094",
+            "id": "19",
+            "name": "The Rogue's Ring - Titanum Escape ring to escape handcuffs!",
+            "type": "url",
+            "url": "https://www.scamstuff.com/products/the-rogues-ring"
+         }, {
+            "date_added": "13141754380800474",
+            "id": "22",
+            "name": "alexsosn/iOS_ML: List of Machine Learning, AI, NLP solutions for iOS. The most recent version of this article can be found on my blog.",
+            "type": "url",
+            "url": "https://github.com/alexsosn/iOS_ML"
+         }, {
+            "date_added": "13143241842208549",
+            "id": "25",
+            "name": "autocomplete - zsh: menu completion for glob - Unix & Linux Stack Exchange",
+            "type": "url",
+            "url": "https://unix.stackexchange.com/questions/277896/zsh-menu-completion-for-glob"
+         }, {
+            "date_added": "13147477210338708",
+            "id": "28",
+            "name": "Measuring size of objects in an image with OpenCV - PyImageSearch",
+            "type": "url",
+            "url": "http://www.pyimagesearch.com/2016/03/28/measuring-size-of-objects-in-an-image-with-opencv/"
+         }, {
+            "date_added": "13147477213242812",
+            "id": "29",
+            "name": "Find distance from camera to object using Python and OpenCV",
+            "type": "url",
+            "url": "http://www.pyimagesearch.com/2015/01/19/find-distance-camera-objectmarker-using-python-opencv/"
+         }, {
+            "date_added": "13147566221173301",
+            "id": "32",
+            "name": "GitHub does dotfiles - dotfiles.github.io",
+            "type": "url",
+            "url": "https://dotfiles.github.io/"
+         }, {
+            "date_added": "13147742174823971",
+            "id": "33",
+            "name": "Patched Kernels - OSx86",
+            "type": "url",
+            "url": "http://wiki.osx86project.org/wiki/index.php/Patched_Kernels"
+         }, {
+            "date_added": "13147930381169570",
+            "id": "36",
+            "name": "herrbischoff/awesome-osx-command-line Use your OS X terminal shell to do awesome things. by @herrbischoff - Repository | DevHub.io",
+            "type": "url",
+            "url": "https://devhub.io/repos/herrbischoff-awesome-osx-command-line"
+         } ],
+         "date_added": "13134696734749714",
+         "date_modified": "13147930381169570",
+         "id": "1",
+         "name": "Bookmarks Bar",
+         "type": "folder"
+      },
+      "other": {
+         "children": [  ],
+         "date_added": "13134696734749752",
+         "date_modified": "0",
+         "id": "2",
+         "name": "Other Bookmarks",
+         "type": "folder"
+      },
+      "synced": {
+         "children": [  ],
+         "date_added": "13134696734749753",
+         "date_modified": "0",
+         "id": "3",
+         "name": "Mobile Bookmarks",
+         "type": "folder"
+      }
+   },
+   "version": 1
+}

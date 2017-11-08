@@ -1,0 +1,11 @@
+#!/usr/bin/env sh
+
+if [ -f ~/Library/Application\ Support/Google/Chrome/Default/Bookmarks ]; then
+  rm ~/Library/Application\ Support/Google/Chrome/Default/Bookmarks
+  ln -s ~/.dotfiles/Chrome/Bookmarks ~/Library/Application\ Support/Google/Chrome/Default/Bookmarks
+fi
+
+if [ -f ~/Library/Application\ Support/Google/Chrome/Default/Preferences ]; then
+  rm ~/Library/Application\ Support/Google/Chrome/Default/Preferences
+  ln -s ~/.dotfiles/Chrome/Preferences ~/Library/Application\ Support/Google/Chrome/Default/Preferences
+fi
