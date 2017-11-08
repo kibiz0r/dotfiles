@@ -2,7 +2,7 @@
 
 os_version=`defaults read loginwindow SystemVersionStampAsString`
 if echo $os_version | grep 10.12 &>/dev/null; then
-  if [ -d /Application/Xcode.app ]; then
+  if [ ! -d /Application/Xcode.app ]; then
     nohup mas install 497799835 &>/dev/null &
   fi
 else
