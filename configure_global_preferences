@@ -1,5 +1,35 @@
 #!/usr/bin/env sh
 
+BUDDY="/usr/libexec/PlistBuddy"
+PLIST="$HOME/Library/Preferences/.GlobalPreferences.plist"
+
+
+defaults write -g AppleInterfaceStyle -string 'Dark'
+defaults write -g AppleAquaColorVariant -int 6
 defaults write -g AppleICUForce24HourTime -boolean YES
+defaults write -g AppleShowAllExtensions -boolean YES
+defaults write -g AppleScrollerPagingBehavior -boolean YES
+
 defaults write -g NSNavPanelFileLastListModeForOpenModeKey -int 2
+defaults write -g NavPanelFileListModeForOpenMode -int 2
+defaults write -g NSNavPanelFileListModeForOpenMode2 -int 2
+
+defaults write -g ApplePressAndHoldEnabled -boolean NO
+defaults write -g InitialKeyRepeat -int 15
+defaults write -g KeyRepeat -int 2
 defaults write -g WebAutomaticSpellingCorrectionEnabled -boolean NO
+defaults write -g NSAutomaticDashSubstitutionEnabled -boolean NO
+defaults write -g NSAutomaticSpellingCorrectionEnabled -boolean NO
+defaults write -g NSAutomaticCapitalizationEnabled -boolean NO
+defaults write -g NSAutomaticQuoteSubstitutionEnabled -boolean NO
+defaults write -g NSAutomaticPeriodSubstitutionEnabled -boolean NO
+
+
+$BUDDY -c 'delete :NSPreferredWebServices:NSWebServicesProviderWebSearch:NSDefaultDisplayName' $PLIST
+$BUDDY -c 'add :NSPreferredWebServices:NSWebServicesProviderWebSearch:NSDefaultDisplayName string "Google"' $PLIST
+
+$BUDDY -c 'delete :NSPreferredWebServices:NSWebServicesProviderWebSearch:NSProviderIdentifier' $PLIST
+$BUDDY -c 'add :NSPreferredWebServices:NSWebServicesProviderWebSearch:NSProviderIdentifier string "com.google.www"' $PLIST
+
+$BUDDY -c 'delete :NSUserDictionaryReplacementItems' $PLIST
+$BUDDY -c 'add :NSUserDictionaryReplacementItems array' $PLIST
