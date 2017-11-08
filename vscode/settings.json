@@ -39,5 +39,6 @@
         "**/*.meta": true
     },
     "workbench.editor.enablePreview": false,
-    "window.zoomLevel": 0
+    "window.zoomLevel": 0,
+    "workbench.iconTheme": "vscode-icons"
 }

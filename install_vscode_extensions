@@ -3,6 +3,13 @@
 /Applications/Visual\ Studio\ Code*.app/Contents/Resources/app/bin/code \
     --install-extension donjayamanne.githistory \
     --install-extension geddski.macros \
+    --install-extension ms-vscode.cpptools \
     --install-extension ms-vscode.csharp \
+    --install-extension redhat.java \
+    --install-extension robertohuertasm.vscode-icons \
+    --install-extension twxs.cmake \
+    --install-extension vector-of-bool.cmake-tools \
+    --install-extension vscjava.vscode-java-debug \
+    --install-extension vscjava.vscode-java-pack \
     --install-extension vscodevim.vim \
     --install-extension Unity.unity-debug
