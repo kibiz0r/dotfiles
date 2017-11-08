@@ -30,6 +30,7 @@
   - [./install_dotnet_sdk, Installing .NET SDK]
   - [./install_vscode, Installing VSCode]
   - [./install_vscode_extensions, Installing VSCode extensions]
+  - [./configure_macvim, Configuring MacVim]
   - [./configure_omnisharp, Configuring OmniSharp]
   - [./configure_unity, Configuring Unity]
   - [./configure_dash, Configuring Dash]

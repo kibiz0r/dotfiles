@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+
+defaults write ~/Library/Preferences/org.vim.MacVim.plist MMNativeFullScreen -boolean NO
+defaults write ~/Library/Preferences/org.vim.MacVim.plist SUEnableAutomaticChecks -boolean YES
+
