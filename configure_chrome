@@ -1,5 +1,11 @@
 #!/usr/bin/env sh
 
+if [ ! -d  ~/Library/Application\ Support/Google/Chrome/Default ]; then
+  open /Applications/Google\ Chrome.app
+  sleep 10
+  killall Google\ Chrome
+fi
+
 if [ -f ~/Library/Application\ Support/Google/Chrome/Default/Bookmarks ]; then
   rm ~/Library/Application\ Support/Google/Chrome/Default/Bookmarks
   ln -s ~/.dotfiles/Chrome/Bookmarks ~/Library/Application\ Support/Google/Chrome/Default/Bookmarks
