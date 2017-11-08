@@ -1,5 +1,11 @@
 #!/usr/bin/env sh
 
+if [ ! -f ~/Library/Preferences/com.kapeli.dashdoc.plist ]; then
+  open /Applications/Dash.app
+  sleep 10
+  killall Dash
+fi
+
 defaults write ~/Library/Preferences/com.kapeli.dashdoc.plist syncFolderPath -string '~/.dotfiles/Dash'
 defaults write ~/Library/Preferences/com.kapeli.dashdoc.plist shouldSyncGeneral -boolean YES
 defaults write ~/Library/Preferences/com.kapeli.dashdoc.plist shouldSyncDocsets -boolean YES

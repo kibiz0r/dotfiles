@@ -165,6 +165,7 @@ brew "log4cxx"
 brew "ruby-build"
 brew "urdfdom"
 brew "unity-version-manager"
+brew "fswatch"
 
 cask "android-file-transfer"
 cask "google-chrome"
