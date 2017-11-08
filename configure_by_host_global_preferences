@@ -1,12 +1,10 @@
 #!/usr/bin/env sh
 
 HARDWARE_UUID="$(system_profiler SPHardwareDataType | awk '/UUID/ { print $3; }')"
-TARGET="~/.dotfiles/Preferences/ByHost/.GlobalPreferences.$HARDWARE_UUID.plist"
+TARGET=~/.dotfiles/Preferences/ByHost/.GlobalPreferences.$HARDWARE_UUID.plist
 
-if [ -f $TARGET ]; then
+if [ ! -L $TARGET ]; then
   rm $TARGET
+  ln -s ~/.dotfiles/Preferences/ByHost/.GlobalPreferences.HARDWARE_UUID.plist ~/Library/Preferences/ByHost/.GlobalPreferences.$HARDWARE_UUID.plist
 fi
 
-ln -s ~/.dotfiles/Preferences/ByHost/.GlobalPreferences.HARDWARE_UUID.plist ~/Library/Preferences/ByHost/.GlobalPreferences.$HARDWARE_UUID.plist
-
-exit 0

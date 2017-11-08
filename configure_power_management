@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
-if [ -f /Library/Preferences/com.apple.PowerManagement.plist ]; then
+if [ ! -L /Library/Preferences/com.apple.PowerManagement.plist ]; then
   sudo rm /Library/Preferences/com.apple.PowerManagement.plist
+  sudo ln -s $HOME/.dotfiles/RootPreferences/com.apple.PowerManagement.plist /Library/Preferences/com.apple.PowerManagement.plist
 fi
 
-sudo ln -s $HOME/.dotfiles/RootPreferences/com.apple.PowerManagement.plist /Library/Preferences/com.apple.PowerManagement.plist
