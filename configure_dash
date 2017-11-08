@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+
+defaults write ~/Library/Preferences/com.kapeli.dashdoc.plist syncFolderPath -string '~/.dotfiles/Dash'
+defaults write ~/Library/Preferences/com.kapeli.dashdoc.plist shouldSyncGeneral -boolean YES
+defaults write ~/Library/Preferences/com.kapeli.dashdoc.plist shouldSyncDocsets -boolean YES
+defaults write ~/Library/Preferences/com.kapeli.dashdoc.plist shouldSyncView -boolean YES
+defaults write ~/Library/Preferences/com.kapeli.dashdoc.plist shouldSyncBookmarks -boolean YES
