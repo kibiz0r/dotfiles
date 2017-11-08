@@ -19,5 +19,5 @@ else
   else
     system "curl -Lo vscode.zip https://go.microsoft.com/fwlink/?LinkID=620882"
   end
-  system "unzip -d /Applications vscode.zip"
+  system "unzip vscode.zip 'Visual Studio Code.app/*' -d /Applications"
 end

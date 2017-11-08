@@ -25,6 +25,7 @@
   - [./change_shell_to_zsh, Changing shell to zsh]
   - [./install_macvim, Installing MacVim]
   - [./install_vim_bundles, Installing vim bundles]
+  - [./install_dash, Installing Dash]
   - [./install_unaphy_dependencies, Installing Unaphy dependencies]
   - [./install_dotnet_sdk, Installing .NET SDK]
   - [./install_vscode, Installing VSCode]
