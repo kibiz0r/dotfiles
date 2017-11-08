@@ -65,11 +65,16 @@
     ~/.gitconfig: gitconfig
     ~/.gitignore_global: gitignore_global
     ~/.iTerm2: iTerm2
-    ~/Library/Preferences/com.hegenberg.BetterSnapTool.plist: Preferences/BetterSnapTool.plist
+    ~/Library/Preferences/com.hegenberg.BetterSnapTool.plist:
+      force: true
+      path: Preferences/BetterSnapTool.plist
     ~/Library/Application Support/BetterSnapTool: Application Support/BetterSnapTool
     ~/Library/Preferences/com.apple.dock.plist:
       force: true
       path: Preferences/com.apple.dock.plist
+    ~/Library/Preferences/com.apple.LaunchServices:
+      force: true
+      path: Preferences/com.apple.LaunchServices
 
 - shell:
   - [killall Finder, Relaunching Finder]
