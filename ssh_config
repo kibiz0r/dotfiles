@@ -1,3 +1,7 @@
 Host hekapoo
      HostName hekapoo.dimensionless.space
      User kibiyama
+
+Host granger
+     HostName granger.local
+     User kibiyama
