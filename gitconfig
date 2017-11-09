@@ -44,5 +44,7 @@
   excludesfile = /Users/kibiyama/.gitignore_global
   autocrlf = input
   mergeoptions = --no-edit
-[merge]
-  tool = opendiff
+[difftool "pldiff"]
+  cmd = pldiff $LOCAL $REMOTE
+[diff]
+  tool = pldiff
