@@ -251,7 +251,7 @@
 	<key>shouldRestoreTabs</key>
 	<false/>
 	<key>shouldShowStatusIcon</key>
-	<true/>
+	<false/>
 	<key>shouldStartAtLogin</key>
 	<true/>
 	<key>shouldSyncBookmarks</key>

@@ -1,3 +1,13 @@
 #!/usr/bin/env sh
 
-setwp --fill ~/.dotfiles/desktop.$(./dotfiles_user).png
+USER_DESKTOP=~/.dotfiles/desktop.$(./dotfiles_user).png
+if [ -f $USER_DESKTOP ]; then
+  setwp --fill $USER_DESKTOP
+fi
+
+ADMIN_DESKTOP=~/.dotfiles/admin.desktop.$(./dotfiles_host).png
+if [ -f $ADMIN_DESKTOP ]; then
+  TARGET=/Library/Caches/com.apple.desktop.admin.png
+  sudo rm $TARGET
+  sudo ln -s $ADMIN_DESKTOP $TARGET
+fi
