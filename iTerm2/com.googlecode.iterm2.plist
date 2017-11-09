@@ -8,6 +8,8 @@
 	<integer>0</integer>
 	<key>AppleSmoothFixedFontsSizeThreshold</key>
 	<integer>1</integer>
+	<key>AppleWindowTabbingMode</key>
+	<string>manual</string>
 	<key>Default Bookmark Guid</key>
 	<string>49535709-DFA9-497E-8941-950882C4755C</string>
 	<key>Hotkey</key>
@@ -53,21 +55,8 @@
 	</data>
 	<key>NSTableView Supports v2 KeyBingingTable</key>
 	<true/>
-	<key>NSToolbar Configuration com.apple.NSColorPanel</key>
-	<dict>
-		<key>TB Is Shown</key>
-		<integer>1</integer>
-	</dict>
-	<key>NSWindow Frame SUAutomaticUpdateAlert</key>
-	<string>532 641 616 174 0 0 1680 1028 </string>
-	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>530 494 620 392 0 0 1680 1050 </string>
-	<key>NSWindow Frame SessionsPreferences</key>
-	<string>269 139 606 456 0 0 1680 1028 </string>
-	<key>NSWindow Frame SharedPreferences</key>
-	<string>268 196 796 473 0 0 1680 1050 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 0 1680 1050 0 0 1680 1028 </string>
+	<string>0 0 1680 1050 0 0 1680 1027 </string>
 	<key>NeverWarnAboutMeta</key>
 	<true/>
 	<key>NeverWarnAboutMeta_selection</key>
@@ -708,15 +697,13 @@
 	<key>NoSyncHaveWarnedAboutPasteConfirmationChange</key>
 	<true/>
 	<key>NoSyncInstallationId</key>
-	<string>B76A642E-A516-4822-8739-57D8A952D503</string>
+	<string>154764D8-7964-40DE-A06A-AE5B52425C81</string>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
 	<integer>0</integer>
-	<key>NoSyncPermissionToShowTip</key>
-	<false/>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
-	<real>524540285.43557</real>
+	<real>531859748.09400803</real>
 	<key>OnlyWhenMoreTabs</key>
 	<false/>
 	<key>OpenArrangementAtStartup</key>
@@ -764,20 +751,12 @@
 	<string>/Users/kibiyama/.iTerm2</string>
 	<key>PromptOnQuit</key>
 	<false/>
-	<key>SUAutomaticallyUpdate</key>
-	<true/>
-	<key>SUEnableAutomaticChecks</key>
-	<true/>
 	<key>SUFeedAlternateAppNameKey</key>
 	<string>iTerm</string>
 	<key>SUFeedURL</key>
-	<string>https://iterm2.com/appcasts/final.xml?shard=55</string>
+	<string>https://iterm2.com/appcasts/final.xml?shard=30</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
-	<key>SULastCheckTime</key>
-	<date>2017-11-02T13:23:26Z</date>
-	<key>SUSendProfileInfo</key>
-	<false/>
 	<key>UseLionStyleFullscreen</key>
 	<false/>
 	<key>WordCharacters</key>
@@ -789,6 +768,6 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.1.0</string>
+	<string>3.1.5</string>
 </dict>
 </plist>

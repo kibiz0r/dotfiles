@@ -176,9 +176,9 @@
         <attribute name="screensize" type="string">{330.79069270644078, 206.74418294152548}</attribute>
         <attribute name="screenframe" type="string">{{0, 0}, {1680, 1050}}</attribute>
         <attribute name="resolution" type="string">{1680, 1050}</attribute>
-        <attribute name="model" type="int32">41008</attribute>
+        <attribute name="model" type="int32">41009</attribute>
         <attribute name="maindisplay" type="int32">1</attribute>
-        <attribute name="displayid" type="int32">69733378</attribute>
+        <attribute name="displayid" type="int32">2077750205</attribute>
         <attribute name="builtin" type="bool">1</attribute>
         <relationship name="displayeddragpoints" type="0/0" destination="BSTDRAGPOINT"></relationship>
         <relationship name="snappeddragpoints" type="0/0" destination="BSTDRAGPOINT"></relationship>
