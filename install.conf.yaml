@@ -10,7 +10,7 @@
 - clean: ['~']
 
 - shell:
-  - [export USE_VSCODE_INSIDERS=yes, exporting USE_VSCODE_INSIDERS]
+  - [export USE_VSCODE_INSIDERS=yes, Exporting USE_VSCODE_INSIDERS]
   - [git submodule update --init --recursive, Downloading submodules]
   - [./write_defaults, Setting OS X defaults]
   - [./install_homebrew, Installing Homebrew]
