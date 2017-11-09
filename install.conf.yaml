@@ -74,7 +74,6 @@
     ~/Library/Preferences/com.hegenberg.BetterSnapTool.plist:
       force: true
       path: Preferences/BetterSnapTool.plist
-    ~/Library/Application Support/BetterSnapTool: Application Support/BetterSnapTool
     ~/Library/Preferences/com.apple.dock.plist:
       force: true
       path: Preferences/com.apple.dock.plist
