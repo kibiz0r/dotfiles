@@ -61,9 +61,11 @@
     ~/bin: bin
     ~/.omnisharp: omnisharp
     ~/Library/Application Support/Code/User:
+      force: true
       create: true
       path: vscode
     ~/Library/Application Support/Code - Insiders/User:
+      force: true
       create: true
       path: vscode
     ~/.gitconfig: gitconfig
