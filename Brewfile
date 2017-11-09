@@ -166,6 +166,7 @@ brew "ruby-build"
 brew "urdfdom"
 brew "unity-version-manager"
 brew "fswatch"
+brew "alexcormier/personal/setwp"
 
 cask "android-file-transfer"
 cask "google-chrome"
