@@ -1,10 +1,10 @@
 #!/usr/bin/env sh
 
-brewfile=Brewfile.$USER.`hostname`
+BREWFILE="Brewfile.$(./dotfiles_user)"
 
-if [ ! -f $brewfile ]; then
-  echo "No custom Brewfile found: $brewfile"
+if [ ! -f $BREWFILE ]; then
+  echo "No custom Brewfile found: $BREWFILE"
   exit 0
 fi
 
-brew bundle --file=Brewfile.$USER.`hostname`
+brew bundle --file=$BREWFILE
