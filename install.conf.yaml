@@ -49,7 +49,6 @@
   # - Chrome extensions:
   #   - 1Password
   #   - Gleebox
-  # - nvALT and prefs
   # iMessage text/emoji replacement
 
 - link:
@@ -80,6 +79,7 @@
     ~/Library/Preferences/com.apple.LaunchServices:
       force: true
       path: Preferences/com.apple.LaunchServices
+    ~/.ssh/config: ssh_config
 
 - shell:
   - [killall Finder, Relaunching Finder]
