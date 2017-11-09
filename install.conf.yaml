@@ -73,7 +73,7 @@
     ~/.iTerm2: iTerm2
     ~/Library/Preferences/com.hegenberg.BetterSnapTool.plist:
       force: true
-      path: Preferences/BetterSnapTool.plist
+      path: Preferences/com.hegenberg.BetterSnapTool.plist
     ~/Library/Preferences/com.apple.dock.plist:
       force: true
       path: Preferences/com.apple.dock.plist
