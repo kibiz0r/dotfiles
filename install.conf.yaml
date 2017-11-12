@@ -81,8 +81,13 @@
       force: true
       path: Preferences/com.apple.LaunchServices
     ~/.ssh/config: ssh_config
+    ~/Library/LaunchAgents/com.kibiz0r.sync_music.plist: LaunchAgents/com.kibiz0r.sync_music.plist
 
 - shell:
+  - [launchctl load ~/Library/LaunchAgents/com.kibiz0r.sync_music.plist, Launching com.kibiz0r.sync_music]
   - [killall Finder, Relaunching Finder]
   - [killall Dock, Relaunching Dock]
   - [killall SystemUIServer, Relaunching SystemUIServer]
+  # Run SIP-phobic tasks last so they can complain if SIP needs to be temporarily disabled
+  - [./hide_spotlight_icon, Hiding Spotlight icon]
+  - [./check_sip_status, Checking SIP status]

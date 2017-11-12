@@ -1,18 +1,15 @@
 #!/usr/bin/env sh
 
-if csrutil status | grep enabled; then
-  echo "Not configuring Finder Favorites due to SIP"
-  exit 0
-fi
+mysides remove all
 
-sfltool clear com.apple.LSSharedFileList.FavoriteItems
-sfltool add-item -n 'Dropbox (YETi CGI)' com.apple.LSSharedFileList.FavoriteItems "file://$HOME/Dropbox%20(YETi%20CGI)/"
-sfltool add-item -n Dropbox com.apple.LSSharedFileList.FavoriteItems file://$HOME/Dropbox/
-sfltool add-item -n domain-AirDrop com.apple.LSSharedFileList.FavoriteItems nwnode://domain-AirDrop
-sfltool add-item -n 'Macintosh HD' com.apple.LSSharedFileList.FavoriteItems file:///
-sfltool add-item -n Applications com.apple.LSSharedFileList.FavoriteItems file:///Applications/
-sfltool add-item -n Desktop com.apple.LSSharedFileList.FavoriteItems file://$HOME/Desktop/
-sfltool add-item -n Documents com.apple.LSSharedFileList.FavoriteItems file://$HOME/Documents/
-sfltool add-item -n Downloads com.apple.LSSharedFileList.FavoriteItems file://$HOME/Downloads/
-sfltool add-item -n $USER com.apple.LSSharedFileList.FavoriteItems file://$HOME/
-sfltool add-item -n git com.apple.LSSharedFileList.FavoriteItems file://$HOME/git/
+mysides add 'domain-AirDrop' 'nwnode://domain-AirDrop'
+mysides add 'Macintosh HD' 'file:///'
+mysides add 'Applications' 'file:///Applications/'
+mysides add 'kibiyama' 'file:///Users/kibiyama/'
+mysides add 'git' 'file:///Users/kibiyama/git/'
+mysides add 'Desktop' 'file:///Users/kibiyama/Desktop/'
+mysides add 'Documents' 'file:///Users/kibiyama/Documents/'
+mysides add 'Downloads' 'file:///Users/kibiyama/Downloads/'
+mysides add 'Dropbox' 'file:///Users/kibiyama/Dropbox/'
+mysides add 'Dropbox (YETi CGI)' 'file:///Users/kibiyama/Dropbox%20(YETi%20CGI)/'
+

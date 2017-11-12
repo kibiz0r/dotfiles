@@ -1,0 +1,14 @@
+#!/usr/bin/env sh
+
+if [ ! ./sip_enabled ]; then
+  echo "***********************************************"
+  echo "*           SIP is still disabled!            *"
+  echo "*                                             *"
+  echo "*    THIS IS EXTREMELY UNSAFE. FIX IT NOW!    *"
+  echo "*                                             *"
+  echo "* == Run `csrutil enable` in recovery mode == *"
+  echo "*                                             *"
+  echo "***********************************************"
+
+  exit 0
+fi

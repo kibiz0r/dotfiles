@@ -1,0 +1,18 @@
+#!/usr/bin/env sh
+
+UNISON_CMD=/usr/local/bin/unison
+
+LOCAL_UNISON=$($UNISON_CMD -version)
+REMOTE_UNISON=$(ssh hekapoo "$UNISON_CMD -version")
+
+echo "Local Unison: $LOCAL_UNISON"
+echo "Remote Unison: $REMOTE_UNISON"
+
+if [ "$LOCAL_UNISON" != "$REMOTE_UNISON" ]; then
+  echo "Unison versions do not match; exiting"
+  exit 1
+fi
+
+echo "Unison versions match"
+
+$UNISON_CMD -servercmd $UNISON_CMD -batch -watch -logfile ~/Library/Logs/sync_music.log -prefer newer -unicode true ~/Music/iTunes ssh://hekapoo/Music/iTunes

@@ -1,0 +1,22 @@
+#!/usr/bin/env sh
+
+if ! grep '\x00\x00\x00\x00\x00\x00\x47\x40\x00\x00\x00\x00\x00\x00\x42\x40\x00\x00\x80\x3f\x00\x00\x70\x42' /System/Library/CoreServices/Spotlight.app/Contents/MacOS/Spotlight; then
+  echo "Spotlight icon already hidden"
+
+  exit 0
+fi
+
+if ./sip_enabled; then
+  echo "************************************************"
+  echo "*       Not hiding Spotlight due to SIP        *"
+  echo "*                                              *"
+  echo "* == Run `csrutil disable` in recovery mode == *"
+  echo "*                                              *"
+  echo "************************************************"
+
+  exit 1
+fi
+
+sudo perl -pi -e 's|(\x00\x00\x00\x00\x00\x00\x47\x40\x00\x00\x00\x00\x00\x00)\x42\x40(\x00\x00\x80\x3f\x00\x00\x70\x42)|$1\x00\x00$2|sg' /System/Library/CoreServices/Spotlight.app/Contents/MacOS/Spotlight
+sudo codesign -f -s - Spotlight
+sudo killall Spotlight
