@@ -10,7 +10,7 @@ if ./sip_enabled; then
   echo "************************************************"
   echo "*       Not hiding Spotlight due to SIP        *"
   echo "*                                              *"
-  echo "* == Run `csrutil disable` in recovery mode == *"
+  echo "* == Run 'csrutil disable' in recovery mode == *"
   echo "*                                              *"
   echo "************************************************"
 

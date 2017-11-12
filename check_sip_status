@@ -6,7 +6,7 @@ if [ ! ./sip_enabled ]; then
   echo "*                                             *"
   echo "*    THIS IS EXTREMELY UNSAFE. FIX IT NOW!    *"
   echo "*                                             *"
-  echo "* == Run `csrutil enable` in recovery mode == *"
+  echo "* == Run 'csrutil enable' in recovery mode == *"
   echo "*                                             *"
   echo "***********************************************"
 
