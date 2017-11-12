@@ -30,6 +30,7 @@
   - [./install_dotnet_sdk, Installing .NET SDK]
   - [./install_vscode, Installing VSCode]
   - [./install_vscode_extensions, Installing VSCode extensions]
+  - [./configure_ssh_config, Configuring SSH]
   - [./configure_nvalt, Configuring nvALT]
   - [./configure_macvim, Configuring MacVim]
   - [./configure_omnisharp, Configuring OmniSharp]
@@ -77,7 +78,6 @@
     ~/Library/Preferences/com.apple.LaunchServices:
       force: true
       path: Preferences/com.apple.LaunchServices
-    ~/.ssh/config: ssh_config
     ~/Library/LaunchAgents/com.kibiz0r.sync_music.plist: LaunchAgents/com.kibiz0r.sync_music.plist
 
 - shell:

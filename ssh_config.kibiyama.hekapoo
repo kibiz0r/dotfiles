@@ -1,0 +1,7 @@
+Host granger
+     HostName granger.local
+     User kibiyama
+
+Host socrates
+     HostName socrates.local
+     User kibiyama
