@@ -6,89 +6,130 @@
 
 /usr/libexec/PlistBuddy \
 -c 'add :orderedItems array' \
-\
+~/Library/Preferences/com.apple.Spotlight.plist
+
+/usr/libexec/PlistBuddy \
 -c 'add :orderedItems:0 dict' \
 -c 'add :orderedItems:0:name string APPLICATIONS' \
 -c 'add :orderedItems:0:enabled bool YES' \
-\
+~/Library/Preferences/com.apple.Spotlight.plist
+
+/usr/libexec/PlistBuddy \
 -c 'add :orderedItems:1 dict' \
 -c 'add :orderedItems:1:name string MENU_SPOTLIGHT_SUGGESTIONS' \
 -c 'add :orderedItems:1:enabled bool NO' \
-\
+~/Library/Preferences/com.apple.Spotlight.plist
+
+/usr/libexec/PlistBuddy \
 -c 'add :orderedItems:2 dict' \
 -c 'add :orderedItems:2:name string MENU_CONVERSION' \
 -c 'add :orderedItems:2:enabled bool YES' \
-\
+~/Library/Preferences/com.apple.Spotlight.plist
+
+/usr/libexec/PlistBuddy \
 -c 'add :orderedItems:3 dict' \
 -c 'add :orderedItems:3:name string MENU_EXPRESSION' \
 -c 'add :orderedItems:3:enabled bool YES' \
-\
+~/Library/Preferences/com.apple.Spotlight.plist
+
+/usr/libexec/PlistBuddy \
 -c 'add :orderedItems:4 dict' \
 -c 'add :orderedItems:4:name string MENU_DEFINITION' \
 -c 'add :orderedItems:4:enabled bool NO' \
-\
+~/Library/Preferences/com.apple.Spotlight.plist
+
+/usr/libexec/PlistBuddy \
 -c 'add :orderedItems:5 dict' \
 -c 'add :orderedItems:5:name string SYSTEM_PREFS' \
 -c 'add :orderedItems:5:enabled bool YES' \
-\
+~/Library/Preferences/com.apple.Spotlight.plist
+
+/usr/libexec/PlistBuddy \
 -c 'add :orderedItems:6 dict' \
 -c 'add :orderedItems:6:name string DOCUMENTS' \
 -c 'add :orderedItems:6:enabled bool NO' \
-\
+~/Library/Preferences/com.apple.Spotlight.plist
+
+/usr/libexec/PlistBuddy \
 -c 'add :orderedItems:7 dict' \
 -c 'add :orderedItems:7:name string DIRECTORIES' \
 -c 'add :orderedItems:7:enabled bool NO' \
-\
+~/Library/Preferences/com.apple.Spotlight.plist
+
+/usr/libexec/PlistBuddy \
 -c 'add :orderedItems:8 dict' \
 -c 'add :orderedItems:8:name string PRESENTATIONS' \
 -c 'add :orderedItems:8:enabled bool NO' \
-\
+~/Library/Preferences/com.apple.Spotlight.plist
+
+/usr/libexec/PlistBuddy \
 -c 'add :orderedItems:9 dict' \
 -c 'add :orderedItems:9:name string SPREADSHEETS' \
 -c 'add :orderedItems:9:enabled bool NO' \
-\
+~/Library/Preferences/com.apple.Spotlight.plist
+
+/usr/libexec/PlistBuddy \
 -c 'add :orderedItems:10 dict' \
 -c 'add :orderedItems:10:name string PDF' \
 -c 'add :orderedItems:10:enabled bool NO' \
-\
+~/Library/Preferences/com.apple.Spotlight.plist
+
+/usr/libexec/PlistBuddy \
 -c 'add :orderedItems:11 dict' \
 -c 'add :orderedItems:11:name string MESSAGES' \
 -c 'add :orderedItems:11:enabled bool NO' \
-\
+~/Library/Preferences/com.apple.Spotlight.plist
+
+/usr/libexec/PlistBuddy \
 -c 'add :orderedItems:12 dict' \
 -c 'add :orderedItems:12:name string CONTACT' \
 -c 'add :orderedItems:12:enabled bool NO' \
-\
+~/Library/Preferences/com.apple.Spotlight.plist
+
+/usr/libexec/PlistBuddy \
 -c 'add :orderedItems:13 dict' \
 -c 'add :orderedItems:13:name string EVENT_TODO' \
 -c 'add :orderedItems:13:enabled bool NO' \
-\
+~/Library/Preferences/com.apple.Spotlight.plist
+
+/usr/libexec/PlistBuddy \
 -c 'add :orderedItems:14 dict' \
 -c 'add :orderedItems:14:name string IMAGES' \
 -c 'add :orderedItems:14:enabled bool NO' \
-\
+~/Library/Preferences/com.apple.Spotlight.plist
+
+/usr/libexec/PlistBuddy \
 -c 'add :orderedItems:15 dict' \
 -c 'add :orderedItems:15:name string BOOKMARKS' \
 -c 'add :orderedItems:15:enabled bool NO' \
-\
+~/Library/Preferences/com.apple.Spotlight.plist
+
+/usr/libexec/PlistBuddy \
 -c 'add :orderedItems:16 dict' \
 -c 'add :orderedItems:16:name string MUSIC' \
 -c 'add :orderedItems:16:enabled bool NO' \
-\
+~/Library/Preferences/com.apple.Spotlight.plist
+
+/usr/libexec/PlistBuddy \
 -c 'add :orderedItems:17 dict' \
 -c 'add :orderedItems:17:name string MOVIES' \
 -c 'add :orderedItems:17:enabled bool NO' \
-\
+~/Library/Preferences/com.apple.Spotlight.plist
+
+/usr/libexec/PlistBuddy \
 -c 'add :orderedItems:18 dict' \
 -c 'add :orderedItems:18:name string FONTS' \
 -c 'add :orderedItems:18:enabled bool NO' \
-\
+~/Library/Preferences/com.apple.Spotlight.plist
+
+/usr/libexec/PlistBuddy \
 -c 'add :orderedItems:19 dict' \
 -c 'add :orderedItems:19:name string MENU_OTHER' \
 -c 'add :orderedItems:19:enabled bool NO' \
-\
+~/Library/Preferences/com.apple.Spotlight.plist
+
+/usr/libexec/PlistBuddy \
 -c 'add :orderedItems:20 dict' \
 -c 'add :orderedItems:20:name string SOURCE' \
 -c 'add :orderedItems:20:enabled bool YES' \
-\
 ~/Library/Preferences/com.apple.Spotlight.plist
