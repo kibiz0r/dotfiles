@@ -1,0 +1,12 @@
+#!/usr/bin/env sh
+
+if [ $(./dotfiles_host) = hekapoo ]; then
+  echo 'hekapoo is the music repo; skipping sync_music agent'
+
+  launchctl unload ~/Library/LaunchAgents/com.kibiz0r.sync_music.plist
+
+  exit 0
+fi
+
+launchctl load ~/Library/LaunchAgents/com.kibiz0r.sync_music.plist
+

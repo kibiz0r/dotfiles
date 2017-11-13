@@ -84,7 +84,7 @@
     ~/Library/Preferences/com.apple.ncprefs.plist: Preferences/com.apple.ncprefs.plist
 
 - shell:
-  - [launchctl load ~/Library/LaunchAgents/com.kibiz0r.sync_music.plist, Launching com.kibiz0r.sync_music]
+  - [./launch_sync_music, Launching com.kibiz0r.sync_music]
   - [defaults read -g > /dev/null, Reloading defaults]
   - [killall cfprefsd, Relaunching prefs cache]
   - [killall Finder, Relaunching Finder]
