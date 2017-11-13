@@ -1,0 +1,37 @@
+#!/usr/bin/env sh
+
+dockutil --remove all --no-restart
+
+# to transcribe from dockutil --list:
+# %s/\([^\t]\+\)\tfile:\/\/\([^\t]\+\)\tpersistent-\([^\t]\+\)\t.\+/dockutil --add '\2' --label '\1' --section '\3' --no-restart/g
+# %s/ / /g
+
+dockutil --add '/Applications/Google Chrome.app/' --label 'Google Chrome' --section 'apps' --no-restart
+dockutil --add '/Applications/Slack.app/' --label 'Slack' --section 'apps' --no-restart
+dockutil --add '/Applications/Messages.app/' --label 'Messages' --section 'apps' --no-restart
+dockutil --add '/Applications/Discord.app/' --label 'Discord' --section 'apps' --no-restart
+dockutil --add '/Applications/Steam.app/' --label 'Steam' --section 'apps' --no-restart
+dockutil --add '/Applications/iTunes.app/' --label 'iTunes' --section 'apps' --no-restart
+dockutil --add '/Applications/Things.app/' --label 'Things' --section 'apps' --no-restart
+dockutil --add '/Applications/Pixelmator.app/' --label 'Pixelmator' --section 'apps' --no-restart
+dockutil --add '/Applications/Notes.app/' --label 'Notes' --section 'apps' --no-restart
+dockutil --add '/Applications/nvALT.app/' --label 'nvALT' --section 'apps' --no-restart
+dockutil --add '/Applications/iTerm.app/' --label 'iTerm' --section 'apps' --no-restart
+dockutil --add '/Applications/MacVim.app/' --label 'MacVim' --section 'apps' --no-restart
+dockutil --add '/Applications/Visual Studio Code.app/' --label 'Visual Studio Code' --section 'apps' --no-restart
+dockutil --add '/Applications/Unity/Unity.app/' --label 'Unity' --section 'apps' --no-restart
+dockutil --add '/Applications/Xcode.app/' --label 'Xcode' --section 'apps' --no-restart
+dockutil --add '/Applications/Xcode.app/Contents/Developer/Applications/Simulator.app/' --label 'Simulator' --section 'apps' --no-restart
+dockutil --add '/Applications/Android Studio.app/' --label 'Android Studio' --section 'apps' --no-restart
+dockutil --add '/Applications/Genymotion.app/' --label 'Genymotion' --section 'apps' --no-restart
+dockutil --add '/Applications/GitX.app/' --label 'GitX' --section 'apps' --no-restart
+dockutil --add '/Applications/VirtualBox.app/' --label 'VirtualBox' --section 'apps' --no-restart
+dockutil --add '/Applications/Screens.app/' --label 'Screens' --section 'apps' --no-restart
+dockutil --add '/Applications/VMware Fusion.app/' --label 'VMware Fusion' --section 'apps' --no-restart
+dockutil --add '/Applications/1Password 6.app/' --label '1Password 6' --section 'apps' --no-restart
+dockutil --add '/Applications/App Store.app/' --label 'App Store' --section 'apps' --no-restart
+dockutil --add '/Applications/DaisyDisk.app/' --label 'DaisyDisk' --section 'apps' --no-restart
+dockutil --add '/Applications/Utilities/Activity Monitor.app/' --label 'Activity Monitor' --section 'apps' --no-restart
+dockutil --add '/Applications/System Preferences.app/' --label 'System Preferences' --section 'apps' --no-restart
+dockutil --add '/Applications/' --label 'Applications' --section 'others' --no-restart
+dockutil --add '/Users/kibiyama/Downloads/' --label 'Downloads' --section 'others' --no-restart

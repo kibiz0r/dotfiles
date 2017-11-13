@@ -41,6 +41,7 @@
   - [./configure_by_host_global_preferences, Configuring by-host global preferences]
   - [./configure_power_management, Configuring power management]
   - [./configure_finder_favorites, Configuring Finder favorites]
+  - [./configure_dock, Configuring Dock]
   - [./configure_desktop, Configuring desktop]
   - [./configure_spotlight, Configuring Spotlight]
   - [./configure_keyboard, Configuring keyboard]
@@ -74,9 +75,6 @@
     ~/.gitconfig: gitconfig
     ~/.gitignore_global: gitignore_global
     ~/.iTerm2: iTerm2
-    ~/Library/Preferences/com.apple.dock.plist:
-      force: true
-      path: Preferences/com.apple.dock.plist
     ~/Library/Preferences/com.apple.LaunchServices:
       force: true
       path: Preferences/com.apple.LaunchServices

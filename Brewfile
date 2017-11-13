@@ -170,6 +170,7 @@ brew "fswatch"
 brew "setwp"
 brew "bandcamp-dl"
 brew "unison"
+brew "dockutil"
 
 cask "soundcloud-downloader"
 cask "android-file-transfer"
