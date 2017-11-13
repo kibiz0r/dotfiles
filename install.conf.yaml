@@ -82,6 +82,7 @@
 
 - shell:
   - [launchctl load ~/Library/LaunchAgents/com.kibiz0r.sync_music.plist, Launching com.kibiz0r.sync_music]
+  - [killall cfprefsd, Relaunching prefs cache]
   - [killall Finder, Relaunching Finder]
   - [killall Dock, Relaunching Dock]
   - [killall SystemUIServer, Relaunching SystemUIServer]
