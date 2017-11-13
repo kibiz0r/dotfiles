@@ -1,5 +1,7 @@
 #!/usr/bin/env sh
 
+killall BetterSnapTool > /dev/null
+
 /usr/libexec/PlistBuddy \
 -c 'delete :registeredHotkeys' \
 ~/Library/Preferences/com.hegenberg.BetterSnapTool.plist
@@ -75,10 +77,13 @@
 ~/Library/Preferences/com.hegenberg.BetterSnapTool.plist
 
 /usr/libexec/PlistBuddy \
--c 'set :launchOnStartup bool YES' \
+-c 'delete :launchOnStartup' \
+-c 'add :launchOnStartup bool YES' \
 ~/Library/Preferences/com.hegenberg.BetterSnapTool.plist
 
 /usr/libexec/PlistBuddy \
--c 'set :showMenubarIcon bool NO' \
+-c 'delete :showMenubarIcon' \
+-c 'add :showMenubarIcon bool NO' \
 ~/Library/Preferences/com.hegenberg.BetterSnapTool.plist
 
+open /Applications/BetterSnapTool.app
