@@ -1,0 +1,84 @@
+#!/usr/bin/env sh
+
+/usr/libexec/PlistBuddy \
+-c 'delete :registeredHotkeys' \
+~/Library/Preferences/com.hegenberg.BetterSnapTool.plist
+
+/usr/libexec/PlistBuddy \
+-c 'add :registeredHotkeys dict' \
+~/Library/Preferences/com.hegenberg.BetterSnapTool.plist
+
+/usr/libexec/PlistBuddy \
+-c 'add :registeredHotkeys:0 dict' \
+-c 'add :registeredHotkeys:0:keyCode integer 3' \
+-c 'add :registeredHotkeys:0:modifiers integer 6400' \
+~/Library/Preferences/com.hegenberg.BetterSnapTool.plist
+
+/usr/libexec/PlistBuddy \
+-c 'add :registeredHotkeys:1 dict' \
+-c 'add :registeredHotkeys:1:keyCode integer 33' \
+-c 'add :registeredHotkeys:1:modifiers integer 6400' \
+~/Library/Preferences/com.hegenberg.BetterSnapTool.plist
+
+/usr/libexec/PlistBuddy \
+-c 'add :registeredHotkeys:2 dict' \
+-c 'add :registeredHotkeys:2:keyCode integer 123' \
+-c 'add :registeredHotkeys:2:modifiers integer 8395008' \
+~/Library/Preferences/com.hegenberg.BetterSnapTool.plist
+
+/usr/libexec/PlistBuddy \
+-c 'add :registeredHotkeys:4 dict' \
+-c 'add :registeredHotkeys:4:keyCode integer 124' \
+-c 'add :registeredHotkeys:4:modifiers integer 8395008' \
+~/Library/Preferences/com.hegenberg.BetterSnapTool.plist
+
+/usr/libexec/PlistBuddy \
+-c 'add :registeredHotkeys:11 dict' \
+-c 'add :registeredHotkeys:11:keyCode integer 34' \
+-c 'add :registeredHotkeys:11:modifiers integer 6400' \
+~/Library/Preferences/com.hegenberg.BetterSnapTool.plist
+
+/usr/libexec/PlistBuddy \
+-c 'add :registeredHotkeys:12 dict' \
+-c 'add :registeredHotkeys:12:keyCode integer 31' \
+-c 'add :registeredHotkeys:12:modifiers integer 6400' \
+~/Library/Preferences/com.hegenberg.BetterSnapTool.plist
+
+/usr/libexec/PlistBuddy \
+-c 'add :registeredHotkeys:13 dict' \
+-c 'add :registeredHotkeys:13:keyCode integer 40' \
+-c 'add :registeredHotkeys:13:modifiers integer 6400' \
+~/Library/Preferences/com.hegenberg.BetterSnapTool.plist
+
+/usr/libexec/PlistBuddy \
+-c 'add :registeredHotkeys:14 dict' \
+-c 'add :registeredHotkeys:14:keyCode integer 37' \
+-c 'add :registeredHotkeys:14:modifiers integer 6400' \
+~/Library/Preferences/com.hegenberg.BetterSnapTool.plist
+
+/usr/libexec/PlistBuddy \
+-c 'add :registeredHotkeys:15 dict' \
+-c 'add :registeredHotkeys:15:keyCode integer 126' \
+-c 'add :registeredHotkeys:15:modifiers integer 8395008' \
+~/Library/Preferences/com.hegenberg.BetterSnapTool.plist
+
+/usr/libexec/PlistBuddy \
+-c 'add :registeredHotkeys:16 dict' \
+-c 'add :registeredHotkeys:16:keyCode integer 125' \
+-c 'add :registeredHotkeys:16:modifiers integer 8395008' \
+~/Library/Preferences/com.hegenberg.BetterSnapTool.plist
+
+/usr/libexec/PlistBuddy \
+-c 'add :registeredHotkeys:18 dict' \
+-c 'add :registeredHotkeys:18:keyCode integer 35' \
+-c 'add :registeredHotkeys:18:modifiers integer 6400' \
+~/Library/Preferences/com.hegenberg.BetterSnapTool.plist
+
+/usr/libexec/PlistBuddy \
+-c 'set :launchOnStartup bool YES' \
+~/Library/Preferences/com.hegenberg.BetterSnapTool.plist
+
+/usr/libexec/PlistBuddy \
+-c 'set :showMenubarIcon bool NO' \
+~/Library/Preferences/com.hegenberg.BetterSnapTool.plist
+

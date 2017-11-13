@@ -1,0 +1,3 @@
+#!/usr/bin/env sh
+
+defaults delete -g NSUserDictionaryReplacementItems
