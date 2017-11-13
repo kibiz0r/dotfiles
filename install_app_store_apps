@@ -10,7 +10,7 @@ else
 fi
 
 nohup mas install \
-443987910 `#1Password` \
+443987910 `# 1Password` \
 425424353 `# The Unarchiver` \
 407951449 `# Things` \
 803453959 `# Slack` \
