@@ -1,6 +1,8 @@
 #!/usr/bin/env sh
 
-/usr/libexec/PlistBuddy -c 'delete :orderedItems'
+/usr/libexec/PlistBuddy \
+-c 'delete :orderedItems' \
+~/Library/Preferences/com.apple.Spotlight.plist
 
 /usr/libexec/PlistBuddy \
 -c 'add :orderedItems array' \
