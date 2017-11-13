@@ -80,6 +80,7 @@
       force: true
       path: Preferences/com.apple.LaunchServices
     ~/Library/LaunchAgents/com.kibiz0r.sync_music.plist: LaunchAgents/com.kibiz0r.sync_music.plist
+    ~/Library/Preferences/com.apple.ncprefs.plist: Preferences/com.apple.ncprefs.plist
 
 - shell:
   - [launchctl load ~/Library/LaunchAgents/com.kibiz0r.sync_music.plist, Launching com.kibiz0r.sync_music]
