@@ -42,6 +42,7 @@
   - [./configure_power_management, Configuring power management]
   - [./configure_finder_favorites, Configuring Finder favorites]
   - [./configure_desktop, Configuring desktop]
+  - [./configure_spotlight, Configuring Spotlight]
   # TODO:
   # - Remote Login
   # - Remote Management
