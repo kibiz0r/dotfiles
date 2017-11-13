@@ -1,7 +1,8 @@
 #!/usr/bin/env sh
 
+/usr/libexec/PlistBuddy -c 'delete :orderedItems'
+
 /usr/libexec/PlistBuddy \
--c 'delete :orderedItems' \
 -c 'add :orderedItems array' \
 \
 -c 'add :orderedItems:0 dict' \
