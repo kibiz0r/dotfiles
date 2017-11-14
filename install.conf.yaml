@@ -44,6 +44,7 @@
   - [./configure_finder_favorites, Configuring Finder favorites]
   - [./configure_dock, Configuring Dock]
   - [./configure_desktop, Configuring desktop]
+  - [./configure_control_strip, Configuring Control Strip]
   - [./configure_spotlight, Configuring Spotlight]
   - [./configure_keyboard, Configuring keyboard]
   # - [./configure_notification_center, Configuring Notification Center]
@@ -90,6 +91,7 @@
   - [killall cfprefsd, Relaunching prefs cache]
   - [killall Finder, Relaunching Finder]
   - [killall Dock, Relaunching Dock]
+  - [killall ControlStrip, Relaunching ControlStrip]
   - [killall SystemUIServer, Relaunching SystemUIServer]
   # Run SIP-phobic tasks last so they can complain if SIP needs to be temporarily disabled
   - [./hide_spotlight_icon, Hiding Spotlight icon]
