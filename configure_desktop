@@ -2,12 +2,13 @@
 
 USER_DESKTOP=~/.dotfiles/desktop.$(./dotfiles_user).png
 
-setwp --fill $USER_DESKTOP
+if [ -f $USER_DESKTOP ]; then
+  setwp --fill $USER_DESKTOP
+fi
 
 ADMIN_DESKTOP=~/.dotfiles/desktop.admin.$(./dotfiles_host).png
 ADMIN_TARGET=/Library/Caches/com.apple.desktop.admin.png
 
-if [ ! -L $ADMIN_TARGET ]; then
-  sudo rm $ADMIN_TARGET
-  sudo ln -s $ADMIN_DESKTOP $ADMIN_TARGET
+if [ -f $ADMIN_DESKTOP ]; then
+  sudo ln -sf $ADMIN_DESKTOP $ADMIN_TARGET
 fi
