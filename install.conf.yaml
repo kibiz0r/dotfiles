@@ -82,6 +82,7 @@
     ~/Library/LaunchAgents/com.kibiz0r.sync_music.plist: LaunchAgents/com.kibiz0r.sync_music.plist
     ~/Library/Preferences/com.apple.ncprefs.plist: Preferences/com.apple.ncprefs.plist
     ~/Library/Preferences/com.apple.systemuiserver.plist: Preferences/com.apple.systemuiserver.plist
+    ~/Library/Preferences/com.apple.symbolichotkeys.plist: Preferences/com.apple.symbolichotkeys.plist
 
 - shell:
   - [./launch_sync_music, Launching com.kibiz0r.sync_music]
