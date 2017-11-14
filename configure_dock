@@ -33,5 +33,6 @@ dockutil --add '/Applications/App Store.app/' --label 'App Store' --section 'app
 dockutil --add '/Applications/DaisyDisk.app/' --label 'DaisyDisk' --section 'apps' --no-restart
 dockutil --add '/Applications/Utilities/Activity Monitor.app/' --label 'Activity Monitor' --section 'apps' --no-restart
 dockutil --add '/Applications/System Preferences.app/' --label 'System Preferences' --section 'apps' --no-restart
-dockutil --add '/Applications/' --label 'Applications' --section 'others' --no-restart
-dockutil --add '/Users/kibiyama/Downloads/' --label 'Downloads' --section 'others' --no-restart
+
+dockutil --add '/Applications/' --label 'Applications' --section 'others' --no-restart --sort name --view grid --display folder
+dockutil --add '/Users/kibiyama/Downloads/' --label 'Downloads' --section 'others' --no-restart --sort dateadded --view fan --display stack
