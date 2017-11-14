@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-if [ ! ./sip_enabled ]; then
+if ! ./sip_enabled; then
   echo "***********************************************"
   echo "*           SIP is still disabled!            *"
   echo "*                                             *"
