@@ -18,5 +18,5 @@ if ./sip_enabled; then
 fi
 
 sudo perl -pi -e 's|(\x00\x00\x00\x00\x00\x00\x47\x40\x00\x00\x00\x00\x00\x00)\x42\x40(\x00\x00\x80\x3f\x00\x00\x70\x42)|$1\x00\x00$2|sg' /System/Library/CoreServices/Spotlight.app/Contents/MacOS/Spotlight
-sudo codesign -f -s - Spotlight
+sudo codesign -f -s - /System/Library/CoreServices/Spotlight.app/Contents/MacOS/Spotlight
 sudo killall Spotlight

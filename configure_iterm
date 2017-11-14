@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-if [ -f iTerm2.$(./dotfiles_user) ]; then
+if [ -d iTerm2.$(./dotfiles_user) ]; then
   rm ~/.iTerm2
   ln -sf ~/.dotfiles/iTerm2.$(./dotfiles_user) ~/.iTerm2
 else
