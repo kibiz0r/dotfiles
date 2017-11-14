@@ -7,7 +7,5 @@
 /usr/libexec/PlistBuddy \
 -c 'add :MiniCustomized array' \
 -c 'add :MiniCustomized:0 string "com.apple.system.brightness"' \
--c 'add :MiniCustomized:1 string "com.apple.system.media-play-pause"' \
 -c 'add :MiniCustomized:2 string "com.apple.system.volume"' \
--c 'add :MiniCustomized:3 string "com.apple.system.mute"' \
 ~/Library/Preferences/com.apple.controlstrip.plist
