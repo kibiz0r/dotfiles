@@ -12,6 +12,7 @@
 - shell:
   - [export USE_VSCODE_INSIDERS=yes, Exporting USE_VSCODE_INSIDERS]
   - [git submodule update --init --recursive, Downloading submodules]
+  # - [./disable_sec_assessment, Disabling security assessments]
   - [./write_defaults, Setting OS X defaults]
   - [./install_homebrew, Installing Homebrew]
   - [brew tap homebrew/bundle, Installing Homebrew bundle installer]

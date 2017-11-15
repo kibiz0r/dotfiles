@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-OS_VERSION=$(defaults read loginwindow SystemVersionStampAsString | sed -En 's/10\.([0-9]+).*/\1/p')
+OS_VERSION=$(./os_version)
 if [ "$OS_VERSION" -ge 12 ]; then
   if [ ! -d /Application/Xcode.app ]; then
     nohup mas install 497799835 &>/dev/null &

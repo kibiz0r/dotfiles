@@ -1,0 +1,4 @@
+#!/usr/bin/env sh
+
+defaults read loginwindow SystemVersionStampAsString | sed -En 's/10\.([0-9]+).*/\1/p'
+

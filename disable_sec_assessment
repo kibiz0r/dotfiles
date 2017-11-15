@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+
+if spctl --status | grep enabled > /dev/null; then
+  sudo spctl --master-disable
+fi

@@ -1,5 +1,11 @@
 #!/usr/bin/env sh
 
+OS_VERSION=$(./os_version)
+if [ "$OS_VERSION" -lt 12 ]; then
+  echo "OS version $OS_VERSION too low for Mute Me"
+  exit 0
+fi
+
 if [ -d '/Applications/Mute Me.app' ]; then
   echo 'Mute Me already installed'
   exit 0
