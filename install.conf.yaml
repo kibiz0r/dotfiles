@@ -96,7 +96,7 @@
   - [killall cfprefsd, Relaunching prefs cache]
   - [killall Finder, Relaunching Finder]
   - [killall Dock, Relaunching Dock]
-  - [killall ControlStrip, Relaunching ControlStrip]
+  - [killall ControlStrip; exit 0, Relaunching ControlStrip]
   - [killall SystemUIServer, Relaunching SystemUIServer]
   # Run SIP-phobic tasks last so they can complain if SIP needs to be temporarily disabled
   - [./hide_spotlight_icon, Hiding Spotlight icon]
