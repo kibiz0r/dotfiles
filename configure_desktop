@@ -10,5 +10,7 @@ ADMIN_DESKTOP=~/.dotfiles/desktop.admin.$(./dotfiles_host).png
 ADMIN_TARGET=/Library/Caches/com.apple.desktop.admin.png
 
 if [ -f $ADMIN_DESKTOP ]; then
-  sudo ln -sf $ADMIN_DESKTOP $ADMIN_TARGET
+  if [ ! -L $ADMIN_TARGET ]; then
+    sudo ln -sf $ADMIN_DESKTOP $ADMIN_TARGET
+  fi
 fi
