@@ -1,0 +1,10 @@
+#!/usr/bin/env sh
+
+if [ -d '/Applications/Mute Me.app' ]; then
+  echo 'Mute Me already installed'
+  exit 0
+fi
+
+curl -Lo mute-me.zip https://github.com/pixel-point/mute-me/releases/download/v1.2.0/mute-me-v1.2.0.zip
+
+unzip mute-me.zip 'Mute Me.app/*' -d /Applications
