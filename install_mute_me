@@ -8,3 +8,5 @@ fi
 curl -Lo mute-me.zip https://github.com/pixel-point/mute-me/releases/download/v1.2.0/mute-me-v1.2.0.zip
 
 unzip mute-me.zip 'Mute Me.app/*' -d /Applications
+
+open '/Applications/Mute Me.app'
