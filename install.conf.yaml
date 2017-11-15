@@ -98,6 +98,7 @@
   - [killall Finder, Relaunching Finder]
   - [killall Dock, Relaunching Dock]
   - [killall ControlStrip; exit 0, Relaunching ControlStrip]
+  - [killall NotificationCenter, Relaunching NotificationCenter]
   - [killall SystemUIServer, Relaunching SystemUIServer]
   # Run SIP-phobic tasks last so they can complain if SIP needs to be temporarily disabled
   - [./hide_spotlight_icon, Hiding Spotlight icon]
