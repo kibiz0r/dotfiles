@@ -86,10 +86,6 @@
     ~/Library/Preferences/com.apple.ncprefs.plist: Preferences/com.apple.ncprefs.plist
     ~/Library/Preferences/com.apple.systemuiserver.plist: Preferences/com.apple.systemuiserver.plist
     ~/Library/Preferences/com.apple.symbolichotkeys.plist: Preferences/com.apple.symbolichotkeys.plist
-    ~/Library/Containers/pixel-point.mute-me-now/Data/Library/Preferences/pixel-point.mute-me-now.plist:
-      force: true
-      create: true
-      path: Preferences/pixel-point.mute-me-now.plist
 
 - shell:
   - [./launch_sync_music, Launching com.kibiz0r.sync_music]
