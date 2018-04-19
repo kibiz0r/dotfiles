@@ -9,6 +9,9 @@ else
   hdiutil detach /Volumes/MacVim
 fi
 
+# python@2 screws up MacVim's environment
+brew uninstall --ignore-dependencies python@2
+
 # TODO: Set non-native fullscreen; this is not enough to get it to init the plist
 # if [ ! -f ~/Library/Preferences/org.vim.MacVim.plist ]; then
 #   open /Applications/MacVim.app

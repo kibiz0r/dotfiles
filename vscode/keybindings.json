@@ -272,5 +272,20 @@
         "key": "cmd+n",
         "command": "workbench.action.files.newUntitledFile",
         "when": "!filesExplorerFocus"
+    },
+    {
+        "key": "alt+cmd+space",
+        "command": "editor.action.triggerSuggest",
+        "when": "editorHasCompletionItemProvider && editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+space",
+        "command": "-editor.action.triggerSuggest",
+        "when": "editorHasCompletionItemProvider && editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "cmd+w",
+        "command": "-workbench.action.closeWindow",
+        "when": "!editorIsOpen"
     }
 ]

@@ -40,5 +40,9 @@
     },
     "workbench.editor.enablePreview": false,
     "window.zoomLevel": 0,
-    "workbench.iconTheme": "vscode-icons"
+    "workbench.iconTheme": "vscode-icons",
+    "vsicons.dontShowNewVersionMessage": true,
+    "explorer.confirmDelete": false,
+    "explorer.confirmDragAndDrop": false,
+    "workbench.activityBar.visible": false
 }

@@ -8,6 +8,6 @@ Host granger
      ProxyJump hekapoo
 
 Host socrates
-     HostName granger.local
+     HostName socrates.local
      User kibiyama
      ProxyJump hekapoo

@@ -65,28 +65,26 @@ export PATH="$HOME/.rbenv/shims:$PATH"
 export PATH="$PATH:$HOME/bin"
 export EDITOR="mvim -f"
 
-# Prevent IOException: kqueue() FileSystemWatcher has reached the maximum nunmber of files to watch.
-export MONO_MANAGED_WATCHER=false
-
 # Android Studio SDK
-export ANDROID_HOME=/usr/local/opt/android-sdk
+# export ANDROID_HOME=/usr/local/opt/android-sdk
+export ANDROID_HOME=$HOME/Library/Android/sdk
 export PATH=$PATH:$HOME/Library/Android/sdk/tools:$HOME/Library/Android/sdk/platform-tools
 
-function docker-start() {
-  docker-machine start default 
-  eval "$(docker-machine env --shell=zsh default)"
-}
-
-function docker-shell() {
-  docker run -it $1 /bin/bash
-}
-
+# My stuff
 alias be='bundle exec'
 alias git=hub
 alias mvim='/usr/local/bin/mvim $@ > /dev/null 2>&1'
 
+# Work stuff
 alias cd-garten="cd ~/git/kindergarten"
 alias cd-kin="cd ~/git/kin"
 alias cd-proto="cd ~/git/yeti-prototypes"
 alias cd-example="cd ~/git/kindergarten/Examples/SensorAPIWithWikitude"
 alias cd-panion="cd ~/git/yeti-prototypes/Kinpanion"
+
+# NOTE: Mono bugs
+# Prevent IOException: kqueue() FileSystemWatcher has reached the maximum nunmber of files to watch.
+export MONO_MANAGED_WATCHER=false
+# https://github.com/dotnet/netcorecli-fsc/wiki/.NET-Core-SDK-1.0#using-net-framework-as-targets-framework-the-osxunix-build-fails
+# https://github.com/dotnet/sdk/issues/335
+export FrameworkPathOverride=$(dirname $(which mono))/../lib/mono/4.5/

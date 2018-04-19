@@ -4,7 +4,7 @@
 [alias]
   shwifty = !git-shwifty
   twirl = !git stash && git pull && git stash pop
-  on = "!git checkout -b \"$1\" && git config branch.\"$1\".remote origin && git config branch.\"$1\".merge \"refs/heads/$1\" #"
+  on = "!git checkout -b \"$1\" 2> /dev/null; git config branch.\"$1\".remote origin && git config branch.\"$1\".merge \"refs/heads/$1\" && echo \"Got on $1\" #"
   b = branch
   ba = branch -a
   bd = branch -d
@@ -50,3 +50,10 @@
   cmd = pldiff $LOCAL $REMOTE
 [diff]
   tool = pldiff
+[filter "lfs"]
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+[pager]
+	branch = false
