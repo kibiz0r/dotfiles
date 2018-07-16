@@ -1,8 +1,9 @@
 #!/usr/bin/env sh
 
-os_version=`defaults read loginwindow SystemVersionStampAsString`
-if echo $os_version | grep 10.12; then
+OS_VERSION=`defaults read loginwindow SystemVersionStampAsString`
+
+if echo $OS_VERSION | grep -e "10.1[2-9]"; then
   brew cask install dotnet-sdk
 else
-  echo "Since your OS version is $os_version, I'll assume you can't install the .NET SDK (it requires Sierra or above)"
+  echo "Since your OS version is $OS_VERSION, I'll assume you can't install the .NET SDK (it requires Sierra or above)"
 fi
