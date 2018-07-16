@@ -1,6 +1,6 @@
 # dotfiles
 
-This is Harrington's script for setting up his development environment. You can use it yourself, too. It won't bite!
+This is my script for setting up my development environment. You can use it yourself, too. It won't bite!
 
 I've tried to make the default setup as non-custom as possible while still providing sensible defaults for developers.
 
@@ -23,7 +23,7 @@ USE_VSCODE_INSIDERS to use bleeding-edge VSCode
 USE_SUDO to do full setup rather than non-admin captive setup
 USE_HOME_APPDIR to cheat and install apps to ~/Applications (mainly to avoid getting admin permissions to run stuff)
 USE_HOME_HOMEBREW to install Homebrew to ~/homebrew... Try not to use this one if you can help it
-USE_KIBIYAMA_CUSTOMIZATIONS to use Harrington's custom configs
+USE_KIBIYAMA_CUSTOMIZATIONS to use my custom configs
 ```
 
-The default setup is rather idealistic and safe. It uses stable VSCode, avoids sudo, installs to global /Applications, installs Homebrew normally, and doesn't use Harrington's custom stuff.
+The default setup is rather idealistic and safe. It uses stable VSCode, avoids sudo, installs to global /Applications, installs Homebrew normally, and doesn't use my custom stuff.
