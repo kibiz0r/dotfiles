@@ -1,5 +1,10 @@
 #!/usr/bin/env sh
 
+if ! which dockutil; then
+  echo "dockutil is not installed"
+  exit 0
+fi
+
 dockutil --remove all --no-restart
 
 # to transcribe from dockutil --list:
@@ -35,4 +40,4 @@ dockutil --add '/Applications/Utilities/Activity Monitor.app/' --label 'Activity
 dockutil --add '/Applications/System Preferences.app/' --label 'System Preferences' --section 'apps' --no-restart
 
 dockutil --add '/Applications/' --label 'Applications' --section 'others' --no-restart --sort name --view grid --display folder
-dockutil --add '/Users/kibiyama/Downloads/' --label 'Downloads' --section 'others' --no-restart --sort dateadded --view fan --display stack
+dockutil --add "$HOME/Downloads/" --label 'Downloads' --section 'others' --no-restart --sort dateadded --view fan --display stack
