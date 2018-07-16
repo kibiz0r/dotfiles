@@ -19,7 +19,8 @@
             "workbench.action.joinTwoGroups",
             "workbench.action.joinTwoGroups",
             "workbench.action.joinTwoGroups",
-            "workbench.action.maximizeEditor"
+            "workbench.action.maximizeEditor",
+            "workbench.action.closePanel"
         ]
     },
     "editor.minimap.enabled": false,
@@ -28,6 +29,9 @@
         80
     ],
     "editor.tabSize": 2,
+    "[csharp]": {
+        "editor.tabSize": 4
+    },
     "editor.acceptSuggestionOnCommitCharacter": false,
     "vim.useSystemClipboard": true,
     "files.exclude": {
@@ -44,5 +48,10 @@
     "vsicons.dontShowNewVersionMessage": true,
     "explorer.confirmDelete": false,
     "explorer.confirmDragAndDrop": false,
-    "workbench.activityBar.visible": false
+    "workbench.activityBar.visible": false,
+    "git.ignoreLimitWarning": true,
+    "editor.renderWhitespace": "none",
+    "editor.autoClosingBrackets": false,
+    "omnisharp.disableMSBuildDiagnosticWarning": true,
+    "workbench.startupEditor": "newUntitledFile"
 }

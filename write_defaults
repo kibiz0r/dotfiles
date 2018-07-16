@@ -41,7 +41,3 @@ plutil -replace NSUserDictionaryReplacementItems -json '[]' ~/Library/Preference
 defaults write -g AppleKeyboardUIMode 3
 
 # TODO: Energy saver settings
-
-if [ -f write_defaults.$(./dotfiles_user) ]; then
-  ./write_defaults.$(./dotfiles_user)
-fi

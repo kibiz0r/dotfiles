@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
-if [ -f ssh_config.$(./dotfiles_user) ]; then
-  ln -sf ~/.dotfiles/ssh_config.$(./dotfiles_user) ~/.ssh/config
+if [ -f ssh_config.$(./dotfiles_user_host) ]; then
+  ln -sf ~/.dotfiles/ssh_config.$(./dotfiles_user_host) ~/.ssh/config
 else
   ln -sf ~/.dotfiles/ssh_config ~/.ssh/config
 fi

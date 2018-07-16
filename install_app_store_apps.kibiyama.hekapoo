@@ -1,0 +1,15 @@
+#!/usr/bin/env sh
+
+# Hekapoo cant install Xcode :(
+# `497799835 `# Xcode` \
+
+nohup mas install \
+443987910 `# 1Password` \
+425424353 `# The Unarchiver` \
+407951449 `# Things` \
+803453959 `# Slack` \
+407963104 `# Pixelmator` \
+447661441 `# xScope` \
+417375580 `# BetterSnapTool` \
+446107677 `# Screens` \
+411643860 `# DaisyDisk` &>/dev/null &

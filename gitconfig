@@ -4,16 +4,23 @@
 [alias]
   shwifty = !git-shwifty
   twirl = !git stash && git pull && git stash pop
-  on = "!git checkout -b \"$1\" 2> /dev/null; git config branch.\"$1\".remote origin && git config branch.\"$1\".merge \"refs/heads/$1\" && echo \"Got on $1\" #"
+  on = "!git checkout -B \"$1\"; git config branch.\"$1\".remote origin; git config branch.\"$1\".merge \"refs/heads/$1\"; echo \"Got on $1\" #"
+  cia = commit --amend
   b = branch
   ba = branch -a
-  bd = branch -d
+  # These need to check if local branch matches $1 first, and only `checkout -` if necessary
+  # It would also be nice to default $1 to the current branch
+  # bd = !"git checkout -; git branch -d \"$1\""
+  # bdr = !"git checkout -; git branch -d \"$1\" && git push origin --delete \"$1\""
+  bd = !"git branch -d \"$1\""
+  bdr = !"git branch -d \"$1\" && git push origin --delete \"$1\""
   ci = commit
   co = checkout
   st = status
   su = submodule update --init --recursive
   diffc = diff --cached
-  cleanall = clean -fdx
+  cleanall = "!git clean -fdx && git submodule foreach --recursive git clean -fdx"
+  rbi = rebase --interactive
   rbc = rebase --continue
   rbs = rebase --skip
   rba = rebase --abort
@@ -24,15 +31,20 @@
   out = merge --abort
   gud = git reset --hard HEAD
   ma = merge --abort
-  submodules = submodule foreach git status
+  submodules = submodule foreach --recursive git status
   bruh = branch -vv
   logp = log --graph --decorate
   loga = log --graph --decorate --all
   logs = log --graph --decorate --all --max-count=16
+  highlight-head = !"sed \"s/\\([\\(]HEAD[^\\)]*[\\)]\\)/`git config --get-color '' reverse`\\\\1`git config --get-color '' reset`/\" | less"
+  lga = !"git lga1"
+  lga1 = !"git lg1-specific --all --color | git highlight-head"
+  lga2 = !"git lg2-specific --all --color | git highlight-head"
+  lga3 = !"git lg3-specific --all --color | git highlight-head"
   lg = !"git lg1"
-  lg1 = !"git lg1-specific --all"
-  lg2 = !"git lg2-specific --all"
-  lg3 = !"git lg3-specific --all"
+  lg1 = !"git lg1-specific --color | git highlight-head"
+  lg2 = !"git lg2-specific --color | git highlight-head"
+  lg3 = !"git lg3-specific --color | git highlight-head"
   lg1-specific = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)'
   lg2-specific = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)'
   lg3-specific = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset) %C(bold cyan)(committed: %cD)%C(reset) %C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset)%n''          %C(dim white)- %an <%ae> %C(reset) %C(dim white)(committer: %cn <%ce>)%C(reset)'
@@ -43,7 +55,7 @@
   current = yellow
   remote = dim white
 [core]
-  excludesfile = /Users/kibiyama/.gitignore_global
+  excludesfile = /Users/harrinm/.gitignore_global
   autocrlf = input
   mergeoptions = --no-edit
 [difftool "pldiff"]
@@ -57,3 +69,5 @@
 	clean = git-lfs clean -- %f
 [pager]
 	branch = false
+[url "git@github.com:"]
+	insteadOf = git://github.com/

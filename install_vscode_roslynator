@@ -1,0 +1,22 @@
+#!/usr/bin/env sh
+
+if [ -d omnisharp/Roslynator.VisualStudio ]; then
+  echo "Roslynator already exists"
+else
+  curl -Lo Roslynator.VisualStudio.vsix https://josefpihrt.gallerycdn.vsassets.io/extensions/josefpihrt/roslynator2017/1.9.0/1528893949710/Roslynator.VisualStudio.1.9.0.vsix
+  rm -rf omnisharp/Roslynator.VisualStudio
+  unzip -d omnisharp/Roslynator.VisualStudio Roslynator.VisualStudio.vsix
+  rm \
+    omnisharp/Roslynator.VisualStudio/Microsoft.VisualStudio.RemoteControl.dll \
+    omnisharp/Roslynator.VisualStudio/Microsoft.VisualStudio.Utilities.Internal.dll \
+    omnisharp/Roslynator.VisualStudio/Roslynator.VisualStudio.Common.dll
+fi
+
+echo "Setting omnisharp.json to point to Roslynator"
+echo "{
+    \"RoslynExtensionsOptions\": {
+        \"LocationPaths\": [
+            \"$HOME/.omnisharp/Roslynator.VisualStudio\"
+        ]
+    }
+}" > omnisharp/omnisharp.json

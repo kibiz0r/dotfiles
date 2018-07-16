@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+
+if [ -z $USE_SUDO ]; then
+  echo "Never mind; avoiding sudo"
+  exit 0
+fi
+
+exec "$@"

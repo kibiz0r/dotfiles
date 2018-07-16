@@ -10,46 +10,49 @@
 - clean: ['~']
 
 - shell:
-  - [export USE_VSCODE_INSIDERS=yes, Exporting USE_VSCODE_INSIDERS]
-  - [git submodule update --init --recursive, Downloading submodules]
-  # - [./disable_sec_assessment, Disabling security assessments]
-  - [./write_defaults, Setting OS X defaults]
-  - [./install_homebrew, Installing Homebrew]
-  - [brew tap homebrew/bundle, Installing Homebrew bundle installer]
-  - [brew install mas, Installing mas]
-  - [./install_app_store_apps, Installing App Store apps (in background)]
-  - [xcode-select --install || true, Installing Xcode command line tools]
-  - [brew bundle -v, Installing Homebrew formulae]
-  - [./install_extra_brews, Installing extra Homebrew formulae]
+  # - [export USE_VSCODE_INSIDERS=yes, "Using the bleeding-edge VSCode. Exciting!"]
+  # - [export USE_SUDO=yes, "Allowing sudo. I'll try to be careful! ;)"]
+  - [export USE_HOME_APPDIR=yes, "Using ~/Applications instead of /Applications. Less than ideal, but okay."]
+  - [export USE_HOME_HOMEBREW=yes, "Using ~/homebrew instead of /usr/local/Homebrew. PLEASE try to avoid this! It'll probably backfire at some point."]
+  - [export USE_KIBIYAMA_CUSTOMIZATIONS, "Giving you the full kibiyama experience. You won't regret it! ...probably..."]
+  - [git submodule update --init --recursive, "Downloading the rest of the repo. Get some snacks."]
+  - [./require_sudo ./disable_sec_assessment, "Maybe disabling security assessments"]
+  - [./per_user_host ./write_defaults, "Setting some good OS X defaults"]
+  - [./install_homebrew, "Installing Homebrew (the definitive OS X package manager)"]
+  - [brew install mas, "Installing mas (a command line App Store interface)"]
+  - [./per_user_host ./install_app_store_apps, "Installing this user's App Store apps in the background"]
+  - [xcode-select --install || true, "Installing Xcode command line tools (you really need this)"]
+  - [brew bundle -v, "Installing Homebrew packages"]
+  - [./install_extra_brews, "Installing extra Homebrew formulae for this specific user"]
   - [brew unlink python, "Unlinking Python for MacVim's sake (https://github.com/Valloric/YouCompleteMe/issues/18)"]
-  - [./install_iterm2, Installing iTerm2]
-  - [./change_shell_to_zsh, Changing shell to zsh]
-  - [./install_macvim, Installing MacVim]
-  - [./install_vim_bundles, Installing vim bundles]
-  - [./install_dash, Installing Dash]
-  - [./install_unaphy_dependencies, Installing Unaphy dependencies]
-  - [./install_dotnet_sdk, Installing .NET SDK]
-  - [./install_vscode, Installing VSCode]
-  - [./install_vscode_extensions, Installing VSCode extensions]
-  - [./install_mute_me, Installing Mute Me]
-  - [./configure_ssh_config, Configuring SSH]
-  - [./configure_iterm, Configuring iTerm2]
-  - [./configure_nvalt, Configuring nvALT]
-  - [./configure_macvim, Configuring MacVim]
-  - [./configure_omnisharp, Configuring OmniSharp]
-  - [./configure_unity, Configuring Unity]
-  - [./configure_dash, Configuring Dash]
-  - [./configure_chrome, Configuring Chrome]
-  - [./configure_global_preferences, Configuring global preferences]
-  - [./configure_by_host_global_preferences, Configuring by-host global preferences]
-  - [./configure_power_management, Configuring power management]
-  - [./configure_finder_favorites, Configuring Finder favorites]
-  - [./configure_dock, Configuring Dock]
-  - [./configure_desktop, Configuring desktop]
-  - [./configure_control_strip, Configuring Control Strip]
-  - [./configure_spotlight, Configuring Spotlight]
-  - [./configure_keyboard, Configuring keyboard]
-  # - [./configure_notification_center, Configuring Notification Center]
+  - [./install_iterm2, "Installing iTerm2 (a better version of Terminal.app)"]
+  - [./change_shell_to_zsh, "Changing shell from bash to zsh (just trust me here)"]
+  - [./install_macvim, "Installing MacVim (the best text editor of all time)"]
+  - [./install_vim_bundles, "Installing vim bundles"]
+  - [./require_kibiyama ./install_dash, "Installing Dash"]
+  - [./install_dotnet_sdk, "Installing .NET SDK"]
+  - [./install_vscode, "Installing VSCode"]
+  - [./install_vscode_extensions, "Installing VSCode extensions"]
+  - [./require_kibiyama ./install_mute_me, "Maybe installing Mute Me"]
+  - [./require_kibiyama ./configure_ssh_config, "Maybe configuring kibiyama's SSH"]
+  - [./configure_iterm, "Configuring iTerm2"]
+  - [./require_kibiyama ./configure_nvalt, "Maybe configuring kibiyama's nvALT"]
+  - [./configure_macvim, "Configuring MacVim"]
+  - [./install_vscode_roslynator, "Installing Roslynator (Visual Studio Code tool for advanced refactoring actions)"]
+  - [./configure_unity, "Configuring Unity"]
+  - [./require_kibiyama ./configure_dash, "Maybe configuring kibiyama's Dash"]
+  - [./require_kibiyama ./configure_chrome, "Maybe configuring kibiyama's Chrome"]
+  - [./require_kibiyama ./configure_global_preferences, "Maybe configuring kibiyama's global preferences"]
+  - [./require_kibiyama ./configure_by_host_global_preferences, "Maybe configuring kibiyama's by-host global preferences"]
+  - [./require_kibiyama ./configure_power_management, "Maybe configuring kibiyama's power management"]
+  - [./require_kibiyama ./configure_finder_favorites, "Maybe configuring kibiyama's Finder favorites"]
+  - [./require_kibiyama ./configure_dock, "Maybe configuring kibiyama's dock"]
+  - [./require_kibiyama ./configure_desktop, "Maybe configuring kibiyama's desktop"]
+  - [./require_kibiyama ./configure_control_strip, "Maybe configuring kibiyama's control strip"]
+  - [./require_kibiyama ./configure_spotlight, "Maybe configuring kibiyama's Spotlight"]
+  - [./require_kibiyama ./configure_keyboard, "Maybe configuring kibiyama's keyboard"]
+  - [./require_kibiyama ./configure_notification_center, "Maybe configuring kibiyama's notifications"]
+  - [./require_kibiyama ./configure_linked_preferences, "Maybe configuring kibiyama's linked preferences"]
   # TODO:
   # - Remote Login
   # - Remote Management
@@ -62,7 +65,6 @@
 
 - link:
     ~/.oh-my-zsh: oh-my-zsh
-    /usr/local/bin/mvim: /Applications/MacVim.app/Contents/bin/mvim
     ~/.vim: vim
     ~/.vimrc: vimrc
     ~/.zshrc: zshrc
@@ -79,23 +81,16 @@
       path: vscode
     ~/.gitconfig: gitconfig
     ~/.gitignore_global: gitignore_global
-    ~/Library/Preferences/com.apple.LaunchServices:
-      force: true
-      path: Preferences/com.apple.LaunchServices
-    ~/Library/LaunchAgents/com.kibiz0r.sync_music.plist: LaunchAgents/com.kibiz0r.sync_music.plist
-    ~/Library/Preferences/com.apple.ncprefs.plist: Preferences/com.apple.ncprefs.plist
-    ~/Library/Preferences/com.apple.systemuiserver.plist: Preferences/com.apple.systemuiserver.plist
-    ~/Library/Preferences/com.apple.symbolichotkeys.plist: Preferences/com.apple.symbolichotkeys.plist
 
 - shell:
-  - [./launch_sync_music, Launching com.kibiz0r.sync_music]
-  - [defaults read -g > /dev/null, Reloading defaults]
-  - [killall cfprefsd, Relaunching prefs cache]
-  - [killall Finder, Relaunching Finder]
-  - [killall Dock, Relaunching Dock]
-  - [killall ControlStrip; exit 0, Relaunching ControlStrip]
-  - [killall NotificationCenter, Relaunching NotificationCenter]
-  - [killall SystemUIServer, Relaunching SystemUIServer]
+  - [./require_kibiyama ./launch_sync_music, "Maybe launching kibiyama's music sync"]
+  - [defaults read -g > /dev/null, "Reloading defaults"]
+  - [killall cfprefsd, "Relaunching prefs cache"]
+  - [killall Finder, "Relaunching Finder"]
+  - [killall Dock, "Relaunching Dock"]
+  - [killall ControlStrip; exit 0, "Relaunching ControlStrip"]
+  - [killall NotificationCenter, "Relaunching NotificationCenter"]
+  - [killall SystemUIServer, "Relaunching SystemUIServer"]
   # Run SIP-phobic tasks last so they can complain if SIP needs to be temporarily disabled
-  - [./hide_spotlight_icon, Hiding Spotlight icon]
-  - [./check_sip_status, Checking SIP status]
+  - [./require_sudo ./hide_spotlight_icon, "Maybe hiding Spotlight icon"]
+  - [./check_sip_status, "Checking SIP status"]

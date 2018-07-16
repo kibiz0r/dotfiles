@@ -3,7 +3,7 @@
     {
         "key": "enter",
         "command": "macros.openAndKeep",
-        "when": "filesExplorerFocus"
+        "when": "filesExplorerFocus && !inputFocus"
     },
     {
         "key": "ctrl+alt+`",
@@ -107,11 +107,11 @@
     },
     {
         "key": "ctrl+w h",
-        "command": "extension.vim_navigateLeft"
+        "command": "workbench.action.navigateLeft"
     },
     {
         "key": "ctrl+w ctrl+h",
-        "command": "extension.vim_navigateLeft"
+        "command": "workbench.action.navigateLeft"
     },
     {
         "key": "ctrl+w shift+h",
@@ -123,11 +123,11 @@
     },
     {
         "key": "ctrl+w l",
-        "command": "extension.vim_navigateRight"
+        "command": "workbench.action.navigateRight"
     },
     {
         "key": "ctrl+w ctrl+l",
-        "command": "extension.vim_navigateRight"
+        "command": "workbench.action.navigateRight"
     },
     {
         "key": "ctrl+w shift+l",
@@ -139,23 +139,15 @@
     },
     {
         "key": "ctrl+w ctrl+w",
-        "command": "extension.vim_navigateGroups"
-    },
-    {
-        "key": "ctrl+w j",
-        "command": "extension.vim_navigateDown"
-    },
-    {
-        "key": "ctrl+w ctrl+j",
-        "command": "extension.vim_navigateDown"
+        "command": "workbench.action.navigateGroups"
     },
     {
         "key": "ctrl+w k",
-        "command": "extension.vim_navigateUp"
+        "command": "workbench.action.navigateUp"
     },
     {
         "key": "ctrl+w ctrl+k",
-        "command": "extension.vim_navigateUp"
+        "command": "workbench.action.navigateUp"
     },
     {
         "key": "ctrl+w",
@@ -163,7 +155,7 @@
     },
     {
         "key": "ctrl+w ctrl+w",
-        "command": "-extension.vim_navigateGroups",
+        "command": "-workbench.action.navigateGroups",
         "when": "vim.active && vim.use<C-w> && !editorTextFocus"
     },
     {
@@ -287,5 +279,297 @@
         "key": "cmd+w",
         "command": "-workbench.action.closeWindow",
         "when": "!editorIsOpen"
+    },
+    {
+        "key": "shift+alt+t",
+        "command": "dotnet-test-explorer.runTestInContext",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "alt+r alt+c",
+        "command": "-dotnet-test-explorer.runTestInContext",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "shift+alt+a",
+        "command": "-editor.action.blockComment",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "shift+alt+a",
+        "command": "dotnet-test-explorer.runAllTests"
+    },
+    {
+        "key": "alt+r alt+a",
+        "command": "-dotnet-test-explorer.runAllTests"
+    },
+    {
+        "key": "shift+alt+r",
+        "command": "dotnet-test-explorer.rerunLastCommand"
+    },
+    {
+        "key": "alt+r alt+r",
+        "command": "-dotnet-test-explorer.rerunLastCommand"
+    },
+    {
+        "key": "shift+alt+x",
+        "command": "workbench.action.toggleActivityBarVisibility"
+    },
+    {
+        "key": "cmd+enter",
+        "command": "-editor.action.insertLineAfter",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "shift+cmd+enter",
+        "command": "-editor.action.insertLineBefore",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "cmd+enter",
+        "command": "workbench.action.debug.run",
+        "when": "!inDebugMode"
+    },
+    {
+        "key": "ctrl+f5",
+        "command": "-workbench.action.debug.run",
+        "when": "!inDebugMode"
+    },
+    {
+        "key": "shift+cmd+enter",
+        "command": "-search.action.replaceAllInFolder",
+        "when": "folderMatchFocus && replaceActive && searchViewletVisible"
+    },
+    {
+        "key": "shift+cmd+enter",
+        "command": "-search.action.replaceAllInFile",
+        "when": "fileMatchFocus && replaceActive && searchViewletVisible"
+    },
+    {
+        "key": "shift+cmd+enter",
+        "command": "workbench.action.debug.start",
+        "when": "!inDebugMode"
+    },
+    {
+        "key": "f5",
+        "command": "-workbench.action.debug.start",
+        "when": "!inDebugMode"
+    },
+    {
+        "key": "shift+alt+w",
+        "command": "workbench.action.closeOtherEditors"
+    },
+    {
+        "key": "alt+cmd+t",
+        "command": "-workbench.action.closeOtherEditors"
+    },
+    {
+        "key": "shift+cmd+c",
+        "command": "-workbench.action.terminal.openNativeConsole",
+        "when": "!terminalFocus"
+    },
+    {
+        "key": "alt+cmd+c",
+        "command": "-toggleSearchCaseSensitive",
+        "when": "searchInputBoxFocus && searchViewletVisible"
+    },
+    {
+        "key": "alt+cmd+c",
+        "command": "-copyFilePath",
+        "when": "!editorFocus"
+    },
+    {
+        "key": "alt+cmd+c",
+        "command": "-search.action.copyPath",
+        "when": "fileMatchOrFolderMatchFocus"
+    },
+    {
+        "key": "alt+cmd+c",
+        "command": "-toggleFindCaseSensitive",
+        "when": "editorFocus"
+    },
+    {
+        "key": "cmd+1",
+        "command": "-workbench.action.focusFirstEditorGroup"
+    },
+    {
+        "key": "cmd+1",
+        "command": "workbench.action.openEditorAtIndex1"
+    },
+    {
+        "key": "ctrl+1",
+        "command": "-workbench.action.openEditorAtIndex1"
+    },
+    {
+        "key": "cmd+2",
+        "command": "workbench.action.openEditorAtIndex2"
+    },
+    {
+        "key": "ctrl+2",
+        "command": "-workbench.action.openEditorAtIndex2"
+    },
+    {
+        "key": "cmd+2",
+        "command": "-workbench.action.focusSecondEditorGroup"
+    },
+    {
+        "key": "cmd+3",
+        "command": "-workbench.action.focusThirdEditorGroup"
+    },
+    {
+        "key": "cmd+4",
+        "command": "workbench.action.openEditorAtIndex4"
+    },
+    {
+        "key": "ctrl+4",
+        "command": "-workbench.action.openEditorAtIndex4"
+    },
+    {
+        "key": "cmd+3",
+        "command": "workbench.action.openEditorAtIndex3"
+    },
+    {
+        "key": "ctrl+3",
+        "command": "-workbench.action.openEditorAtIndex3"
+    },
+    {
+        "key": "cmd+5",
+        "command": "workbench.action.openEditorAtIndex5"
+    },
+    {
+        "key": "ctrl+5",
+        "command": "-workbench.action.openEditorAtIndex5"
+    },
+    {
+        "key": "cmd+6",
+        "command": "workbench.action.openEditorAtIndex6"
+    },
+    {
+        "key": "ctrl+6",
+        "command": "-workbench.action.openEditorAtIndex6"
+    },
+    {
+        "key": "cmd+7",
+        "command": "workbench.action.openEditorAtIndex7"
+    },
+    {
+        "key": "ctrl+7",
+        "command": "-workbench.action.openEditorAtIndex7"
+    },
+    {
+        "key": "cmd+8",
+        "command": "workbench.action.openEditorAtIndex8"
+    },
+    {
+        "key": "ctrl+8",
+        "command": "-workbench.action.openEditorAtIndex8"
+    },
+    {
+        "key": "cmd+9",
+        "command": "workbench.action.openEditorAtIndex9"
+    },
+    {
+        "key": "ctrl+9",
+        "command": "-workbench.action.openEditorAtIndex9"
+    },
+    {
+        "key": "cmd+0",
+        "command": "workbench.action.openLastEditorInGroup"
+    },
+    {
+        "key": "ctrl+0",
+        "command": "-workbench.action.openLastEditorInGroup"
+    },
+    {
+        "key": "shift+alt+left",
+        "command": "-cursorWordStartLeftSelect",
+        "when": "textInputFocus"
+    },
+    {
+        "key": "shift+f8",
+        "command": "-editor.action.marker.prevInFiles",
+        "when": "editorFocus && !editorReadonly"
+    },
+    {
+        "key": "shift+alt+right",
+        "command": "-cursorWordEndRightSelect",
+        "when": "textInputFocus"
+    },
+    {
+        "key": "f8",
+        "command": "-editor.action.marker.nextInFiles",
+        "when": "editorFocus && !editorReadonly"
+    },
+    {
+        "key": "shift+alt+down",
+        "command": "-editor.action.copyLinesDownAction",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "shift+alt+up",
+        "command": "-editor.action.copyLinesUpAction",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "shift+alt+down",
+        "command": "merge-conflict.next"
+    },
+    {
+        "key": "shift+alt+up",
+        "command": "merge-conflict.previous"
+    },
+    {
+        "key": "shift+alt+0",
+        "command": "workbench.action.toggleEditorGroupLayout"
+    },
+    {
+        "key": "ctrl+w j",
+        "command": "workbench.action.navigateDown"
+    },
+    {
+        "key": "ctrl+w ctrl+j",
+        "command": "workbench.action.navigateDown"
+    },
+    {
+        "key": "ctrl+w k",
+        "command": "workbench.action.navigateUp"
+    },
+    {
+        "key": "ctrl+w ctrl+k",
+        "command": "workbench.action.navigateUp"
+    },
+    {
+        "key": "alt+cmd+n",
+        "command": "explorer.newFolder"
+    },
+    {
+        "key": "shift+5",
+        "command": "editor.emmet.action.matchTag",
+        "when": "editorLangId == xml"
+    },
+    {
+        "key": "ctrl+cmd+up",
+        "command": "-workbench.action.terminal.resizePaneUp",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "ctrl+cmd+shift+up",
+        "command": "fileextswitch",
+        "args": { "extensions": [".xaml", ".xaml.cs"], "useOtherColumn": true }, 
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+cmd+up",
+        "command": "fileextswitch",
+        "args": { "extensions": [".xaml", ".xaml.cs"] }, 
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "shift+alt+right",
+        "command": "editor.action.marker.nextInFiles"
+    },
+    {
+        "key": "shift+alt+left",
+        "command": "editor.action.marker.prevInFiles"
     }
 ]

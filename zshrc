@@ -1,3 +1,6 @@
+# Might need this?
+# eval $(/usr/libexec/path_helper)
+
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 

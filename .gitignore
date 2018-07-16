@@ -1,8 +1,10 @@
-Roslynator.VisualStudio.vsix
-iTerm2.zip
-omnisharp/Roslynator.VisualStudio
-vscode.zip
-MacVim.dmg
+/Roslynator.VisualStudio.vsix
+/iTerm2.zip
+/omnisharp/Roslynator.VisualStudio
+/omnisharp/omnisharp.json
+/vscode.zip
+/MacVim.dmg
 /vscode/workspaceStorage
-dash.zip
-mute-me.zip
+/vscode/extensions
+/dash.zip
+/mute-me.zip

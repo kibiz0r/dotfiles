@@ -1,0 +1,12 @@
+#!/usr/bin/env sh
+
+BASE_SCRIPT="$1"
+USER_SCRIPT="$BASE_SCRIPT.$(./dotfiles_user_host)"
+
+if [ -f "$BASE_SCRIPT" ]; then
+  eval "$BASE_SCRIPT"
+fi
+
+if [ -f "$USER_SCRIPT" ]; then
+  eval "$USER_SCRIPT"
+fi

@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-BREWFILE="Brewfile.$(./dotfiles_user)"
+BREWFILE="Brewfile.$(./dotfiles_user_host)"
 
 if [ ! -f $BREWFILE ]; then
   echo "No custom Brewfile found: $BREWFILE"

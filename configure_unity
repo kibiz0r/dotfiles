@@ -1,19 +1,30 @@
 #!/usr/bin/env sh
 
+APPDIR="$HOME/Applications"
+
+if [ ! -z USE_HOME_APPDIR ]; then
+  APPDIR="/Applications"
+fi
+
+if [ ! -d $APPDIR/Unity ]; then
+  echo "Unity isn't installed"
+  exit 0
+fi
+
 if [ ! -f ~/Library/Preferences/com.unity3d.UnityEditor5.x.plist ]; then
   open /Applications/Unity/Unity.app
   sleep 10
   killall Unity
 fi
 
-vscode="/Applications/Visual Studio Code.app"
+vscode="$APPDIR/Visual Studio Code.app"
 if [ "$USE_VSCODE_INSIDERS" = "yes" ]; then
-  vscode="/Applications/Visual Studio Code - Insiders.app"
+  vscode="$APPDIR/Visual Studio Code - Insiders.app"
 fi
 
 plutil -replace kScriptsDefaultApp -string "$vscode" ~/Library/Preferences/com.unity3d.UnityEditor5.x.plist
 
-# Don't ask me why this requires so many escapes
+# Don't ask me why this requires so many escapeseses
 vscodeEscaped=`echo $vscode | sed s/\.app/\\\\\\\.app/`
 argsKey="kScriptEditorArgs_$vscodeEscaped"
 plutil -replace "$argsKey" -string '' ~/Library/Preferences/com.unity3d.UnityEditor5.x.plist
