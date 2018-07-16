@@ -1,12 +1,3 @@
-# Example usage: USE_SUDO=yes ./install
-#
-# I swear I used to be able to export env vars like this, but I guess just pass them in on the command line now?
-# - [export USE_VSCODE_INSIDERS=yes, "Using the bleeding-edge VSCode. Exciting!"]
-# - [export USE_SUDO=yes, "Allowing sudo. I'll try to be careful! ;)"]
-# - [export USE_HOME_APPDIR=yes, "Using ~/Applications instead of /Applications. Less than ideal, but okay."]
-# - [export USE_HOME_HOMEBREW=yes, "Using ~/homebrew instead of /usr/local/Homebrew. PLEASE try to avoid this! It'll probably backfire at some point."]
-# - [export USE_KIBIYAMA_CUSTOMIZATIONS=yes, "Giving you the full kibiyama experience. You won't regret it! ...probably..."]
-
 # Default options for dotbot commands like "link"
 - defaults:
     link:
