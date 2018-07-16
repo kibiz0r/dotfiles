@@ -80,13 +80,6 @@ alias be='bundle exec'
 alias git=hub
 alias mvim='/usr/local/bin/mvim $@ > /dev/null 2>&1'
 
-# Work stuff
-alias cd-garten="cd ~/git/kindergarten"
-alias cd-kin="cd ~/git/kin"
-alias cd-proto="cd ~/git/yeti-prototypes"
-alias cd-example="cd ~/git/kindergarten/Examples/SensorAPIWithWikitude"
-alias cd-panion="cd ~/git/yeti-prototypes/Kinpanion"
-
 # NOTE: Mono bugs
 # Prevent IOException: kqueue() FileSystemWatcher has reached the maximum nunmber of files to watch.
 export MONO_MANAGED_WATCHER=false
