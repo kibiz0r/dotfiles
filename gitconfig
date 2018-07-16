@@ -21,6 +21,7 @@
   st = status
   su = submodule update --init --recursive
   diffc = diff --cached
+  dc = diffc
   cleanall = "!git clean -fdx && git submodule foreach --recursive git clean -fdx"
   rbi = rebase --interactive
   rbc = rebase --continue
