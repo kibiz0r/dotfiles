@@ -26,7 +26,8 @@
   rba = rebase --abort
   pull-reset = !git fetch && git reset --hard FETCH_HEAD
   sa = submodule add
-  remotes = remote -v
+  url = remote get-url --all origin
+  urls = !"git remote get-url --all origin && git submodule foreach --recursive git remote get-url --all origin"
   pullr = pull --rebase
   out = merge --abort
   gud = git reset --hard HEAD
