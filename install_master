@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
 
+USE_VSCODE_INSIDERS=yes \
+USE_SUDO=yes \
+USE_KIBIYAMA_CUSTOMIZATIONS=yes \
 ./install_base
 
