@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-if which brew; then
+if which brew > /dev/null || [ -d $HOME/homebrew ]; then
   echo "brew already installed"
   exit 0
 fi
