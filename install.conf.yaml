@@ -17,7 +17,7 @@
   - [brew install mas, "Installing mas (a command line App Store interface)"]
   - [./per_user_host ./install_app_store_apps, "Installing this user's App Store apps in the background"]
   - [xcode-select --install || true, "Installing Xcode command line tools (you really need this)"]
-  - [brew bundle -v, "Installing Homebrew packages"]
+  - [./install_brews, "Installing Homebrew packages"]
   - [./install_extra_brews, "Installing extra Homebrew formulae for this specific user"]
   - [brew unlink python, "Unlinking Python for MacVim's sake (https://github.com/Valloric/YouCompleteMe/issues/18)"]
   - [./install_iterm2, "Installing iTerm2 (a better version of Terminal.app)"]

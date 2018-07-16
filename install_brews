@@ -1,0 +1,9 @@
+#!/usr/bin/env sh
+
+if [ -z $USE_HOME_APPDIR ]; then
+  echo "Note: Installing Homebrew cask apps to /Applications"
+  brew bundle -v
+else
+  echo "Note: Installing Homebrew cask apps to ~/Applications"
+  brew bundle -v --file=Brewfile.home_appdir
+fi
