@@ -8,9 +8,10 @@ But, of course, a lot of this still caters to my tastes. :)
 
 ## Installation
 
-Run this:
+Pick master or bissell:
 
-`git clone git@github.com:kibiz0r/dotfiles.git ~/.dotfiles && cd ~/.dotfiles && ./install`
+Master: `git clone -b master git@github.com:kibiz0r/dotfiles.git ~/.dotfiles && cd ~/.dotfiles && ./install`
+BISSELL: `git clone -b bissell git@github.com:kibiz0r/dotfiles.git ~/.dotfiles && cd ~/.dotfiles && ./install`
 
 ## Customization
 
