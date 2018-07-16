@@ -5,4 +5,4 @@ if [ -z $USE_KIBIYAMA_CUSTOMIZATIONS ]; then
   exit 0
 fi
 
-exec "$@"
+eval "$@"

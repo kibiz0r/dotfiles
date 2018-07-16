@@ -2,6 +2,7 @@
   name = Michael Harrington
   email = kibiz0r@gmail.com
 [alias]
+  current-branch = !"git branch | grep '*' | sed 's/* //'"
   shwifty = !git-shwifty
   twirl = !git stash && git pull && git stash pop
   on = "!git checkout -B \"$1\"; git config branch.\"$1\".remote origin; git config branch.\"$1\".merge \"refs/heads/$1\"; echo \"Got on $1\" #"

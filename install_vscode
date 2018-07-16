@@ -11,6 +11,8 @@ app_path =
     "/Applications"
   end
 
+puts app_path
+
 vscode_dir =
   if UseBleedingEdge
     "#{app_path}/Visual Studio Code - Insiders.app"

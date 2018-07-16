@@ -1,3 +1,4 @@
+cask_args appdir: "~/Applications"
 tap "alexcormier/personal"
 tap "aspnet/dnx"
 tap "homebrew/boneyard"
