@@ -10,7 +10,7 @@ But, of course, a lot of this still caters to my tastes. :)
 
 Run this:
 
-`git clone git@github.com:kibiz0r/dotfiles.git ~/.dotfiles && cd ~/.dotfiles && ./install_bissell`
+`git clone git@github.com:kibiz0r/dotfiles.git ~/.dotfiles && cd ~/.dotfiles && ./install`
 
 ## Customization
 
