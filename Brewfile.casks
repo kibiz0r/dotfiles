@@ -1,0 +1,3 @@
+cask "application-loader"
+cask "macvim"
+cask "rowanj-gitx"

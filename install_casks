@@ -1,0 +1,29 @@
+#!/usr/bin/env sh
+
+CASKS_FILE="Brewfile.casks"
+if [ ! -z USE_HOME_APPDIR ]; then
+  CASKS_FILE="$CASKS_FILE.home_appdir"
+fi
+
+KIBIYAMA_CASKS_FILE="Brewfile.casks.kibiyama"
+USER_CASKS_FILE="Brewfile.casks.$(./dotfiles_user)"
+USER_HOST_CASKS_FILE="Brewfile.casks.$(./dotfiles_user_host)"
+
+if [ -f "$CASKS_FILE" ]; then
+  brew bundle -v --file="$CASKS_FILE"
+fi
+
+if [ -z "$USE_KIBIYAMA_CUSTOMIZATIONS" ] && [ -f "$KIBIYAMA_CASKS_FILE" ]; then
+  echo "Installing kibiyama casks"
+  brew bundle -v --file="$KIBIYAMA_CASKS_FILE"
+fi
+
+if [ -f "$USER_CASKS_FILE" ] && [ "$USER_CASKS_FILE" != "$KIBIYAMA_CASKS_FILE" ]; then
+  echo "Installing $(./dotfiles_user) casks"
+  brew bundle -v --file="$USER_CASKS_FILE"
+fi
+
+if [ -f "$USER_HOST_CASKS_FILE" ]; then
+  echo "Installing $(./dotfiles_user_host) casks"
+  brew bundle -v --file="$USER_HOST_CASKS_FILE"
+fi

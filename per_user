@@ -14,7 +14,7 @@ if [ ! -z $USE_KIBIYAMA_CUSTOMIZATIONS ]; then
   eval "$KIBIYAMA_SCRIPT"
 fi
 
-if [ -f "$USER_SCRIPT" ] && [ $USER != kibiyama ]; then
+if [ -f "$USER_SCRIPT" ] && [ "$USER" != kibiyama ]; then
   echo "Running $USER_SCRIPT"
   eval "$USER_SCRIPT"
 fi

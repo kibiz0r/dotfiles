@@ -10,12 +10,12 @@ if [ -f "$BASE_SCRIPT" ]; then
   eval "$BASE_SCRIPT"
 fi
 
-if [ ! -z $USE_KIBIYAMA_CUSTOMIZATIONS ]; then
+if [ ! -z "$USE_KIBIYAMA_CUSTOMIZATIONS" ]; then
   echo "Running $KIBIYAMA_SCRIPT"
   eval "$KIBIYAMA_SCRIPT"
 fi
 
-if [ -f "$USER_SCRIPT" ] && [ $USER != kibiyama ]; then
+if [ -f "$USER_SCRIPT" ] && [ "$USER" != kibiyama ]; then
   echo "Running $USER_SCRIPT"
   eval "$USER_SCRIPT"
 fi

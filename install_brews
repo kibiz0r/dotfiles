@@ -1,9 +1,26 @@
 #!/usr/bin/env sh
 
-if [ -z $USE_HOME_APPDIR ]; then
-  echo "Note: Installing Homebrew cask apps to /Applications"
-  brew bundle -v
-else
-  echo "Note: Installing Homebrew cask apps to ~/Applications"
-  brew bundle -v --file=Brewfile.home_appdir
+BREWFILE="Brewfile"
+KIBIYAMA_BREWFILE="Brewfile.kibiyama"
+USER_BREWFILE="Brewfile.$(./dotfiles_user)"
+USER_HOST_BREWFILE="Brewfile.$(./dotfiles_user_host)"
+
+if [ -f "$BREWFILE" ]; then
+  brew bundle -v --file="$BREWFILE"
 fi
+
+if [ ! -z "$USE_KIBIYAMA_CUSTOMIZATIONS" ] && [ -f "$KIBIYAMA_BREWFILE" ]; then
+  echo "Installing kibiyama brews"
+  brew bundle --file="$KIBIYAMA_BREWFILE"
+fi
+
+if [ -f "$USER_BREWFILE" ] && [ "$USER_BREWFILE" != "$KIBIYAMA_BREWFILE" ]; then
+  echo "Installing $(./dotfiles_user) brews"
+  brew bundle --file="$USER_BREWFILE"
+fi
+
+if [ -f "$USER_HOST_BREWFILE" ]; then
+  echo "Installing $(./dotfiles_user_host) brews"
+  brew bundle --file="$USER_HOST_BREWFILE"
+fi
+

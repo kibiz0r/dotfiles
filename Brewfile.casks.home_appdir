@@ -1,0 +1,5 @@
+cask_args appdir: "~/Applications"
+
+cask "macvim"
+cask "rowanj-gitx"
+cask "nvalt"
