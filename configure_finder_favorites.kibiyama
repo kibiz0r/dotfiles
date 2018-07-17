@@ -7,7 +7,8 @@ fi
 
 mysides remove all
 
-mysides add 'domain-AirDrop' 'nwnode://domain-AirDrop'
+# Doesn't work right now
+# mysides add 'domain-AirDrop' 'nwnode://domain-AirDrop'
 mysides add 'Macintosh HD' 'file:///'
 mysides add 'Applications' 'file:///Applications/'
 mysides add 'kibiyama' "file://$HOME/"
@@ -16,5 +17,4 @@ mysides add 'Desktop' "file://$HOME/Desktop/"
 mysides add 'Documents' "file://$HOME/Documents/"
 mysides add 'Downloads' "file://$HOME/Downloads/"
 mysides add 'Dropbox' "file://$HOME/Dropbox/"
-mysides add 'Dropbox (YETi CGI)' "file://$HOME/Dropbox%20(YETi%20CGI)/"
 

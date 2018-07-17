@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
 
-./install_`git branch | grep '*' | sed 's/* //'`
+INSTALL_BRANCH=`git branch | grep '*' | sed 's/* //'`
+
+./install_$INSTALL_BRANCH
 
