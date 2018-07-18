@@ -1,3 +1,5 @@
 cask "application-loader"
+cask "bettertouchtool"
 cask "macvim"
+cask "nvalt"
 cask "rowanj-gitx"

@@ -1,5 +1,6 @@
 cask_args appdir: "~/Applications"
 
+cask "bettertouchtool"
 cask "macvim"
-cask "rowanj-gitx"
 cask "nvalt"
+cask "rowanj-gitx"

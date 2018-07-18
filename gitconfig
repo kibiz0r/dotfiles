@@ -6,6 +6,8 @@
   curb = current-branch
   shwifty = !git-shwifty
   twirl = !git stash && git pull && git stash pop
+  # TODO: Apply this to `git on` so we can translate story names to branch names:
+  # echo $1 | tr '[:upper:]' '[:lower:]' | sed "s/[[:space:]_]/-/g"
   on = "!git checkout -B \"$1\"; git config branch.\"$1\".remote origin; git config branch.\"$1\".merge \"refs/heads/$1\"; echo \"Got on $1\" #"
   cia = commit --amend
   b = branch

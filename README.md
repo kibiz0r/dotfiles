@@ -13,7 +13,11 @@ Pick master or bissell:
 Master: `git clone -b master git@github.com:kibiz0r/dotfiles.git ~/.dotfiles && cd ~/.dotfiles && ./install`
 BISSELL: `git clone -b bissell git@github.com:kibiz0r/dotfiles.git ~/.dotfiles && cd ~/.dotfiles && ./install`
 
+If you want the kibiyama awesomesauce, run `./install_plus_kibiyama` instead of `./install`.
+
 ## Customization
+
+You can layer your own stuff on top of the base stuff. If you use the kibiyama stuff, your stuff will be run last so you don't get overwritten.
 
 To understand what's going on, look at `install.conf.yaml`.
 

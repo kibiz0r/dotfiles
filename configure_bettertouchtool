@@ -1,0 +1,10 @@
+#!/usr/bin/env sh
+
+APPDIR="/Applications"
+if [ ! -z "$USE_HOME_APPDIR" ]; then
+  APPDIR="$HOME/Applications"
+fi
+
+killall "BetterTouchTool"
+open "$APPDIR/BetterTouchTool.app"
+
