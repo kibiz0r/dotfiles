@@ -511,11 +511,11 @@
         "when": "editorTextFocus && !editorReadonly"
     },
     {
-        "key": "shift+alt+down",
+        "key": "ctrl+shift+down",
         "command": "merge-conflict.next"
     },
     {
-        "key": "shift+alt+up",
+        "key": "ctrl+shift+up",
         "command": "merge-conflict.previous"
     },
     {
@@ -565,11 +565,11 @@
         "when": "editorTextFocus"
     },
     {
-        "key": "shift+alt+right",
+        "key": "ctrl+shift+right",
         "command": "editor.action.marker.nextInFiles"
     },
     {
-        "key": "shift+alt+left",
+        "key": "ctrl+shift+left",
         "command": "editor.action.marker.prevInFiles"
     },
     {
