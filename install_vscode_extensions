@@ -2,12 +2,13 @@
 
 APPDIR="/Applications"
 
-if [ ! -z USE_HOME_APPDIR ]; then
+if [ ! -z "$USE_HOME_APPDIR" ]; then
   APPDIR="$HOME/Applications"
 fi
 
 $APPDIR/Visual\ Studio\ Code*.app/Contents/Resources/app/bin/code \
     --install-extension donjayamanne.githistory \
+    --install-extension editorconfig.editorconfig \
     --install-extension emeraldwalk.runonsave \
     --install-extension formulahendry.dotnet-test-explorer \
     --install-extension geddski.macros \
