@@ -1,6 +1,7 @@
 cask "application-loader"
 cask "bettertouchtool"
 cask "macvim"
-cask "nvalt"
 cask "postman"
 cask "rowanj-gitx"
+cask "zeplin"
+cask "wireshark"

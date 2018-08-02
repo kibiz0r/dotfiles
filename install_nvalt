@@ -1,0 +1,16 @@
+#!/usr/bin/env sh
+
+APPDIR="/Applications"
+
+if [ ! -z "$USE_HOME_APPDIR" ]; then
+  APPDIR="$HOME/Applications"
+fi
+
+if [ -d "$APPDIR/nvALT.app" ]; then
+  echo "nvALT already installed"
+else
+  if [ ! -f nvAPT.app.zip ]; then
+    curl -Lo nvALT.app.zip https://github.com/kibiz0r/nv/files/2220754/nvALT.app.zip
+    unzip nvALT.app.zip "nvALT.app/*" -d "$APPDIR"
+  fi
+fi

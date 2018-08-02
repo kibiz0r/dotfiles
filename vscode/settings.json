@@ -8,17 +8,7 @@
             "workbench.action.toggleSidebarVisibility"
         ],
         "mergeGroupsAndHideSidebar": [
-            "workbench.action.joinTwoGroups",
-            "workbench.action.joinTwoGroups",
-            "workbench.action.joinTwoGroups",
-            "workbench.action.joinTwoGroups",
-            "workbench.action.joinTwoGroups",
-            "workbench.action.joinTwoGroups",
-            "workbench.action.joinTwoGroups",
-            "workbench.action.joinTwoGroups",
-            "workbench.action.joinTwoGroups",
-            "workbench.action.joinTwoGroups",
-            "workbench.action.joinTwoGroups",
+            "workbench.action.joinAllGroups",
             "workbench.action.maximizeEditor",
             "workbench.action.closePanel"
         ]
@@ -28,9 +18,15 @@
     "editor.rulers": [
         80
     ],
-    "editor.tabSize": 2,
+    "editor.tabSize": 4,
     "[csharp]": {
         "editor.tabSize": 4
+    },
+    "[xml]": {
+        "editor.tabSize": 4
+    },
+    "[json]": {
+        "editor.tabSize": 2
     },
     "editor.acceptSuggestionOnCommitCharacter": false,
     "vim.useSystemClipboard": true,
@@ -53,5 +49,18 @@
     "editor.renderWhitespace": "none",
     "editor.autoClosingBrackets": false,
     "omnisharp.disableMSBuildDiagnosticWarning": true,
-    "workbench.startupEditor": "newUntitledFile"
+    "workbench.startupEditor": "newUntitledFile",
+    "editor.detectIndentation": false,
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+    "files.associations": {
+        "*.xaml": "html"
+    },
+    "html.format.wrapAttributes": "force-aligned",
+    "html.suggest.html5": false,
+    "html.suggest.ionic": false,
+    "html.validate.scripts": false,
+    "html.validate.styles": false,
+    "editor.parameterHints": false,
 }

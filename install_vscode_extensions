@@ -8,10 +8,13 @@ fi
 
 $APPDIR/Visual\ Studio\ Code*.app/Contents/Resources/app/bin/code \
     --install-extension donjayamanne.githistory \
+    --install-extension dotjoshjohnson.xml \
     --install-extension editorconfig.editorconfig \
     --install-extension emeraldwalk.runonsave \
+    --install-extension formulahendry.auto-close-tag \
     --install-extension formulahendry.dotnet-test-explorer \
     --install-extension geddski.macros \
+    --install-extension hookyqr.beautify \
     --install-extension Ionide.ionide-fake \
     --install-extension Ionide.ionide-fsharp \
     --install-extension johannesrudolph.file-ext-switcher \

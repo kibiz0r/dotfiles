@@ -64,7 +64,10 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 # rbenv
-export PATH="$HOME/.rbenv/shims:$PATH"
+if which rbenv > /dev/null; then
+  eval "$(rbenv init -)"
+  alias rubies="rbenv install -l"
+fi
 
 # User configuration
 export PATH="$PATH:$HOME/bin"
@@ -79,6 +82,7 @@ export PATH=$PATH:$HOME/Library/Android/sdk/tools:$HOME/Library/Android/sdk/plat
 alias be='bundle exec'
 alias git=hub
 alias mvim='/usr/local/bin/mvim $@ > /dev/null 2>&1'
+alias bis="cd $HOME/git/BISSELL_Xamarin_App"
 
 # NOTE: Mono bugs
 # Prevent IOException: kqueue() FileSystemWatcher has reached the maximum nunmber of files to watch.

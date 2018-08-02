@@ -555,13 +555,24 @@
     {
         "key": "ctrl+cmd+shift+up",
         "command": "fileextswitch",
-        "args": { "extensions": [".xaml", ".xaml.cs"], "useOtherColumn": true }, 
+        "args": {
+            "extensions": [
+                ".xaml",
+                ".xaml.cs"
+            ],
+            "useOtherColumn": true
+        },
         "when": "editorTextFocus"
     },
     {
         "key": "ctrl+cmd+up",
         "command": "fileextswitch",
-        "args": { "extensions": [".xaml", ".xaml.cs"] }, 
+        "args": {
+            "extensions": [
+                ".xaml",
+                ".xaml.cs"
+            ]
+        },
         "when": "editorTextFocus"
     },
     {
@@ -596,5 +607,31 @@
         "key": "ctrl+k",
         "command": "list.focusUp",
         "when": "listFocus"
+    },
+    {
+        "key": "shift+alt+h",
+        "command": "editor.action.showHover",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "cmd+k cmd+i",
+        "command": "-editor.action.showHover",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "shift+alt+]",
+        "command": "workbench.action.moveEditorRightInGroup"
+    },
+    {
+        "key": "cmd+k shift+cmd+right",
+        "command": "-workbench.action.moveEditorRightInGroup"
+    },
+    {
+        "key": "shift+alt+[",
+        "command": "workbench.action.moveEditorLeftInGroup"
+    },
+    {
+        "key": "cmd+k shift+cmd+left",
+        "command": "-workbench.action.moveEditorLeftInGroup"
     }
 ]

@@ -81,6 +81,10 @@
       path: vscode
     ~/.gitconfig: gitconfig
     ~/.gitignore_global: gitignore_global
+    ~/.ruby-version: ruby-version
+    ~/.irbrc: irbrc
+    ~/Gemfile: Gemfile
+    ~/Gemfile.lock: Gemfile.lock
 
 - shell:
   - [./require_kibiyama ./launch_sync_music, "Maybe launching kibiyama's music sync"]
