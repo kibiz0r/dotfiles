@@ -1,7 +1,8 @@
 cask_args appdir: "~/Applications"
 
-cask "bettertouchtool"
 cask "macvim"
-cask "postman"
 cask "rowanj-gitx"
 cask "zeplin"
+cask "dash"
+cask "colorsnapper"
+cask "xscope"

@@ -12,6 +12,10 @@ defaults write com.apple.Dock showhidden -bool YES
 # Enable selecting text in QuickLook
 defaults write com.apple.finder QLEnableTextSelection -bool YES
 
+# Show expanded Finder panel by default in Save/Open dialogs
+defaults write -g NSNavPanelExpandedStateForSaveMode -bool YES
+defaults write -g NSNavPanelExpandedStateForSaveMode2 -bool YES
+
 # Show hidden files
 defaults write com.apple.finder AppleShowAllFiles -bool YES
 

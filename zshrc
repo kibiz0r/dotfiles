@@ -72,6 +72,7 @@ fi
 # User configuration
 export PATH="$PATH:$HOME/bin"
 export EDITOR="mvim -f"
+export LESS="$LESS -i"
 
 # Android Studio SDK
 # export ANDROID_HOME=/usr/local/opt/android-sdk

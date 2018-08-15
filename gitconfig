@@ -8,17 +8,14 @@
   curb = current-branch
   shwifty = !git-shwifty
   twirl = !git stash && git pull && git stash pop
-  # TODO: Apply this to `git on` so we can translate story names to branch names:
-  # echo $1 | tr '[:upper:]' '[:lower:]' | sed "s/[[:space:]_]/-/g"
-  on = "!git checkout -B \"$1\"; git config branch.\"$1\".remote origin; git config branch.\"$1\".merge \"refs/heads/$1\"; echo \"Got on $1\" #"
+  up = pull
+  upr = pull --rebase
+  cfg = !"/usr/local/bin/mvim $HOME/.gitconfig > /dev/null 2>&1"
+  on = !"ON_BRANCH=\"$(echo \"$1\" | tr '[:upper:]' '[:lower:]' | sed -e \"s/[^[:alnum:]\\/\\.]/-/g\" -e \"s/--*/-/g\" -e \"s/-\\././g\" -e \"s/[-.]*$//\")\"; git checkout -B \"$ON_BRANCH\"; git config branch.\"$ON_BRANCH\".remote origin; git config branch.\"$ON_BRANCH\".merge \"refs/heads/$ON_BRANCH\"; echo \"Got on $ON_BRANCH\" #"
   amend = commit --amend
   b = branch
   ba = branch -a
-  # These need to check if local branch matches $1 first, and only `checkout -` if necessary
-  # It would also be nice to default $1 to the current branch
-  # bd = !"git checkout -; git branch -d \"$1\""
-  # bdr = !"git checkout -; git branch -d \"$1\" && git push origin --delete \"$1\""
-  bd = !"git branch -d \"$1\""
+  bd = branch -d
   bdr = !"git branch -d \"$1\" && git push origin --delete \"$1\""
   ci = commit
   co = checkout
@@ -26,7 +23,7 @@
   su = submodule update --init --recursive
   diffc = diff --cached
   dc = diffc
-  cleanall = "!git clean -fdx && git submodule foreach --recursive git clean -fdx"
+  cleanall = !"git clean -fdx && git submodule foreach --recursive git clean -fdx"
   rbi = rebase --interactive
   rbc = rebase --continue
   rbs = rebase --skip
@@ -37,7 +34,7 @@
   urls = !"git remote get-url --all origin && git submodule foreach --recursive git remote get-url --all origin"
   pullr = pull --rebase
   out = merge --abort
-  gud = git reset --hard HEAD
+  gud = !"git reset --hard HEAD && git clean -df"
   ma = merge --abort
   submodules = submodule foreach --recursive git status
   bruh = branch -vv
@@ -45,17 +42,14 @@
   loga = log --graph --decorate --all
   logs = log --graph --decorate --all --max-count=16
   highlight-head = !"sed \"s/\\([\\(]HEAD[^\\)]*[\\)]\\)/`git config --get-color '' reverse`\\\\1`git config --get-color '' reset`/\" | less"
-  lga = !"git lga1"
-  lga1 = !"git lg1-specific --all --color | git highlight-head"
-  lga2 = !"git lg2-specific --all --color | git highlight-head"
-  lga3 = !"git lg3-specific --all --color | git highlight-head"
-  lg = !"git lg1"
-  lg1 = !"git lg1-specific --color | git highlight-head"
-  lg2 = !"git lg2-specific --color | git highlight-head"
-  lg3 = !"git lg3-specific --color | git highlight-head"
-  lg1-specific = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)'
-  lg2-specific = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)'
-  lg3-specific = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset) %C(bold cyan)(committed: %cD)%C(reset) %C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset)%n''          %C(dim white)- %an <%ae> %C(reset) %C(dim white)(committer: %cn <%ce>)%C(reset)'
+  lga = "lg1 --all"
+  lga1 = "lg1 --all"
+  lga2 = "lg2 --all"
+  lga3 = "lg3 --all"
+  lg = "lg1"
+  lg1 = !"git log --graph --abbrev-commit --decorate --color --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' $@ | git highlight-head #"
+  lg2 = !"git log --graph --abbrev-commit --decorate --color --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' $@ | git highlight-head #"
+  lg3 = !"git log --graph --abbrev-commit --decorate --color --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset) %C(bold cyan)(committed: %cD)%C(reset) %C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset)%n''          %C(dim white)- %an <%ae> %C(reset) %C(dim white)(committer: %cn <%ce>)%C(reset)' $@ | git highlight-head #"
 [color]
   ui = true
 [color "branch"]
@@ -65,7 +59,6 @@
 [core]
   excludesfile = /Users/harrinm/.gitignore_global
   autocrlf = input
-  mergeoptions = --no-edit
 [difftool "pldiff"]
   cmd = pldiff $LOCAL $REMOTE
 [diff]

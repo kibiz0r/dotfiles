@@ -16,7 +16,7 @@
     "editor.minimap.enabled": false,
     "editor.codeLens": false,
     "editor.rulers": [
-        80
+        100
     ],
     "editor.tabSize": 4,
     "[csharp]": {
@@ -62,5 +62,5 @@
     "html.suggest.ionic": false,
     "html.validate.scripts": false,
     "html.validate.styles": false,
-    "editor.parameterHints": false,
+    "editor.parameterHints": false
 }

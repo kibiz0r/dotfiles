@@ -11,8 +11,18 @@ GEM
     i18n (1.0.1)
       concurrent-ruby (~> 1.0)
     minitest (5.11.3)
+    mustermann (1.0.2)
     pp (0.1.1)
+    rack (2.0.5)
+    rack-protection (2.0.3)
+      rack
+    sinatra (2.0.3)
+      mustermann (~> 1.0)
+      rack (~> 2.0)
+      rack-protection (= 2.0.3)
+      tilt (~> 2.0)
     thread_safe (0.3.6)
+    tilt (2.0.8)
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
 
@@ -23,6 +33,7 @@ DEPENDENCIES
   activesupport!
   bond!
   pp!
+  sinatra!
 
 BUNDLED WITH
    1.16.3
