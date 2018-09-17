@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+
+if which rbenv > /dev/null && ! echo $PATH | grep rbenv > /dev/null; then
+  eval "$(rbenv init -)"
+
+  rbenv install 2.5.1
+  rbenv global 2.5.1
+fi

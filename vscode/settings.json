@@ -1,5 +1,4 @@
 {
-    "vim.disableAnnoyingNeovimMessage": true,
     "git.countBadge": "off",
     "macros": {
         "openAndKeep": [
@@ -52,7 +51,7 @@
     "workbench.startupEditor": "newUntitledFile",
     "editor.detectIndentation": false,
     "editor.formatOnPaste": true,
-    "editor.formatOnSave": true,
+    "editor.formatOnSave": false,
     "editor.formatOnType": true,
     "files.associations": {
         "*.xaml": "html"
@@ -62,5 +61,16 @@
     "html.suggest.ionic": false,
     "html.validate.scripts": false,
     "html.validate.styles": false,
-    "editor.parameterHints": false
+    "gitlens.advanced.messages": {
+        "suppressShowKeyBindingsNotice": true
+    },
+    "window.newWindowDimensions": "maximized",
+    "workbench.settings.editor": "json",
+    "html.autoClosingTags": false,
+    "html.suggest.angular1": false,
+    "editor.parameterHints.enabled": false,
+    "vsicons.projectDetection.disableDetect": true,
+    "omnisharp.loggingLevel": "critical",
+    "debug.internalConsoleOptions": "neverOpen",
+    "vim.overrideCopy": false
 }

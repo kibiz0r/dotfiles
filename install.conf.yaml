@@ -20,6 +20,7 @@
   - [./install_brews, "Installing Homebrew formulae (command-line packages)"]
   - [./install_casks, "Installing Homebrew casks (GUI apps)"]
   - [brew unlink python, "Unlinking Python for MacVim's sake (see https://github.com/Valloric/YouCompleteMe/issues/18)"]
+  - [./install_ruby, "Installing Ruby through rbenv"]
   - [./install_npm_packages, "Installing npm packages"]
   - [./install_iterm2, "Installing iTerm2 (a better version of Terminal.app)"]
   - [./configure_iterm, "Configuring iTerm2"]
@@ -83,10 +84,11 @@
       path: vscode
     ~/.gitconfig: gitconfig
     ~/.gitignore_global: gitignore_global
-    ~/.ruby-version: ruby-version
     ~/.irbrc: irbrc
     ~/Gemfile: Gemfile
     ~/Gemfile.lock: Gemfile.lock
+    ~/.mailcap: mailcap
+    ~/.config/csharp: csharp
 
 - shell:
   - [./require_kibiyama ./launch_sync_music, "Maybe launching kibiyama's music sync"]

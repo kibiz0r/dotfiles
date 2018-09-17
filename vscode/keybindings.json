@@ -599,6 +599,11 @@
         "when": "inputBoxFocus && searchViewletVisible"
     },
     {
+        "key": "ctrl+n",
+        "command": "search.focus.nextInputBox",
+        "when": "inputBoxFocus && searchViewletVisible"
+    },
+    {
         "key": "ctrl+j",
         "command": "list.focusDown",
         "when": "listFocus && !inputBoxFocus"
@@ -633,5 +638,48 @@
     {
         "key": "cmd+k shift+cmd+left",
         "command": "-workbench.action.moveEditorLeftInGroup"
+    },
+    {
+        "key": "shift+alt+g",
+        "command": "gitlens.toggleLineBlame"
+    },
+    {
+        "key": "shift+alt+b",
+        "command": "-java.workspace.compile"
+    },
+    {
+        "key": "shift+alt+d",
+        "command": "editor.action.previewDeclaration",
+        "when": "editorHasDefinitionProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor"
+    },
+    {
+        "key": "alt+f12",
+        "command": "-editor.action.previewDeclaration",
+        "when": "editorHasDefinitionProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor"
+    },
+    {
+        "key": "ctrl+n",
+        "command": "-cursorDown",
+        "when": "textInputFocus"
+    },
+    // {
+    //     "key": "ctrl+n",
+    //     "command": "-selectNextSuggestion",
+    //     "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+    // },
+    {
+        "key": "ctrl+p",
+        "command": "-cursorUp",
+        "when": "textInputFocus"
+    },
+    {
+        "key": "ctrl+p",
+        "command": "-extension.vim_ctrl+p",
+        "when": "suggestWidgetVisible && vim.active && vim.use<C-p>"
+    },
+    {
+        "key": "ctrl+n",
+        "command": "-extension.vim_ctrl+n",
+        "when": "editorTextFocus && vim.active && vim.use<C-n> && !inDebugRepl"
     }
 ]

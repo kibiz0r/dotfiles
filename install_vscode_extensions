@@ -10,6 +10,7 @@ $APPDIR/Visual\ Studio\ Code*.app/Contents/Resources/app/bin/code \
     --install-extension donjayamanne.githistory \
     --install-extension dotjoshjohnson.xml \
     --install-extension editorconfig.editorconfig \
+    --install-extension eamodio.gitlens \
     --install-extension emeraldwalk.runonsave \
     --install-extension formulahendry.auto-close-tag \
     --install-extension formulahendry.dotnet-test-explorer \

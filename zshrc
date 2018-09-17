@@ -70,9 +70,12 @@ if which rbenv > /dev/null; then
 fi
 
 # User configuration
-export PATH="$PATH:$HOME/bin"
+export PATH="$PATH:$HOME/bin:$HOME/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 export EDITOR="mvim -f"
-export LESS="$LESS -i"
+export PAGER="tabless"
+export LESS="-Ri"
+
+alias less=$PAGER
 
 # Android Studio SDK
 # export ANDROID_HOME=/usr/local/opt/android-sdk
@@ -83,7 +86,10 @@ export PATH=$PATH:$HOME/Library/Android/sdk/tools:$HOME/Library/Android/sdk/plat
 alias be='bundle exec'
 alias git=hub
 alias mvim='/usr/local/bin/mvim $@ > /dev/null 2>&1'
+alias dot="cd $HOME/.dotfiles"
 alias bis="cd $HOME/git/BISSELL_Xamarin_App"
+alias reddit="rtv --enable-media"
+alias csharp="$(command which csharp) -r:System.Reactive.Core,System.Reactive.Linq,System.Reactive.Interfaces"
 
 # NOTE: Mono bugs
 # Prevent IOException: kqueue() FileSystemWatcher has reached the maximum nunmber of files to watch.
@@ -91,3 +97,5 @@ export MONO_MANAGED_WATCHER=false
 # https://github.com/dotnet/netcorecli-fsc/wiki/.NET-Core-SDK-1.0#using-net-framework-as-targets-framework-the-osxunix-build-fails
 # https://github.com/dotnet/sdk/issues/335
 export FrameworkPathOverride=$(dirname $(which mono))/../lib/mono/4.5/
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"

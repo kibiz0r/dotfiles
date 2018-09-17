@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
-# Temporarily using bleeding edge until this is resolved:
-# https://github.com/Microsoft/vscode/issues/32381
+require "fileutils"
+
 UseBleedingEdge = ENV["USE_VSCODE_INSIDERS"]
 
 app_path =
@@ -11,22 +11,36 @@ app_path =
     "/Applications"
   end
 
+zip_app_path = 
+  if UseBleedingEdge
+    "Visual Studio Code - Insiders.app"
+  else
+    "Visual Studio Code.app"
+  end
+
+default_vscode_dir = "#{app_path}/#{zip_app_path}"
+target_vscode_dir = "#{app_path}/Visual Studio Code.app"
+
+link_id =
+  if UseBleedingEdge
+    "723966"
+  else
+    "620882"
+  end
+
+if UseBleedingEdge
+  puts "Using bleeding edge VSCode"
+end
+
 puts app_path
 
-vscode_dir =
-  if UseBleedingEdge
-    "#{app_path}/Visual Studio Code - Insiders.app"
-  else
-    "#{app_path}/Visual Studio Code.app"
-  end
-
-if Dir.exists? vscode_dir
-  puts "VSCode#{if UseBleedingEdge then " Bleeding Edge" else "" end} already installed"
-else
-  if UseBleedingEdge
-    system "curl -Lo vscode.zip https://go.microsoft.com/fwlink/?LinkId=723966"
-  else
-    system "curl -Lo vscode.zip https://go.microsoft.com/fwlink/?LinkID=620882"
-  end
-  system "unzip vscode.zip 'Visual Studio Code.app/*' -d '#{app_path}'"
+if Dir.exists? target_vscode_dir
+  puts "VSCode already installed"
+  exit
 end
+
+system "curl -Lo vscode.zip https://go.microsoft.com/fwlink/?LinkId=#{link_id}"
+
+system "unzip vscode.zip '#{zip_app_path}/*' -d '#{app_path}'"
+
+FileUtils.mv default_vscode_dir, target_vscode_dir
