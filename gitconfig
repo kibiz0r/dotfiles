@@ -38,7 +38,7 @@
   url = remote get-url --all origin
   urls = !"git remote get-url --all origin && git submodule foreach --recursive git remote get-url --all origin"
   pullr = pull --rebase
-  out = !"git merge --abort && git reset --hard HEAD"
+  out = !"git merge --abort 2> /dev/null || git rebase --abort 2> /dev/null #"
   re = reset --hard
   to = reset --hard
   gud = !"git reset --hard HEAD && git clean -df"
