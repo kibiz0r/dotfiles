@@ -89,6 +89,10 @@
     ~/Gemfile.lock: Gemfile.lock
     ~/.mailcap: mailcap
     ~/.config/csharp: csharp
+    ~/Library/Application Support/browsh:
+      force: true
+      create: true
+      path: browsh
 
 - shell:
   - [./require_kibiyama ./launch_sync_music, "Maybe launching kibiyama's music sync"]

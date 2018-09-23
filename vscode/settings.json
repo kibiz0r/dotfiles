@@ -51,7 +51,7 @@
     "workbench.startupEditor": "newUntitledFile",
     "editor.detectIndentation": false,
     "editor.formatOnPaste": true,
-    "editor.formatOnSave": false,
+    "editor.formatOnSave": true,
     "editor.formatOnType": true,
     "files.associations": {
         "*.xaml": "html"

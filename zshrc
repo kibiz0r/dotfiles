@@ -88,7 +88,7 @@ alias git=hub
 alias mvim='/usr/local/bin/mvim $@ > /dev/null 2>&1'
 alias dot="cd $HOME/.dotfiles"
 alias bis="cd $HOME/git/BISSELL_Xamarin_App"
-alias reddit="rtv --enable-media"
+alias reddit="RTV_BROWSER=lynx rtv --enable-media"
 alias csharp="$(command which csharp) -r:System.Reactive.Core,System.Reactive.Linq,System.Reactive.Interfaces"
 
 # NOTE: Mono bugs

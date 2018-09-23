@@ -15,7 +15,7 @@
   upr = pull --rebase
   cfg = !"/usr/local/bin/mvim $HOME/.gitconfig 2> /dev/null"
   on = !"ON_BRANCH=\"$(echo \"$1\" | tr '[:upper:]' '[:lower:]' | sed -e \"s/[^[:alnum:]\\/\\.]/-/g\" -e \"s/--*/-/g\" -e \"s/-\\././g\" -e \"s/[-.]*$//\")\"; git checkout -B \"$ON_BRANCH\"; git config branch.\"$ON_BRANCH\".remote origin; git config branch.\"$ON_BRANCH\".merge \"refs/heads/$ON_BRANCH\"; echo \"Got on $ON_BRANCH\" #"
-  with = !"if [[ \"$1\" == it ]]; then git pull && git merge \"origin/develop\"; else git cherry-pick \"$1\"; fi #"
+  with = !"if [[ \"$1\" == it ]]; then git fetch && git merge \"origin/develop\"; else git cherry-pick \"$1\"; fi #"
   with-it = with it
   amend = commit --amend
   b = branch
@@ -33,6 +33,7 @@
   rbc = rebase --continue
   rbs = rebase --skip
   rba = rebase --abort
+  rvc = revert --continue
   pull-reset = !git fetch && git reset --hard FETCH_HEAD
   sa = submodule add
   url = remote get-url --all origin
@@ -80,3 +81,5 @@
 	branch = false
 [url "git@github.com:"]
 	insteadOf = git://github.com/
+[stash]
+	showPatch = true
