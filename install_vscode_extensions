@@ -19,3 +19,6 @@
     --install-extension vscjava.vscode-java-test \
     --install-extension vscjava.vscode-maven \
     --install-extension vscodevim.vim
+
+# Test Explorer doesn't care that F# names can have spaces, so fix it!
+sed -i '' 's/FullyQualifiedName~\${testName}/FullyQualifiedName~"${testName}"/' ~/.vscode/extensions/formulahendry.dotnet-test-explorer-0.2.2/out/src/testCommands.js

@@ -149,9 +149,9 @@
 			<key>~/Library/Application Support/Dash/DocSets/Apple_API_Reference/Apple_API_Reference.docset</key>
 			<string>a</string>
 			<key>~/Library/Application Support/Dash/DocSets/JavaScript/JavaScript.docset</key>
-			<string>j</string>
+			<string>js</string>
 			<key>~/Library/Application Support/Dash/DocSets/Lo-Dash/Lo-Dash.docset</key>
-			<string>j</string>
+			<string>js</string>
 			<key>~/Library/Application Support/Dash/DocSets/Man_Pages/Man Pages.docset</key>
 			<string>man</string>
 			<key>~/Library/Application Support/Dash/DocSets/NET_Framework/NET Framework.docset</key>
@@ -161,15 +161,19 @@
 			<key>~/Library/Application Support/Dash/DocSets/OpenGL_2/OpenGL2.docset</key>
 			<string>gl</string>
 			<key>~/Library/Application Support/Dash/DocSets/React/React.docset</key>
-			<string>j</string>
+			<string>js</string>
 			<key>~/Library/Application Support/Dash/DocSets/Ruby_2/Ruby.docset</key>
 			<string>r</string>
 			<key>~/Library/Application Support/Dash/DocSets/Swift/Swift.docset</key>
 			<string>s</string>
 			<key>~/Library/Application Support/Dash/DocSets/Unity_3D/Unity 3D.docset</key>
 			<string>u</string>
+			<key>~/Library/Application Support/Dash/DocSets/Xamarin/Xamarin.docset</key>
+			<string>x</string>
+			<key>~/Library/Application Support/Dash/GitHub/eyworldwideglsldocset/eyworldwide-glsl-docset.docset</key>
+			<string>glsl</string>
 			<key>~/Library/Application Support/Dash/User Contributed/React Native/React_Native.docset</key>
-			<string>j</string>
+			<string>js</string>
 		</dict>
 	</dict>
 	<key>feeds</key>
@@ -240,6 +244,11 @@
 			<dict>
 				<key>date</key>
 				<date>2017-03-13T16:31:45Z</date>
+			</dict>
+			<key>http://kapeli.com/feeds/Xamarin.xml</key>
+			<dict>
+				<key>date</key>
+				<date>2018-05-01T19:35:57Z</date>
 			</dict>
 		</dict>
 		<key>uninstalled</key>

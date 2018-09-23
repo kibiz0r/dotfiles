@@ -44,5 +44,7 @@
     "vsicons.dontShowNewVersionMessage": true,
     "explorer.confirmDelete": false,
     "explorer.confirmDragAndDrop": false,
-    "workbench.activityBar.visible": false
+    "workbench.activityBar.visible": false,
+    "workbench.startupEditor": "newUntitledFile",
+    "csharp.format.enable": false
 }
