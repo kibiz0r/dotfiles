@@ -11,7 +11,7 @@
   curb = current-branch
   shwifty = !git-shwifty
   twirl = !git stash && git pull && git stash pop
-  up = pull
+  up = !"git pull && git submodule update --init --recursive"
   upr = pull --rebase
   cfg = !"/usr/local/bin/mvim $HOME/.gitconfig 2> /dev/null"
   on = !"ON_BRANCH=\"$(echo \"$1\" | tr '[:upper:]' '[:lower:]' | sed -e \"s/[^[:alnum:]\\/\\.]/-/g\" -e \"s/--*/-/g\" -e \"s/-\\././g\" -e \"s/[-.]*$//\")\"; git checkout -B \"$ON_BRANCH\"; git config branch.\"$ON_BRANCH\".remote origin; git config branch.\"$ON_BRANCH\".merge \"refs/heads/$ON_BRANCH\"; echo \"Got on $ON_BRANCH\" #"
