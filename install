@@ -2,5 +2,9 @@
 
 INSTALL_BRANCH=`git branch | grep '*' | sed 's/* //'`
 
+if [[ $USER == "kibiyama" ]]; then
+  export USE_KIBIYAMA_CUSTOMIZATIONS=yes
+fi
+
 ./install_$INSTALL_BRANCH
 

@@ -12,10 +12,12 @@ ZSH_CUSTOM=$HOME/.zsh_custom
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 USER_HOST=$USER.`hostname | sed s/\.local//`
-if [ ! -f $ZSH_CUSTOM/themes/$USER_HOST.zsh-theme ]; then
-  if [ ! -f $ZSH_CUSTOM/themes/$USER.zsh-theme ]; then
-    ZSH_THEME="kibiyama"
-  fi
+if [ -f $ZSH_CUSTOM/themes/$USER_HOST.zsh-theme ]; then
+  ZSH_THEME=$USER_HOST
+elif [ -f $ZSH_CUSTOM/themes/$USER.zsh-theme ]; then
+  ZSH_THEME=$USER
+else
+  ZSH_THEME="kibiyama"
 fi
 
 # Example aliases

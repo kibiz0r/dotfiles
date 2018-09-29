@@ -35,8 +35,8 @@ end
 puts app_path
 
 if Dir.exists? target_vscode_dir
-  puts "VSCode already installed"
-  exit
+  puts "VSCode already installed; reinstalling"
+  FileUtils.rm_rf target_vscode_dir
 end
 
 system "curl -Lo vscode.zip https://go.microsoft.com/fwlink/?LinkId=#{link_id}"
