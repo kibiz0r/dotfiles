@@ -51,7 +51,7 @@
     "workbench.startupEditor": "newUntitledFile",
     "editor.detectIndentation": false,
     "editor.formatOnPaste": true,
-    "editor.formatOnSave": true,
+    "editor.formatOnSave": false,
     "editor.formatOnType": true,
     "files.associations": {
         "*.xaml": "html"
@@ -72,5 +72,6 @@
     "vsicons.projectDetection.disableDetect": true,
     "omnisharp.loggingLevel": "critical",
     "debug.internalConsoleOptions": "neverOpen",
-    "vim.overrideCopy": false
+    "vim.overrideCopy": false,
+    "editor.copyWithSyntaxHighlighting": false
 }

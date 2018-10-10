@@ -1,18 +1,20 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
-# SPACE_COLOR=$'\e[48;5;248m'
 TAB_COLOR=$'\e[48;5;236m'
 DINGLEBERRY_COLOR=$'\e[48;5;52m'
-
-# RESET_FG_COLOR=$'\e[39m'
 RESET_BG_COLOR=$'\e[49m'
-# RESET_COLOR="${RESET_FG_COLOR}${RESET_BG_COLOR}"
 
-cat $@ |
-    # sed -E "s/([ ]+)/$(echo $SPACE_COLOR)\1$(echo $RESET_BG_COLOR)/g" |
-    # sed -E "s/([	]+)/$(echo $TAB_COLOR)\1$(echo $RESET_BG_COLOR)/g" |
-    # sed -E "s/([ 	]+)\$/$(echo $DINGLEBERRY_COLOR)\1$(echo $RESET_BG_COLOR)/g" |
-    # perl -pe "s/^([ \t]+)/$(echo $SPACE_COLOR)\1$(echo $RESET_BG_COLOR)/g" |
+IFS=: read MY_FILE MY_LINE <<< "${@: -1}"
+
+MY_OPTS_LENGTH=${#@}
+MY_OPTS_LENGTH=$((MY_OPTS_LENGTH > 1 ? MY_OPTS_LENGTH : 0))
+MY_OPTS=${@::MY_OPTS_LENGTH}
+
+if [[ -n $MY_LINE ]]; then
+  MY_OPTS="$MY_OPTS +$MY_LINE"
+fi
+
+cat $MY_FILE |
     perl -pe "s/(\t+)(?![ \t]*$)/$(echo $TAB_COLOR)\1$(echo $RESET_BG_COLOR)/g" |
     perl -pe "s/([ \t]+(?:\\e\\[[\\d;]+m[ \t]*)*)\$/$(echo $DINGLEBERRY_COLOR)\1$(echo $RESET_BG_COLOR)/g" |
-    less
+    less $MY_OPTS

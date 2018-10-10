@@ -1,0 +1,38 @@
+#!/usr/bin/env zsh
+
+export WINEPREFIX="$HOME/.wine-cleanupcode"
+
+if [[ ! -d "$HOME/.resharper-clt" ]]; then
+    curl -Lo "$HOME/.resharper-clt.zip" https://download-cf.jetbrains.com/resharper/ReSharperUltimate.2018.2.3/JetBrains.ReSharper.CommandLineTools.2018.2.3.zip
+    unzip -d "$HOME/.resharper-clt" "$HOME/.resharper-clt.zip"
+    rm "$HOME/.resharper-clt.zip"
+fi
+
+if ! which wine > /dev/null; then
+    brew install wine
+fi
+
+if ! which winetricks > /dev/null; then
+    brew install winetricks
+fi
+
+if [[ ! -d "$HOME/.wine-cleanupcode" ]]; then
+    WINEARCH=win32 wine wineboot --init
+    winetricks dotnet46
+fi
+
+git_modified_files=""
+
+while read -r l; do
+    if [[ $l =~ '^[^ ]+ (.+)' ]]; then
+        if [[ $git_modified_files != "" ]]; then
+            git_modified_files+=";"
+        fi
+        git_modified_files+="$match"
+    fi
+done <<< "$(git status --porcelain)"
+
+sln=(*.sln)
+dotsettings=(*.DotSettings)
+
+WINEDEBUG=-all wine "$HOME/.resharper-clt/cleanupcode.x86.exe" $@

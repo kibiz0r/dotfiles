@@ -99,3 +99,4 @@ export MONO_MANAGED_WATCHER=false
 export FrameworkPathOverride=$(dirname $(which mono))/../lib/mono/4.5/
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+export PATH="/usr/local/opt/qt/bin:$PATH"
