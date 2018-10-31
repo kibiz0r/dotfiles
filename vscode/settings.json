@@ -73,5 +73,7 @@
     "omnisharp.loggingLevel": "critical",
     "debug.internalConsoleOptions": "neverOpen",
     "vim.overrideCopy": false,
-    "editor.copyWithSyntaxHighlighting": false
+    "editor.copyWithSyntaxHighlighting": false,
+    "window.nativeFullScreen": false,
+    "window.restoreFullscreen": true
 }

@@ -2,8 +2,14 @@
   name = Michael Harrington
   email = kibiz0r@gmail.com
 [alias]
+  some = add -p
+  away = checkout -p
+  since = diff --stat
   uh = !"git config --global --get alias.$@ #"
   wut = !"git config --global --get alias.$@ #"
+  wtf = !"git config --global --get alias.$@ #"
+  issues = issue
+  remotes = remote -v
   a = add
   df = diff --ws-error-highlight=all
   d = df
@@ -70,18 +76,27 @@
 [core]
   excludesfile = ~/.gitignore_global
   autocrlf = input
+  pager = diff-so-fancy | tabless
 [difftool "pldiff"]
   cmd = pldiff $LOCAL $REMOTE
 [diff]
   tool = pldiff
 [filter "lfs"]
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
-	clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+  required = true
+  clean = git-lfs clean -- %f
 [pager]
-	branch = false
+  branch = false
 [url "git@github.com:"]
-	insteadOf = git://github.com/
+  insteadOf = git://github.com/
 [stash]
-	showPatch = true
+  showPatch = true
+[color "diff"]
+  meta = yellow
+  frag = magenta bold
+  commit = yellow bold
+  whitespace = red reverse
+[diff-so-fancy]
+  markEmptyLines = false
+  stripLeadingSymbols = false
