@@ -2,7 +2,7 @@
   name = Michael Harrington
   email = kibiz0r@gmail.com
 [alias]
-  fixed = !"FIXED=$(git status --porcelain | grep \"^UU\" | sed \"s/UU //\" | head -n1); if [[ -n $FIXED ]]; then echo git add \"$FIXED\"; git add \"$FIXED\"; fi; NEXT=$(git status --porcelain | grep \"^UU\" | sed \"s/UU //\" | head -n1); if [[ -n $NEXT ]]; then echo Next is \"$NEXT\"; else echo 'All done!'; fi"
+  fixed = !"FIXED=$(git status --porcelain | grep \"^U\\w\" | sed \"s/U[[:alpha:]] //\" | head -n1); if [[ -n $FIXED ]]; then echo git add \"$FIXED\"; git add \"$FIXED\"; fi; NEXT=$(git status --porcelain | grep \"^U\\w\" | sed \"s/U[[:alpha:]] //\" | head -n1); if [[ -n $NEXT ]]; then echo Next is \"$NEXT\"; else echo 'All done!'; fi"
   some = add -p
   away = checkout -p
   since = diff --stat
