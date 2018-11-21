@@ -27,6 +27,9 @@
     "[json]": {
         "editor.tabSize": 2
     },
+    "[ruby]": {
+        "editor.tabSize": 2
+    },
     "editor.acceptSuggestionOnCommitCharacter": false,
     "vim.useSystemClipboard": true,
     "files.exclude": {
@@ -51,7 +54,7 @@
     "workbench.startupEditor": "newUntitledFile",
     "editor.detectIndentation": false,
     "editor.formatOnPaste": true,
-    "editor.formatOnSave": false,
+    "editor.formatOnSave": true,
     "editor.formatOnType": true,
     "files.associations": {
         "*.xaml": "html"
@@ -75,5 +78,6 @@
     "vim.overrideCopy": false,
     "editor.copyWithSyntaxHighlighting": false,
     "window.nativeFullScreen": false,
-    "window.restoreFullscreen": true
+    "window.restoreFullscreen": true,
+    "update.channel": "none"
 }
