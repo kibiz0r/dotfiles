@@ -91,7 +91,7 @@ alias mvim='/usr/local/bin/mvim $@ > /dev/null 2>&1'
 alias dot="cd $HOME/.dotfiles"
 alias bis="cd $HOME/git/BISSELL_Xamarin_App"
 alias reddit="RTV_BROWSER=lynx rtv --enable-media"
-alias csharp="$(command which csharp) -r:System.Reactive.Core,System.Reactive.Linq,System.Reactive.Interfaces"
+alias csharp="$(command which csharp) -r:System.Reactive.Core,System.Reactive.Linq,System.Reactive.Interfaces -r:System.Net.Http"
 
 # NOTE: Mono bugs
 # Prevent IOException: kqueue() FileSystemWatcher has reached the maximum nunmber of files to watch.
@@ -101,3 +101,4 @@ export MONO_MANAGED_WATCHER=false
 export FrameworkPathOverride=$(dirname $(which mono))/../lib/mono/4.5/
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+export PATH="/usr/local/opt/qt/bin:$PATH"

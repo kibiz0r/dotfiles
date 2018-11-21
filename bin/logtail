@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+TRACE=$'\e[38;5;30m'
+DEBUG=$'\e[38;5;246m'
+INFO=$'\e[38;5;255m'
+WARN=$'\e[38;5;214m'
+ERROR=$'\e[38;5;196m'
+FATAL=$'\e[38;5;207m'
+
+tail $@ |
+  perl -p \
+  -e "s/^(.*TRACE)/$TRACE\1/;" \
+  -e "s/^(.*DEBUG)/$DEBUG\1/;" \
+  -e "s/^(.*INFO)/$INFO\1/;" \
+  -e "s/^(.*WARN)/$WARN\1/;" \
+  -e "s/^(.*ERROR)/$ERROR\1/;" \
+  -e "s/^(.*FATAL)/$FATAL\1/;"

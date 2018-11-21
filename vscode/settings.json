@@ -27,6 +27,9 @@
     "[json]": {
         "editor.tabSize": 2
     },
+    "[ruby]": {
+        "editor.tabSize": 2
+    },
     "editor.acceptSuggestionOnCommitCharacter": false,
     "vim.useSystemClipboard": true,
     "files.exclude": {
@@ -72,5 +75,9 @@
     "vsicons.projectDetection.disableDetect": true,
     "omnisharp.loggingLevel": "critical",
     "debug.internalConsoleOptions": "neverOpen",
-    "vim.overrideCopy": false
+    "vim.overrideCopy": false,
+    "editor.copyWithSyntaxHighlighting": false,
+    "window.nativeFullScreen": false,
+    "window.restoreFullscreen": true,
+    "update.channel": "none"
 }

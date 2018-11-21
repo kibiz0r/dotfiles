@@ -110,3 +110,7 @@ brew "mosh"
 brew "gdbm"
 brew "lynx"
 brew "browsh"
+brew "ask-cli"
+brew "lzip"
+brew "diff-so-fancy"
+brew "libimobiledevice", args: ["HEAD"]

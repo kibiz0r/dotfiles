@@ -1,0 +1,22 @@
+#!/usr/bin/env zsh
+
+git_modified_files=""
+
+while read -r l; do
+    if [[ $l =~ '^[^ ]+ (.+)' ]]; then
+        if [[ $git_modified_files != "" ]]; then
+            git_modified_files+=";"
+        fi
+        git_modified_files+="$match"
+    fi
+done <<< "$(git status --porcelain)"
+
+sln=(*.sln)
+dotsettings=(*.DotSettings)
+resources=(**/Resources)
+bin=(**/bin)
+obj=(**/obj)
+json=(**/*.json)
+js=(**/*.js)
+
+cleanupcode "$sln" --settings="$dotsettings" --include="$git_modified_files" --exclude="$resources;$bin;$obj;$json;$js"

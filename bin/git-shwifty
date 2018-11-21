@@ -1,13 +1,26 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
-CURRENT=$(git rev-parse --abbrev-ref HEAD)
+if [[ -z $@ ]]; then
+  cat <<EOS
+usage: git shwifty <shell command>
+
+Finds a commit SHA where <shell command> succeeds
+EOS
+
+  exit 1
+fi
+
+CURRENT="$(git rev-parse --abbrev-ref HEAD)"
 
 while true; do
-  if eval "$1"; then
+  if eval "$@" > /dev/null; then
     git rev-parse HEAD
     break
   fi
-  git checkout HEAD^
+  if ! git checkout HEAD^ > /dev/null 2>&1; then
+    git checkout "$CURRENT" > /dev/null 2>&1
+    exit 1
+  fi
 done
 
-git checkout $CURRENT
+git checkout "$CURRENT" > /dev/null 2>&1

@@ -2,7 +2,15 @@
   name = Michael Harrington
   email = kibiz0r@gmail.com
 [alias]
+  fixed = !"FIXED=$(git status --porcelain | grep \"^U\\w\" | sed \"s/U[[:alpha:]] //\" | head -n1); if [[ -n $FIXED ]]; then echo git add \"$FIXED\"; git add \"$FIXED\"; fi; NEXT=$(git status --porcelain | grep \"^U\\w\" | sed \"s/U[[:alpha:]] //\" | head -n1); if [[ -n $NEXT ]]; then echo Next is \"$NEXT\"; else echo 'All done!'; fi"
+  some = add -p
+  away = checkout -p
+  since = diff --stat
   uh = !"git config --global --get alias.$@ #"
+  wut = !"git config --global --get alias.$@ #"
+  wtf = !"git config --global --get alias.$@ #"
+  issues = issue
+  remotes = remote -v
   a = add
   df = diff --ws-error-highlight=all
   d = df
@@ -14,10 +22,11 @@
   up = !"git pull && git submodule update --init --recursive"
   upr = pull --rebase
   cfg = !"/usr/local/bin/mvim $HOME/.gitconfig 2> /dev/null"
-  on = !"ON_BRANCH=\"$(echo \"$1\" | tr '[:upper:]' '[:lower:]' | sed -e \"s/[^[:alnum:]\\/\\.]/-/g\" -e \"s/--*/-/g\" -e \"s/-\\././g\" -e \"s/[-.]*$//\")\"; git checkout -B \"$ON_BRANCH\"; git config branch.\"$ON_BRANCH\".remote origin; git config branch.\"$ON_BRANCH\".merge \"refs/heads/$ON_BRANCH\"; echo \"Got on $ON_BRANCH\" #"
+  on = !"ON_BRANCH=\"$(echo \"$@\" | tr '[:upper:]' '[:lower:]' | sed -e \"s/'//g\" -e \"s/[^[:alnum:]\\/\\.]/-/g\" -e \"s/--*/-/g\" -e \"s/-\\././g\" -e \"s/[-.]*$//\")\"; git checkout -B \"$ON_BRANCH\"; git config branch.\"$ON_BRANCH\".remote origin; git config branch.\"$ON_BRANCH\".merge \"refs/heads/$ON_BRANCH\"; echo \"Got on $ON_BRANCH\" #"
   with = !"if [[ \"$1\" == it ]]; then git fetch && git merge \"origin/develop\"; else git cherry-pick \"$1\"; fi #"
   with-it = with it
   amend = commit --amend
+  amen = commit --amend
   b = branch
   ba = branch -a
   bd = branch -d
@@ -42,7 +51,7 @@
   out = !"git merge --abort 2> /dev/null || git rebase --abort 2> /dev/null #"
   re = reset --hard
   to = reset --hard
-  gud = !"git reset --hard HEAD && git clean -df"
+  gud = !"git reset --hard HEAD && git clean -dfx"
   ma = merge --abort
   submodules = submodule foreach --recursive git status
   bruh = branch -vv
@@ -68,18 +77,27 @@
 [core]
   excludesfile = ~/.gitignore_global
   autocrlf = input
+  pager = diff-so-fancy | tabless
 [difftool "pldiff"]
   cmd = pldiff $LOCAL $REMOTE
 [diff]
   tool = pldiff
 [filter "lfs"]
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
-	clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+  required = true
+  clean = git-lfs clean -- %f
 [pager]
-	branch = false
+  branch = false
 [url "git@github.com:"]
-	insteadOf = git://github.com/
+  insteadOf = git://github.com/
 [stash]
-	showPatch = true
+  showPatch = true
+[color "diff"]
+  meta = yellow
+  frag = magenta bold
+  commit = yellow bold
+  whitespace = red reverse
+[diff-so-fancy]
+  markEmptyLines = false
+  stripLeadingSymbols = false
