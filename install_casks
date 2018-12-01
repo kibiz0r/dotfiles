@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
 CASKS_FILE="Brewfile.casks"
-if [ ! -z USE_HOME_APPDIR ]; then
+if [ ! -z $USE_HOME_APPDIR ]; then
   CASKS_FILE="$CASKS_FILE.home_appdir"
 fi
 

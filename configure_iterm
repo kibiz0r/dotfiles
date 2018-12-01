@@ -1,9 +1,9 @@
 #!/usr/bin/env sh
 
 if [ -d iTerm2.$(./dotfiles_user_host) ]; then
-  rm ~/.iTerm2
+  rm -rf ~/.iTerm2
   ln -sf ~/.dotfiles/iTerm2.$(./dotfiles_user_host) ~/.iTerm2
 else
-  rm ~/.iTerm2
+  rm -rf ~/.iTerm2
   ln -sf ~/.dotfiles/iTerm2 ~/.iTerm2
 fi

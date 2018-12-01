@@ -57,6 +57,7 @@
   - [./require_kibiyama ./configure_notification_center, "Maybe configuring kibiyama's notifications"]
   - [./require_kibiyama ./configure_linked_preferences, "Maybe configuring kibiyama's linked preferences"]
   # TODO:
+  # - Dock apps
   # - Remote Login
   # - Remote Management
   # - Insomnia configuration, and run immediately and on start, and grant security permissions
