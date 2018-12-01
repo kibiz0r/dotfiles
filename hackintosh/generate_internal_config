@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
 cp hackintosh/usb_config.plist hackintosh/internal_config.plist
-/usr/libexec/PlistBuddy -c 'set :GUI:Theme clover-next-black' hackintosh/internal_config.plist
+
+/usr/libexec/PlistBuddy -c 'set :GUI:Theme clover-theme-next-black' hackintosh/internal_config.plist
 

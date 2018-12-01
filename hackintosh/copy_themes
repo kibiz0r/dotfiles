@@ -4,4 +4,5 @@ rm -rf /Volumes/ESP/EFI/CLOVER/themes
 cp -r hackintosh/themes /Volumes/ESP/EFI/CLOVER/themes
 
 /usr/libexec/PlistBuddy -c 'set :Theme:Components:Label true' /Volumes/ESP/EFI/CLOVER/themes/clover-theme-minimal/theme.plist
+/usr/libexec/PlistBuddy -c 'set :Theme:Components:Label true' /Volumes/ESP/EFI/CLOVER/themes/clover-theme-next-black/theme.plist
 

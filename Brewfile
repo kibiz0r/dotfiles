@@ -114,3 +114,4 @@ brew "ask-cli"
 brew "lzip"
 brew "diff-so-fancy"
 brew "libimobiledevice", args: ["HEAD"]
+brew "lsusb"
