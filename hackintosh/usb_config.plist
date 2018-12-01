@@ -164,7 +164,7 @@
 		<key>Inject</key>
 		<dict>
 			<key>ATI</key>
-			<false/>
+			<true/>
 			<key>Intel</key>
 			<true/>
 			<key>NVidia</key>
@@ -173,7 +173,7 @@
 		<key>VRAM</key>
 		<integer>4096</integer>
 		<key>VideoPorts</key>
-		<integer>4</integer>
+		<integer>5</integer>
 	</dict>
 	<key>KernelAndKextPatches</key>
 	<dict>
