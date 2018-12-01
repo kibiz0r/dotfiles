@@ -27,4 +27,9 @@ hackintosh/copy_kexts
 
 hackintosh/copy_themes
 
+hackintosh/generate_internal_config
+
 hackintosh/copy_config
+
+hackintosh/generate_switch_to_internal_script
+
