@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+ln -sf ../../profiles.json hackintosh/Lilu-and-Friends/Scripts/profiles.json
+
+hackintosh/Lilu-and-Friends/Run.command
+

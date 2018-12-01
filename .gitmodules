@@ -10,3 +10,12 @@
 [submodule "UnaToggl"]
 	path = UnaToggl
 	url = git@github.com:kibiz0r/UnaToggl.git
+[submodule "hackintosh/Lilu-and-Friends"]
+	path = hackintosh/Lilu-and-Friends
+	url = git@github.com:corpnewt/Lilu-and-Friends.git
+[submodule "hackintosh/themes/clover-theme-minimal"]
+	path = hackintosh/themes/clover-theme-minimal
+	url = git@github.com:al3xtjames/clover-theme-minimal.git
+[submodule "hackintosh/themes/clover-theme-next-black"]
+	path = hackintosh/themes/clover-theme-next-black
+	url = git@github.com:al3xtjames/clover-theme-next-black.git

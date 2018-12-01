@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+echo <<-EOS > /Volumes/ESP/EFI/CLOVER/switch_to_internal_config
+#!/usr/bin/env bash
+
+sudo mkdir /Volumes/ESP2
+sudo mount -t msdos /dev/disk2s1 /Volumes/ESP2
+
+cp /Volumes/ESP2/EFI/CLOVER/internal_config.plist /Volumes/ESP/EFI/CLOVER/config.plist 
+EOS
+
+chmod +x /Volumes/ESP/EFI/CLOVER/switch_to_internal_config
+
