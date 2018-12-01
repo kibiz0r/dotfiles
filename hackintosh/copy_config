@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+cp hackintosh/usb_config.plist /Volumes/ESP/EFI/CLOVER/config.plist
+cp hackintosh/internal_config.plist /Volumes/ESP/EFI/CLOVER/internal_config.plist
+
