@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+hackintosh/mount_cruzer_to_esp
+
 rm -rf hackintosh/kexts
 mkdir hackintosh/kexts
 
@@ -14,25 +16,6 @@ done
 mv hackintosh/kexts/VirtualSMC/Kexts/VirtualSMC.kext hackintosh/kexts/.
 rm -rf hackintosh/kexts/VirtualSMC
 
-disks=$(diskutil list | grep /dev/disk | sed 's/\/dev\/\(disk[[:digit:]]\).*/\1/')
-
-cruzer=""
-
-for disk in $disks; do
-  if diskutil info $disk | grep "Device / Media Name:      Cruzer Glide" > /dev/null; then
-    cruzer=$disk
-  fi
-done
-
-if [[ -z $cruzer ]]; then
-  echo "Couldn't find Cruzer Glide"
-  exit 1
-fi
-
-echo "Found Cruzer Glide at $cruzer"
-
-sudo mkdir /Volumes/ESP
-sudo mount -t msdos /dev/"$cruzer"s1 /Volumes/ESP
-
 rm -rf /Volumes/ESP/EFI/CLOVER/kexts/Other/*
 cp -r hackintosh/kexts/*.kext /Volumes/ESP/EFI/CLOVER/kexts/Other
+

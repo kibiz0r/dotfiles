@@ -2,4 +2,4 @@
 
 cp hackintosh/usb_config.plist /Volumes/ESP/EFI/CLOVER/config.plist
 cp hackintosh/internal_config.plist /Volumes/ESP/EFI/CLOVER/internal_config.plist
-
+cp hackintosh/switch_to_internal_config /Volumes/ESP/EFI/CLOVER/switch_to_internal_config

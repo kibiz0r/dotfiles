@@ -4,5 +4,5 @@ if [ ! -f hackintosh/clover.pkg ]; then
   curl -Lo hackintosh/clover.pkg https://github.com/Dids/clover-builder/releases/download/v2.4k_r4782/Clover_v2.4k_r4782.pkg
 fi
 
-open "https://hackintosh.gitbook.io/-r-hackintosh-vanilla-desktop-guide/clover-setup"
-open hackintosh/clover.pkg
+sudo installer -applyChoiceChangesXML hackintosh/install_clover.plist -package hackintosh/clover.pkg -target "/Volumes/Install macOS Mojave"
+

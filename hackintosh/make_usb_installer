@@ -5,7 +5,7 @@ disks=$(diskutil list | grep /dev/disk | sed 's/\/dev\/\(disk[[:digit:]]\).*/\1/
 cruzer=""
 
 for disk in $disks; do
-  if diskutil info $disk | grep "Device / Media Name:      Cruzer Glide" > /dev/null; then
+  if diskutil info $disk | grep "Cruzer Glide" > /dev/null; then
     cruzer=$disk
   fi
 done
@@ -23,13 +23,13 @@ sudo "/Applications/Install macOS Mojave.app/Contents/Resources/createinstallmed
 
 hackintosh/install_clover
 
+hackintosh/build_kexts
+
 hackintosh/copy_kexts
 
 hackintosh/copy_themes
 
 hackintosh/generate_internal_config
 
-hackintosh/copy_config
-
-hackintosh/generate_switch_to_internal_script
+hackintosh/copy_configs
 
