@@ -290,20 +290,20 @@
 		<key>CsrActiveConfig</key>
 		<string>0x3E7</string>
 		<key>MLB</key>
-		<string>C02344130GUF2FRUE</string>
+		<string>C02238207QXF2FRJA</string>
 		<key>ROM</key>
 		<string>UseMacAddr0</string>
 	</dict>
 	<key>SMBIOS</key>
 	<dict>
 		<key>BoardSerialNumber</key>
-		<string>C02344130GUF2FRUE</string>
+		<string>C02238207QXF2FRJA</string>
 		<key>ProductName</key>
 		<string>iMac13,2</string>
 		<key>SerialNumber</key>
-		<string>C02LMKY0DNCW</string>
+		<string>C02JFXZEDNCW</string>
 		<key>SmUUID</key>
-		<string>C495EE18-C8EA-4100-8CAD-3099AC27772F</string>
+		<string>AF26E3CF-1272-4DA3-A98A-42BCF99A0D5A</string>
 	</dict>
 	<key>SystemParameters</key>
 	<dict>
