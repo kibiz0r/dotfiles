@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
 
+hackintosh/mount_usb
+hackintosh/mount_internal
 
-sudo mkdir /Volumes/ESP2
-sudo mount -t msdos /dev/disk2s1 /Volumes/ESP2
-
-cp /Volumes/ESP2/EFI/CLOVER/internal_config.plist /Volumes/ESP/EFI/CLOVER/config.plist
+cp /Volumes/ESP-USB/EFI/CLOVER/internal_config.plist /Volumes/ESP-internal/EFI/CLOVER/config.plist
 

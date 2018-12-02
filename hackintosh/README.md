@@ -16,6 +16,27 @@
 # Post-install
 
 ```
-sudo mkdir /Volumes/ESP; sudo mount -t msdos /dev/disk1s1 /Volumes/ESP
-/Volumes/ESP/EFI/CLOVER/switch_to_internal_config
+disks=$(diskutil list | grep /dev/disk | sed 's/\/dev\/\(disk[[:digit:]]\).*/\1/')
+
+cruzer=""
+
+for disk in $disks; do
+  if diskutil info $disk | grep "Cruzer Glide" > /dev/null; then
+    cruzer=$disk
+  fi
+done
+
+if [[ -z $cruzer ]]; then
+  echo "Couldn't find Cruzer Glide"
+  exit 1
+fi
+
+echo "Found Cruzer Glide at $cruzer"
+
+diskutil unmount "$cruzer"s1
+sudo mkdir /Volumes/ESP-USB
+sudo mount -t msdos /dev/"$cruzer"s1 /Volumes/ESP-USB
+
+/Volumes/ESP-USB/EFI/CLOVER/switch_to_internal_config
 ```
+

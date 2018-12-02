@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+disks=$(diskutil list | grep /dev/disk | sed 's/\/dev\/\(disk[[:digit:]]\).*/\1/')
+
+internal=""
+
+for disk in $disks; do
+  if diskutil info "$disk"s2 | grep "Apple_APFS" > /dev/null; then
+    internal=$disk
+  fi
+done
+
+if [[ -z $internal ]]; then
+  echo "Couldn't find internal EFI"
+  exit 1
+fi
+
+echo "Found internal EFI at $internal"
+
+diskutil unmount "$internal"s1
+sudo mkdir /Volumes/ESP-internal
+sudo mount -t msdos /dev/"$internal"s1 /Volumes/ESP-internal
+

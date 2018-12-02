@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-sudo diskutil unmount /Volumes/ESP
-
 disks=$(diskutil list | grep /dev/disk | sed 's/\/dev\/\(disk[[:digit:]]\).*/\1/')
 
 cruzer=""
@@ -19,6 +17,7 @@ fi
 
 echo "Found Cruzer Glide at $cruzer"
 
-sudo mkdir /Volumes/ESP
-sudo mount -t msdos /dev/"$cruzer"s1 /Volumes/ESP
+diskutil unmount "$cruzer"s1
+sudo mkdir /Volumes/ESP-USB
+sudo mount -t msdos /dev/"$cruzer"s1 /Volumes/ESP-USB
 

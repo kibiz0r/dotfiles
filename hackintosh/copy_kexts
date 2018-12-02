@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-hackintosh/mount_cruzer_to_esp
+hackintosh/mount_usb
 
 rm -rf hackintosh/kexts
 mkdir hackintosh/kexts
@@ -16,6 +16,6 @@ done
 mv hackintosh/kexts/VirtualSMC/Kexts/VirtualSMC.kext hackintosh/kexts/.
 rm -rf hackintosh/kexts/VirtualSMC
 
-rm -rf /Volumes/ESP/EFI/CLOVER/kexts/Other/*
-cp -r hackintosh/kexts/*.kext /Volumes/ESP/EFI/CLOVER/kexts/Other
+rm -rf /Volumes/ESP-USB/EFI/CLOVER/kexts/Other/*
+cp -r hackintosh/kexts/*.kext /Volumes/ESP-USB/EFI/CLOVER/kexts/Other
 
