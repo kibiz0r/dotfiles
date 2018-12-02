@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+if [ -f bin/macserial ]; then
+  echo "macserial already installed"
+  exit 0
+fi
+
+if [ ! -f macserial.zip ]; then
+  curl -Lo macserial.zip https://github.com/acidanthera/macserial/releases/download/2.0.3/macserial-2.0.3-mac.zip
+fi
+
+unzip -d bin macserial.zip
