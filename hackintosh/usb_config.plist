@@ -153,9 +153,16 @@
 			<true/>
 			<key>Tool</key>
 			<true/>
+			<key>Legacy</key>
+			<false/>
 		</dict>
 		<key>Theme</key>
-		<string>clover-theme-minimal</string>
+		<string>clover-theme-next-black</string>
+		<key>Hide</key>
+		<array>
+			<string>Preboot</string>
+			<string>Recovery</string>
+		</array>
 	</dict>
 	<key>Graphics</key>
 	<dict>
