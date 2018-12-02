@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+
+if [ ! -d /Volumes/ESP ]; then
+  sudo mkdir /Volumes/ESP
+  sudo mount -t msdos /dev/disk0s1 /Volumes/ESP
+fi
+
+cp /Volumes/ESP/EFI/CLOVER/config.plist hackintosh/internal_config.plist.bak
+
+hackintosh/generate_internal_config
+
+cp hackintosh/internal_config.plist /Volumes/ESP/EFI/CLOVER/config.plist
