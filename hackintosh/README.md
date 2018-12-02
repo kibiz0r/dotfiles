@@ -16,6 +16,6 @@
 # Post-install
 
 ```
-sudo mkdir /Volumes/ESP; sudo mount -t msdos /dev/disk0s1 /Volumes/ESP
+sudo mkdir /Volumes/ESP; sudo mount -t msdos /dev/disk1s1 /Volumes/ESP
 /Volumes/ESP/EFI/CLOVER/switch_to_internal_config
 ```

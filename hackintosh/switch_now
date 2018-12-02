@@ -3,7 +3,7 @@
 
 if [ ! -d /Volumes/ESP ]; then
   sudo mkdir /Volumes/ESP
-  sudo mount -t msdos /dev/disk0s1 /Volumes/ESP
+  sudo mount -t msdos /dev/disk1s1 /Volumes/ESP
 fi
 
 cp /Volumes/ESP/EFI/CLOVER/config.plist hackintosh/internal_config.plist.bak
