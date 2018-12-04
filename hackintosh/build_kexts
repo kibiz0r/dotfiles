@@ -7,5 +7,5 @@ if [ -d hackintosh/Lilu-and-Friends/Kexts ]; then
   exit 0
 fi
 
-hackintosh/Lilu-and-Friends/Run.command
+hackintosh/Lilu-and-Friends/Run.command -p Default
 

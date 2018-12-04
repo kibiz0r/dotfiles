@@ -92,8 +92,10 @@ alias dot="cd $HOME/.dotfiles"
 alias bis="cd $HOME/git/BISSELL_Xamarin_App"
 alias reddit="RTV_BROWSER=lynx rtv --enable-media"
 alias csharp="$(command which csharp) -r:System.Reactive.Core,System.Reactive.Linq,System.Reactive.Interfaces -r:System.Net.Http"
-alias internal_efi="sudo mkdir /Volumes/ESP; sudo mount -t msdos /dev/disk1s1 /Volumes/ESP"
-alias usb_efi="sudo mkdir /Volumes/ESP2; sudo mount -t msdos /dev/disk2s1 /Volumes/ESP2"
+
+# Hackintosh
+alias esp_internal="$HOME/.dotfiles/hackintosh/mount_internal"
+alias esp_usb="$HOME/.dotfiles/hackintosh/mount_usb"
 
 # NOTE: Mono bugs
 # Prevent IOException: kqueue() FileSystemWatcher has reached the maximum nunmber of files to watch.
