@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+ln -sf ../../profiles.json hackintosh/Lilu-and-Friends/Scripts/profiles.json
+
+if [ -d hackintosh/Lilu-and-Friends/Kexts ]; then
+  echo "Already built Lilu-and-Friends"
+  exit 0
+fi
+
+hackintosh/Lilu-and-Friends/Run.command -p Default
+

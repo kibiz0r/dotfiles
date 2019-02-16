@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+TAB_COLOR=$'\e[48;5;235m'
+DINGLEBERRY_COLOR=$'\e[48;5;52m'
+RESET_BG_COLOR=$'\e[49m'
+
+IFS=: read MY_FILE MY_LINE <<< "${@: -1}"
+
+MY_OPTS_LENGTH=${#@}
+MY_OPTS_LENGTH=$((MY_OPTS_LENGTH > 1 ? MY_OPTS_LENGTH : 0))
+MY_OPTS=${@::MY_OPTS_LENGTH}
+
+if [[ -n $MY_LINE ]]; then
+  MY_OPTS="$MY_OPTS +$MY_LINE"
+fi
+
+([[ -n $MY_FILE ]] && cat "$MY_FILE" || cat) |
+    perl -pe "s/(\t+)(?![ \t]*$)/$TAB_COLOR\1$RESET_BG_COLOR/g" |
+    perl -pe "s/([ \t]+(?:\\e\\[[\\d;]+m[ \t]*)*)\$/$DINGLEBERRY_COLOR\1$RESET_BG_COLOR/g" |
+    less $MY_OPTS

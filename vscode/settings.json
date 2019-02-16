@@ -1,5 +1,4 @@
 {
-    "vim.disableAnnoyingNeovimMessage": true,
     "git.countBadge": "off",
     "macros": {
         "openAndKeep": [
@@ -8,26 +7,29 @@
             "workbench.action.toggleSidebarVisibility"
         ],
         "mergeGroupsAndHideSidebar": [
-            "workbench.action.joinTwoGroups",
-            "workbench.action.joinTwoGroups",
-            "workbench.action.joinTwoGroups",
-            "workbench.action.joinTwoGroups",
-            "workbench.action.joinTwoGroups",
-            "workbench.action.joinTwoGroups",
-            "workbench.action.joinTwoGroups",
-            "workbench.action.joinTwoGroups",
-            "workbench.action.joinTwoGroups",
-            "workbench.action.joinTwoGroups",
-            "workbench.action.joinTwoGroups",
-            "workbench.action.maximizeEditor"
+            "workbench.action.joinAllGroups",
+            "workbench.action.maximizeEditor",
+            "workbench.action.closePanel"
         ]
     },
     "editor.minimap.enabled": false,
     "editor.codeLens": false,
     "editor.rulers": [
-        80
+        100
     ],
-    "editor.tabSize": 2,
+    "editor.tabSize": 4,
+    "[csharp]": {
+        "editor.tabSize": 4
+    },
+    "[xml]": {
+        "editor.tabSize": 4
+    },
+    "[json]": {
+        "editor.tabSize": 2
+    },
+    "[ruby]": {
+        "editor.tabSize": 2
+    },
     "editor.acceptSuggestionOnCommitCharacter": false,
     "vim.useSystemClipboard": true,
     "files.exclude": {
@@ -40,5 +42,42 @@
     },
     "workbench.editor.enablePreview": false,
     "window.zoomLevel": 0,
-    "workbench.iconTheme": "vscode-icons"
+    "workbench.iconTheme": "vscode-icons",
+    "vsicons.dontShowNewVersionMessage": true,
+    "explorer.confirmDelete": false,
+    "explorer.confirmDragAndDrop": false,
+    "workbench.activityBar.visible": false,
+    "git.ignoreLimitWarning": true,
+    "editor.renderWhitespace": "none",
+    "editor.autoClosingBrackets": false,
+    "omnisharp.disableMSBuildDiagnosticWarning": true,
+    "workbench.startupEditor": "newUntitledFile",
+    "editor.detectIndentation": false,
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+    "files.associations": {
+        "*.xaml": "html"
+    },
+    "html.format.wrapAttributes": "force-aligned",
+    "html.suggest.html5": false,
+    "html.suggest.ionic": false,
+    "html.validate.scripts": false,
+    "html.validate.styles": false,
+    "gitlens.advanced.messages": {
+        "suppressShowKeyBindingsNotice": true
+    },
+    "window.newWindowDimensions": "maximized",
+    "workbench.settings.editor": "json",
+    "html.autoClosingTags": false,
+    "html.suggest.angular1": false,
+    "editor.parameterHints.enabled": false,
+    "vsicons.projectDetection.disableDetect": true,
+    "omnisharp.loggingLevel": "critical",
+    "debug.internalConsoleOptions": "neverOpen",
+    "vim.overrideCopy": false,
+    "editor.copyWithSyntaxHighlighting": false,
+    "window.nativeFullScreen": false,
+    "window.restoreFullscreen": true,
+    "update.channel": "none"
 }

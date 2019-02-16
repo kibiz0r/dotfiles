@@ -1,7 +1,16 @@
 #!/usr/bin/env sh
 
-if which brew; then
+if which brew > /dev/null || [ -d $HOME/homebrew ]; then
   echo "brew already installed"
-else
+  exit 0
+fi
+
+if [ -z $USE_HOME_HOMEBREW ]; then
   /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+else
+  echo "Ouch! Looks like we have to install Homebrew in your home directory... :("
+  pushd $HOME
+  rm -rf homebrew
+  mkdir homebrew && curl -L https://github.com/Homebrew/brew/tarball/master | tar xz --strip 1 -C homebrew
+  popd
 fi

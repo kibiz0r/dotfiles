@@ -1,0 +1,3 @@
+#!/usr/bin/env sh
+
+USE_KIBIYAMA_CUSTOMIZATIONS=yes ./install

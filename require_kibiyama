@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+
+if [ -z $USE_KIBIYAMA_CUSTOMIZATIONS ]; then
+  echo "Never mind; not using kibiyama's customizations"
+  exit 0
+fi
+
+eval "$@"

@@ -26,7 +26,22 @@
 	<key>DHGitHubRepo</key>
 	<dict>
 		<key>installed</key>
-		<dict/>
+		<dict>
+			<key>eyworldwide/glsl-docset</key>
+			<dict>
+				<key>date</key>
+				<date>2018-04-01T05:40:25Z</date>
+				<key>entry</key>
+				<dict>
+					<key>name</key>
+					<string>eyworldwide/glsl-docset</string>
+					<key>platform</key>
+					<string>github</string>
+					<key>uniqueIdentifier</key>
+					<string>eyworldwide/glsl-docset</string>
+				</dict>
+			</dict>
+		</dict>
 		<key>uninstalled</key>
 		<dict/>
 	</dict>
@@ -93,7 +108,7 @@
 			<key>React_Native</key>
 			<dict>
 				<key>date</key>
-				<date>2017-06-15T17:37:45Z</date>
+				<date>2018-01-30T03:07:22Z</date>
 				<key>entry</key>
 				<dict>
 					<key>aliases</key>
@@ -137,6 +152,8 @@
 			<string>j</string>
 			<key>~/Library/Application Support/Dash/DocSets/Lo-Dash/Lo-Dash.docset</key>
 			<string>j</string>
+			<key>~/Library/Application Support/Dash/DocSets/Man_Pages/Man Pages.docset</key>
+			<string>man</string>
 			<key>~/Library/Application Support/Dash/DocSets/NET_Framework/NET Framework.docset</key>
 			<string>n</string>
 			<key>~/Library/Application Support/Dash/DocSets/OpenCV_C++/OpenCV C++.docset</key>
@@ -147,6 +164,8 @@
 			<string>j</string>
 			<key>~/Library/Application Support/Dash/DocSets/Ruby_2/Ruby.docset</key>
 			<string>r</string>
+			<key>~/Library/Application Support/Dash/DocSets/Swift/Swift.docset</key>
+			<string>s</string>
 			<key>~/Library/Application Support/Dash/DocSets/Unity_3D/Unity 3D.docset</key>
 			<string>u</string>
 			<key>~/Library/Application Support/Dash/User Contributed/React Native/React_Native.docset</key>
@@ -182,6 +201,11 @@
 				<key>date</key>
 				<date>2016-12-06T20:31:48Z</date>
 			</dict>
+			<key>http://kapeli.com/feeds/Man_Pages.xml</key>
+			<dict>
+				<key>date</key>
+				<date>2017-12-04T16:43:03Z</date>
+			</dict>
 			<key>http://kapeli.com/feeds/NET_Framework.xml</key>
 			<dict>
 				<key>date</key>
@@ -206,6 +230,11 @@
 			<dict>
 				<key>date</key>
 				<date>2017-08-18T22:35:07Z</date>
+			</dict>
+			<key>http://kapeli.com/feeds/Swift.xml</key>
+			<dict>
+				<key>date</key>
+				<date>2018-02-26T16:44:59Z</date>
 			</dict>
 			<key>http://kapeli.com/feeds/Unity_3D.xml</key>
 			<dict>

@@ -1,33 +1,9 @@
 #!/usr/bin/env sh
 
-defaults write -g AppleInterfaceStyle -string 'Dark'
-defaults write -g AppleAquaColorVariant -int 6
-defaults write -g AppleICUForce24HourTime -boolean YES
 defaults write -g AppleShowAllExtensions -boolean YES
-defaults write -g AppleScrollerPagingBehavior -boolean YES
-
-defaults write -g NSNavPanelFileLastListModeForOpenModeKey -int 2
-defaults write -g NavPanelFileListModeForOpenMode -int 2
-defaults write -g NSNavPanelFileListModeForOpenMode2 -int 2
-
 defaults write -g ApplePressAndHoldEnabled -boolean NO
 defaults write -g InitialKeyRepeat -int 15
 defaults write -g KeyRepeat -int 2
-defaults write -g WebAutomaticSpellingCorrectionEnabled -boolean NO
 defaults write -g NSAutomaticDashSubstitutionEnabled -boolean NO
-defaults write -g NSAutomaticSpellingCorrectionEnabled -boolean NO
-defaults write -g NSAutomaticCapitalizationEnabled -boolean NO
 defaults write -g NSAutomaticQuoteSubstitutionEnabled -boolean NO
 defaults write -g NSAutomaticPeriodSubstitutionEnabled -boolean NO
-
-/usr/libexec/PlistBuddy \
--c 'delete :NSPreferredWebServices:NSWebServicesProviderWebSearch:NSDefaultDisplayName' \
--c 'add :NSPreferredWebServices:NSWebServicesProviderWebSearch:NSDefaultDisplayName string "Google"' \
-\
--c 'delete :NSPreferredWebServices:NSWebServicesProviderWebSearch:NSProviderIdentifier' \
--c 'add :NSPreferredWebServices:NSWebServicesProviderWebSearch:NSProviderIdentifier string "com.google.www"' \
-\
--c 'delete :NSUserDictionaryReplacementItems' \
--c 'add :NSUserDictionaryReplacementItems array' \
-\
-~/Library/Preferences/.GlobalPreferences.plist

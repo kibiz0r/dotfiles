@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+# Let's see if we can get rid of this requirement soon:
+USE_HOME_HOMEBREW=yes \
+USE_HOME_APPDIR=yes \
+  ./install_base

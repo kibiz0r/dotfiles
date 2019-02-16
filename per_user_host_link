@@ -1,0 +1,24 @@
+#!/usr/bin/env sh
+
+BASE_PATH="$1"
+KIBIYAMA_PATH="$BASE_PATH.kibiyama"
+USER_PATH="$BASE_PATH.$(./dotfiles_user)"
+USER_HOST_PATH="$BASE_PATH.$(./dotfiles_user_host)"
+
+if [ -f "$USER_HOST_PATH" ]; then
+  echo "Linking $USER_HOST_PATH => $2"
+  rm -rf "$2"
+  ln -s "$PWD/$USER_HOST_PATH" "$2"
+elif [ -f "$USER_PATH" ]; then
+  echo "Linking $USER_PATH => $2"
+  rm -rf "$2"
+  ln -s "$PWD/$USER_PATH" "$2"
+elif [ -f "$KIBIYAMA_PATH" ] && [ ! -z "$USE_KIBIYAMA_CUSTOMIZATIONS" ]; then
+  echo "Linking $KIBIYAMA_PATH => $2"
+  rm -rf "$2"
+  ln -s "$PWD/$KIBIYAMA_PATH" "$2"
+elif [ -f "$BASE_PATH" ]; then
+  echo "Linking $BASE_PATH => $2"
+  rm -rf "$2"
+  ln -s "$PWD/$BASE_PATH" "$2"
+fi

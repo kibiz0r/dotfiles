@@ -1,14 +1,10 @@
 #!/usr/bin/env bash
 
-set -e
+INSTALL_BRANCH=`git branch | grep '*' | sed 's/* //'`
 
-CONFIG="install.conf.yaml"
-DOTBOT_DIR="dotbot"
+if [[ $USER == "kibiyama" ]]; then
+  export USE_KIBIYAMA_CUSTOMIZATIONS=yes
+fi
 
-DOTBOT_BIN="bin/dotbot"
-BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+./install_$INSTALL_BRANCH
 
-cd "${BASEDIR}"
-git submodule update --init --recursive "${DOTBOT_DIR}"
-
-"${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${CONFIG}" "${@}"

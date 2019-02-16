@@ -1,0 +1,20 @@
+#!/usr/bin/env sh
+
+BASE_SCRIPT="$1"
+KIBIYAMA_SCRIPT="$BASE_SCRIPT.kibiyama"
+USER_SCRIPT="$BASE_SCRIPT.$(./dotfiles_user)"
+
+if [ -f "$BASE_SCRIPT" ]; then
+  echo "Running $BASE_SCRIPT"
+  eval "$BASE_SCRIPT"
+fi
+
+if [ ! -z $USE_KIBIYAMA_CUSTOMIZATIONS ]; then
+  echo "Running $KIBIYAMA_SCRIPT"
+  eval "$KIBIYAMA_SCRIPT"
+fi
+
+if [ -f "$USER_SCRIPT" ] && [ "$USER" != kibiyama ]; then
+  echo "Running $USER_SCRIPT"
+  eval "$USER_SCRIPT"
+fi

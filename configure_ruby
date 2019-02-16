@@ -1,0 +1,16 @@
+#!/usr/bin/env sh
+
+if ! which rbenv > /dev/null; then
+  echo "rbenv is not installed"
+  exit
+fi
+
+if ! echo "$PATH" | grep .rbenv > /dev/null; then
+  echo "Initializing rbenv"
+  eval "$(rbenv init -)"
+fi
+
+rbenv install -s `cat ruby-version`
+gem install bundler
+bundle install
+

@@ -2,39 +2,72 @@
   name = Michael Harrington
   email = kibiz0r@gmail.com
 [alias]
+  fixed = !"FIXED=$(git status --porcelain | grep \"^U\\w\" | sed \"s/U[[:alpha:]] //\" | head -n1); if [[ -n $FIXED ]]; then echo git add \"$FIXED\"; git add \"$FIXED\"; fi; NEXT=$(git status --porcelain | grep \"^U\\w\" | sed \"s/U[[:alpha:]] //\" | head -n1); if [[ -n $NEXT ]]; then echo Next is \"$NEXT\"; else echo 'All done!'; fi"
+  some = add -p
+  away = checkout -p
+  since = diff --stat
+  uh = !"git config --global --get alias.$@ #"
+  wut = !"git config --global --get alias.$@ #"
+  wtf = !"git config --global --get alias.$@ #"
+  issues = issue
+  remotes = remote -v
+  a = add
+  df = diff --ws-error-highlight=all
+  d = df
+  forked-by = !"git remote set-url origin `git remote get-url origin | sed \"s/:[^/]*/:$1/\"` # git forked-by kibiz0r"
+  current-branch = !"git branch | grep '*' | sed 's/* //'"
+  curb = current-branch
+  shwifty = !git-shwifty
   twirl = !git stash && git pull && git stash pop
-  on = "!git checkout -b \"$1\" && git config branch.\"$1\".remote origin && git config branch.\"$1\".merge \"refs/heads/$1\" #"
+  up = !"git pull && git submodule update --init --recursive"
+  upr = pull --rebase
+  cfg = !"/usr/local/bin/mvim $HOME/.gitconfig 2> /dev/null"
+  on = !"ON_BRANCH=\"$(echo \"$@\" | tr '[:upper:]' '[:lower:]' | sed -e \"s/'//g\" -e \"s/[^[:alnum:]\\/\\.]/-/g\" -e \"s/--*/-/g\" -e \"s/-\\././g\" -e \"s/[-.]*$//\")\"; git checkout -B \"$ON_BRANCH\"; git config branch.\"$ON_BRANCH\".remote origin; git config branch.\"$ON_BRANCH\".merge \"refs/heads/$ON_BRANCH\"; echo \"Got on $ON_BRANCH\" #"
+  with = !"if [[ \"$1\" == it ]]; then git fetch && git merge \"origin/develop\"; else git cherry-pick \"$1\"; fi #"
+  with-it = with it
+  amend = commit --amend
+  amen = commit --amend
   b = branch
   ba = branch -a
   bd = branch -d
+  bdr = !"git branch -d \"$1\" 2> /dev/null; git push origin --delete \"$1\" #"
   ci = commit
   co = checkout
   st = status
   su = submodule update --init --recursive
-  diffc = diff --cached
-  cleanall = clean -fdx
+  diffc = diff --cached --ws-error-highlight=all
+  dc = diffc
+  cleanall = !"git clean -fdx && git submodule foreach --recursive git clean -fdx"
+  rbi = rebase --interactive
   rbc = rebase --continue
   rbs = rebase --skip
   rba = rebase --abort
+  rvc = revert --continue
   pull-reset = !git fetch && git reset --hard FETCH_HEAD
   sa = submodule add
-  remotes = remote -v
+  url = remote get-url --all origin
+  urls = !"git remote get-url --all origin && git submodule foreach --recursive git remote get-url --all origin"
   pullr = pull --rebase
-  out = merge --abort
-  gud = git reset --hard HEAD
+  out = !"git merge --abort 2> /dev/null || git rebase --abort 2> /dev/null #"
+  re = reset --hard
+  to = reset --hard
+  gud = !"git reset --hard HEAD && git clean -dfx"
   ma = merge --abort
-  submodules = submodule foreach git status
+  submodules = submodule foreach --recursive git status
   bruh = branch -vv
-  logp = log --graph --decorate
-  loga = log --graph --decorate --all
-  logs = log --graph --decorate --all --max-count=16
-  lg = !"git lg1"
-  lg1 = !"git lg1-specific --all"
-  lg2 = !"git lg2-specific --all"
-  lg3 = !"git lg3-specific --all"
-  lg1-specific = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)'
-  lg2-specific = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)'
-  lg3-specific = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset) %C(bold cyan)(committed: %cD)%C(reset) %C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset)%n''          %C(dim white)- %an <%ae> %C(reset) %C(dim white)(committer: %cn <%ce>)%C(reset)'
+  logh = !"git log --color \"$@\" | sed \"s/\\([\\(]HEAD[^\\)]*[\\)]\\)/`git config --get-color '' reverse`\\\\1`git config --get-color '' reset`/\" | less #"
+  logp = logh --graph --decorate
+  loga = logh --graph --decorate --all
+  logs = logh --graph --decorate --all --max-count=16
+  logf = !"git logh --graph --abbrev-commit --decorate --color --format=format:\"$@\" #"
+  lga = "lg1 --all"
+  lga1 = "lg1 --all"
+  lga2 = "lg2 --all"
+  lga3 = "lg3 --all"
+  lg = "lg1"
+  lg1 = !"git logf '%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' $@ #"
+  lg2 = !"git logf '%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' $@ #"
+  lg3 = !"git logf '%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset) %C(bold cyan)(committed: %cD)%C(reset) %C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset)%n''          %C(dim white)- %an <%ae> %C(reset) %C(dim white)(committer: %cn <%ce>)%C(reset)' $@ #"
 [color]
   ui = true
 [color "branch"]
@@ -42,10 +75,29 @@
   current = yellow
   remote = dim white
 [core]
-  excludesfile = /Users/kibiyama/.gitignore_global
+  excludesfile = ~/.gitignore_global
   autocrlf = input
-  mergeoptions = --no-edit
+  pager = diff-so-fancy | tabless
 [difftool "pldiff"]
   cmd = pldiff $LOCAL $REMOTE
 [diff]
   tool = pldiff
+[filter "lfs"]
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+  required = true
+  clean = git-lfs clean -- %f
+[pager]
+  branch = false
+[url "git@github.com:"]
+  insteadOf = git://github.com/
+[stash]
+  showPatch = true
+[color "diff"]
+  meta = yellow
+  frag = magenta bold
+  commit = yellow bold
+  whitespace = red reverse
+[diff-so-fancy]
+  markEmptyLines = false
+  stripLeadingSymbols = false

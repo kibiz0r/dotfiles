@@ -1,13 +1,22 @@
 #!/usr/bin/env sh
 
-if [ -d /Applications/MacVim.app ]; then
+APPDIR="/Applications"
+
+if [ ! -z USE_HOME_APPDIR ]; then
+  APPDIR="$HOME/Applications"
+fi
+
+if [ -d "$APPDIR/MacVim.app" ]; then
   echo "MacVim already installed"
 else
   curl -Lo MacVim.dmg https://github.com/macvim-dev/macvim/releases/download/snapshot-136/MacVim.dmg
   hdiutil attach MacVim.dmg
-  cp -r /Volumes/MacVim/MacVim.app /Applications/MacVim.app
+  cp -r /Volumes/MacVim/MacVim.app "$APPDIR/MacVim.app"
   hdiutil detach /Volumes/MacVim
 fi
+
+# python@2 screws up MacVim's environment
+brew uninstall --ignore-dependencies python@2 2> /dev/null || true
 
 # TODO: Set non-native fullscreen; this is not enough to get it to init the plist
 # if [ ! -f ~/Library/Preferences/org.vim.MacVim.plist ]; then

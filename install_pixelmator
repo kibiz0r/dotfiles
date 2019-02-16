@@ -1,0 +1,17 @@
+#!/usr/bin/env sh
+
+APPDIR="/Applications"
+
+if [ ! -z "$USE_HOME_APPDIR" ]; then
+  APPDIR="$HOME/Applications"
+fi
+
+if [ -d "$APPDIR/Pixelmator.app" ]; then
+  echo "Pixelmator already installed"
+else
+  if [ ! -f Pixelmator.app.zip ]; then
+    curl -Lo Pixelmator.app.zip https://pixelmator-download.s3.amazonaws.com/trial/Pixelmator.zip
+    unzip Pixelmator.app.zip "Pixelmator.app/*" -d "$APPDIR"
+  fi
+fi
+

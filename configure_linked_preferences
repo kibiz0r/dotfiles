@@ -1,0 +1,16 @@
+#!/usr/bin/env sh
+
+rm -rf ~/Library/Preferences/com.apple.LaunchServices
+ln -s ~/.dotfiles/Preferences/com.apple.LaunchServices ~/Library/Preferences/com.apple.LaunchServices
+
+rm ~/Library/LaunchAgents/com.kibiz0r.sync_music.plist
+ln -s ~/.dotfiles/LaunchAgents/com.kibiz0r.sync_music.plist ~/Library/LaunchAgents/com.kibiz0r.sync_music.plist
+
+rm ~/Library/Preferences/com.apple.ncprefs.plist
+ln -s ~/.dotfiles/Preferences/com.apple.ncprefs.plist ~/Library/Preferences/com.apple.ncprefs.plist
+
+rm ~/Library/Preferences/com.apple.systemuiserver.plist
+ln -s ~/.dotfiles/Preferences/com.apple.systemuiserver.plist ~/Library/Preferences/com.apple.systemuiserver.plist
+
+rm ~/Library/Preferences/com.apple.symbolichotkeys.plist
+ln -s ~/.dotfiles/Preferences/com.apple.symbolichotkeys.plist ~/Library/Preferences/com.apple.symbolichotkeys.plist

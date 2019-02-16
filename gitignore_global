@@ -9,3 +9,4 @@ tags
 .idea
 /src/KinExamples/Build-iOS
 .vscode
+*.pyc

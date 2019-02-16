@@ -1,0 +1,19 @@
+[
+  {
+    "Reveal": false, 
+    "Name": "Default", 
+    "Xcode": null, 
+    "IncrementSDK": false, 
+    "Kexts": [
+      "AppleALC", 
+      "Lilu", 
+      "LiluFriend", 
+      "RealtekRTL8111", 
+      "USBInjectAll", 
+      "VirtualSMC (All Tools)", 
+      "WhateverGreen"
+    ], 
+    "SDK": null, 
+    "DefOnFail": false
+  }
+]

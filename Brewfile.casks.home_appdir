@@ -1,0 +1,9 @@
+cask_args appdir: "~/Applications"
+
+cask "macvim"
+cask "rowanj-gitx"
+cask "zeplin"
+cask "colorsnapper"
+cask "xscope"
+cask "vlc"
+cask "firefox"

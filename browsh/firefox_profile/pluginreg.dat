@@ -1,0 +1,26 @@
+Generated File. Do not edit.
+
+[HEADER]
+Version:0.19t:$
+Arch:x86_64-gcc3:$
+
+[PLUGINS]
+Flash Player.plugin:$
+/Library/Internet Plug-Ins/Flash Player.plugin:$
+30.0.0.154:$
+1535046050860:0:0:0:0:$
+Shockwave Flash 30.0 r0:$
+Shockwave Flash:$
+2
+0:application/x-shockwave-flash:Shockwave Flash:swf:$
+1:application/futuresplash:FutureSplash Player:spl:$
+
+[INVALID]
+/Library/Internet Plug-Ins/Disabled Plug-Ins:$
+1519521680000:$
+/Library/Internet Plug-Ins/JavaAppletPlugin.plugin:$
+1522278547000:$
+/Library/Internet Plug-Ins/MeetingJoinPlugin.plugin:$
+1531146230853:$
+/Library/Internet Plug-Ins/flashplayer.xpt:$
+1532730021000:$

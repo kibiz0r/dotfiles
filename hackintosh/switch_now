@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+diskutil unmount disk1s1
+sudo mkdir /Volumes/ESP-internal
+sudo mount -t msdos /dev/disk1s1 /Volumes/ESP-internal
+
+cp /Volumes/ESP-internal/EFI/CLOVER/config.plist hackintosh/internal_config.plist.bak
+
+hackintosh/generate_internal_config
+
+cp hackintosh/internal_config.plist /Volumes/ESP-internal/EFI/CLOVER/config.plist
+

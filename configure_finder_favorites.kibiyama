@@ -1,0 +1,20 @@
+#!/usr/bin/env sh
+
+if ! which mysides; then
+  echo "mysides is not installed"
+  exit 0
+fi
+
+mysides remove all
+
+# Doesn't work right now
+# mysides add 'domain-AirDrop' 'nwnode://domain-AirDrop'
+mysides add 'Macintosh HD' 'file:///'
+mysides add 'Applications' 'file:///Applications/'
+mysides add 'kibiyama' "file://$HOME/"
+mysides add 'git' "file://$HOME/git/"
+mysides add 'Desktop' "file://$HOME/Desktop/"
+mysides add 'Documents' "file://$HOME/Documents/"
+mysides add 'Downloads' "file://$HOME/Downloads/"
+mysides add 'Dropbox' "file://$HOME/Dropbox/"
+

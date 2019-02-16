@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+echo "Maybe prompting Github credentials"
+hub issue > /dev/null

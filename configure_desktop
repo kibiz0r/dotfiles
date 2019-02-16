@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-USER_DESKTOP=~/.dotfiles/desktop.$(./dotfiles_user).png
+USER_DESKTOP=~/.dotfiles/desktop.$(./dotfiles_user_host).png
 
 if [ -f $USER_DESKTOP ]; then
   setwp --fill $USER_DESKTOP

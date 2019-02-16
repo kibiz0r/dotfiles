@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+MODEL="$(/usr/libexec/PlistBuddy -c 'print :SMBIOS:ProductName' hackintosh/usb_config.plist)"
+
+SERIAL_INFO=$(macserial -a | grep "$MODEL" | head -1)
+
+SERIAL=$(echo $SERIAL_INFO | sed 's/.*| \([[:alnum:]]*\) | \([[:alnum:]]*\).*/\1/')
+BOARD_SERIAL=$(echo $SERIAL_INFO | sed 's/.*| \([[:alnum:]]*\) | \([[:alnum:]]*\).*/\2/')
+SM_UUID=$(uuidgen)
+
+echo $SERIAL
+echo $BOARD_SERIAL
+echo $SM_UUID
+
+/usr/libexec/PlistBuddy -c "set :SMBIOS:SerialNumber $SERIAL" hackintosh/usb_config.plist
+/usr/libexec/PlistBuddy -c "set :SMBIOS:BoardSerialNumber $BOARD_SERIAL" hackintosh/usb_config.plist
+/usr/libexec/PlistBuddy -c "set :RtVariables:MLB $BOARD_SERIAL" hackintosh/usb_config.plist
+/usr/libexec/PlistBuddy -c "set :SMBIOS:SmUUID $SM_UUID" hackintosh/usb_config.plist
+

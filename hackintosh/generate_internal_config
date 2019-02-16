@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+cp hackintosh/usb_config.plist hackintosh/internal_config.plist
+/usr/libexec/PlistBuddy -c 'set :GUI:Theme clover-theme-minimal' hackintosh/internal_config.plist
+
