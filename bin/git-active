@@ -1,0 +1,60 @@
+#!/usr/bin/env ruby
+
+# WIP
+# Show which files have seen the most recent activity, across all branches, with a summary of how much they've changed
+#
+
+require "date"
+
+ref = if ARGV.any?
+  if ARGV[0] =~ /^origin\//
+    ARGV[0]
+  else
+    "origin/#{ARGV[0]}"
+  end
+else
+  "HEAD"
+end
+
+unmerged_branches = `git branch -r --no-merged #{ref}`.lines.map &:strip
+unmerged_branches = %w|origin/feature/6336-variable-schedules|
+
+files = {}
+
+unmerged_branches.each do |unmerged_branch|
+  branch_name = unmerged_branch.gsub(/^origin\//, "")
+
+  stats = `git diff --numstat "#{ref}...#{unmerged_branch}"`.chomp.lines.map &:chomp
+
+  stats.each do |stat|
+    added, removed, file = stat.split "\t"
+
+    added = added.to_i
+    removed = removed.to_i
+
+    time = `git log -1 --format="%at" "#{ref}...#{unmerged_branch}" -- "#{file}"`.chomp.to_i
+
+    entry = files[file]
+
+    if entry
+      entry[:added] += added
+      entry[:removed] += removed
+      if time > entry[:timestamp]
+        entry[:timestamp] = time
+      end
+    else
+      entry = files[file] = { branches: [], added: added, removed: removed, timestamp: time }
+    end
+
+    entry[:branches] << branch_name
+  end
+end
+
+results = files.to_a.sort_by do |file, info|
+  # [info[:timestamp], info[:added] + info[:removed]]
+  [info[:added] + info[:removed], info[:timestamp]]
+end.reverse.map do |file, info|
+  "#{file}: #{info.inspect}"
+end
+
+puts results.join("\n")

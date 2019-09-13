@@ -2,12 +2,22 @@
   name = Michael Harrington
   email = kibiz0r@gmail.com
 [alias]
+  head = reset --hard @{upstream}
+  prs-since = !"git log --format='%C(white)%s%C(reset) %C(dim white)- %an%C(reset)' origin/$1..origin/develop --grep='^Merged PR' #"
+  prs-since1 = !"git log --format='%C(bold blue)%h%C(reset) %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' origin/$1..origin/develop --grep='^Merged PR' #"
+  prs-between = !"git log --format='%C(white)%s%C(reset) %C(dim white)- %an%C(reset)' origin/$1..origin/$2 --grep='^Merged PR' #"
+  prs-between1 = !"git log --format='%C(bold blue)%h%C(reset) %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' origin/$1..origin/$2 --grep='^Merged PR' #"
+  there = !"git pull --rebase && git push"
+  rename = branch -m
+  remerge = checkout -m
   fixed = !"FIXED=$(git status --porcelain | grep \"^U\\w\" | sed \"s/U[[:alpha:]] //\" | head -n1); if [[ -n $FIXED ]]; then echo git add \"$FIXED\"; git add \"$FIXED\"; fi; NEXT=$(git status --porcelain | grep \"^U\\w\" | sed \"s/U[[:alpha:]] //\" | head -n1); if [[ -n $NEXT ]]; then echo Next is \"$NEXT\"; else echo 'All done!'; fi"
   some = add -p
   away = checkout -p
+  less = reset -p
   since = diff --stat
   uh = !"git config --global --get alias.$@ #"
   wut = !"git config --global --get alias.$@ #"
+  what = !"git config --global --get alias.$@ #"
   wtf = !"git config --global --get alias.$@ #"
   issues = issue
   remotes = remote -v
@@ -22,7 +32,7 @@
   up = !"git pull && git submodule update --init --recursive"
   upr = pull --rebase
   cfg = !"/usr/local/bin/mvim $HOME/.gitconfig 2> /dev/null"
-  on = !"ON_BRANCH=\"$(echo \"$@\" | tr '[:upper:]' '[:lower:]' | sed -e \"s/'//g\" -e \"s/[^[:alnum:]\\/\\.]/-/g\" -e \"s/--*/-/g\" -e \"s/-\\././g\" -e \"s/[-.]*$//\")\"; git checkout -B \"$ON_BRANCH\"; git config branch.\"$ON_BRANCH\".remote origin; git config branch.\"$ON_BRANCH\".merge \"refs/heads/$ON_BRANCH\"; echo \"Got on $ON_BRANCH\" #"
+  on = !"ON_BRANCH=\"$(echo \"$@\" | tr '[:upper:]' '[:lower:]' | sed -e \"s/'//g\" -e \"s/[^[:alnum:]\\/\\.]/-/g\" -e \"s/--*/-/g\" -e \"s/-\\././g\" -e \"s/[-.]*$//\")\"; git checkout -b \"$ON_BRANCH\"; git config branch.\"$ON_BRANCH\".remote origin; git config branch.\"$ON_BRANCH\".merge \"refs/heads/$ON_BRANCH\"; echo \"Got on $ON_BRANCH\" #"
   with = !"if [[ \"$1\" == it ]]; then git fetch && git merge \"origin/develop\"; else git cherry-pick \"$1\"; fi #"
   with-it = with it
   amend = commit --amend
@@ -68,6 +78,7 @@
   lg1 = !"git logf '%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' $@ #"
   lg2 = !"git logf '%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' $@ #"
   lg3 = !"git logf '%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset) %C(bold cyan)(committed: %cD)%C(reset) %C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset)%n''          %C(dim white)- %an <%ae> %C(reset) %C(dim white)(committer: %cn <%ce>)%C(reset)' $@ #"
+  imgdiff = 
 [color]
   ui = true
 [color "branch"]
@@ -78,6 +89,7 @@
   excludesfile = ~/.gitignore_global
   autocrlf = input
   pager = diff-so-fancy | tabless
+	attributesfile = ~/.gitattributes
 [difftool "pldiff"]
   cmd = pldiff $LOCAL $REMOTE
 [diff]
@@ -93,6 +105,11 @@
   insteadOf = git://github.com/
 [stash]
   showPatch = true
+[color "diff-highlight"]
+  oldNormal = red
+  oldHighlight = red reverse
+  newNormal = green
+  newHighlight = green reverse
 [color "diff"]
   meta = yellow
   frag = magenta bold
@@ -101,3 +118,6 @@
 [diff-so-fancy]
   markEmptyLines = false
   stripLeadingSymbols = false
+# [diff "image"]
+# 	textconv = imgcat
+# 	command = imgdiff

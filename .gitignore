@@ -15,3 +15,5 @@
 /bin/macserial
 /macserial.zip
 /hackintosh/internal_config.plist.bak
+/browsh/*
+!/browsh/config.toml

@@ -89,9 +89,17 @@ alias be='bundle exec'
 alias git=hub
 alias mvim='/usr/local/bin/mvim $@ > /dev/null 2>&1'
 alias dot="cd $HOME/.dotfiles"
-alias bis="cd $HOME/git/BISSELL_Xamarin_App"
 alias reddit="RTV_BROWSER=lynx rtv --enable-media"
-alias csharp="$(command which csharp) -r:System.Reactive.Core,System.Reactive.Linq,System.Reactive.Interfaces -r:System.Net.Http"
+alias csharp="$(command which csharp) -r:System.Reactive.Core,System.Reactive.Linq,System.Reactive.Interfaces -r:System.Net.Http -r:$HOME/.nuget/packages/newtonsoft.json/12.0.2/lib/net45/Newtonsoft.Json.dll"
+
+alias bis="cd $HOME/git/BISSELL_Xamarin_App"
+alias bisd="cd $HOME/git/BISSELL_Xamarin_App_Develop"
+alias bisr="cd $HOME/git/BISSELL_Xamarin_App_Release"
+alias bisp="cd $HOME/git/BISSELL_Xamarin_App_PR"
+alias bispr="cd $HOME/git/BISSELL_Xamarin_App_PR"
+alias bisdrs="cd $HOME/git/BISSELL_Xamarin_App_DRS"
+alias ota="cd $HOME/git/OTATool"
+alias wiki="cd $HOME/git/TroubleshootingWiki"
 
 # Hackintosh
 alias esp_internal="$HOME/.dotfiles/hackintosh/mount_internal"

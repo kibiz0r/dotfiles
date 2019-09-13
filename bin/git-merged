@@ -1,0 +1,34 @@
+#!/usr/bin/env ruby
+
+require "date"
+
+ref = if ARGV.any?
+  if ARGV[0] =~ /^origin\//
+    ARGV[0]
+  else
+    "origin/#{ARGV[0]}"
+  end
+else
+  "HEAD"
+end
+
+merged_branches = `git branch -r --merged #{ref}`.lines.map(&:strip).reject do |branch|
+  branch =~ /^origin\/HEAD ->/
+end
+
+merged_branches.map do |merged_branch|
+  branch_name = merged_branch.gsub(/^origin\//, "")
+  timestamp = `git log -1 --format="%at" "#{merged_branch}"`.to_i
+  author = `git log -1 --format="%an" "#{merged_branch}"`.chomp
+  date = Time.at(timestamp).to_datetime
+
+  {
+    name: branch_name,
+    author: author,
+    date: date,
+  }
+end.sort_by do |result|
+  result[:date]
+end.reverse.each do |result|
+  puts "#{result[:date].strftime "%a %b %d %H:%M:%S %Y %z"}\t#{result[:name]} (#{result[:author]})"
+end

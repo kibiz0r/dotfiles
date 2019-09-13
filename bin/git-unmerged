@@ -1,0 +1,41 @@
+#!/usr/bin/env ruby
+
+require "date"
+
+ref = if ARGV.any?
+  if ARGV[0] =~ /^origin\//
+    ARGV[0]
+  else
+    "origin/#{ARGV[0]}"
+  end
+else
+  "HEAD"
+end
+
+unmerged_branches = `git branch -r --no-merged #{ref}`.lines.map &:strip
+
+unmerged_branches.map do |unmerged_branch|
+  branch_name = unmerged_branch.gsub(/^origin\//, "")
+  ahead = `git log --oneline "#{ref}..#{unmerged_branch}"`.lines.size
+  behind = `git log --oneline "#{unmerged_branch}..#{ref}"`.lines.size
+  timestamp = `git log -1 --format="%at" "#{unmerged_branch}"`.to_i
+  author = `git log -1 --format="%an" "#{unmerged_branch}"`.chomp
+  date = Time.at(timestamp).to_datetime
+
+  {
+    name: branch_name,
+    ahead: ahead,
+    behind: behind,
+    author: author,
+    date: date,
+  }
+end.sort_by do |result|
+  result[:date]
+end.reverse.each do |result|
+  ahead, behind = result[:ahead], result[:behind]
+
+  a = if ahead > 0 then "+#{ahead}" else "" end
+  b = if behind > 0 then "-#{behind}" else "" end
+
+  puts "#{result[:date].strftime "%a %b %d %H:%M:%S %Y %z"}\t#{a}\t#{b}\t#{result[:name]} (#{result[:author]})"
+end

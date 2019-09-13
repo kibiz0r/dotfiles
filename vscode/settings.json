@@ -13,7 +13,7 @@
         ]
     },
     "editor.minimap.enabled": false,
-    "editor.codeLens": false,
+    "editor.codeLens": true,
     "editor.rulers": [
         100
     ],
@@ -29,6 +29,9 @@
     },
     "[ruby]": {
         "editor.tabSize": 2
+    },
+    "[html]": {
+        "editor.tabSize": 4
     },
     "editor.acceptSuggestionOnCommitCharacter": false,
     "vim.useSystemClipboard": true,
@@ -52,9 +55,8 @@
     "editor.autoClosingBrackets": false,
     "omnisharp.disableMSBuildDiagnosticWarning": true,
     "workbench.startupEditor": "newUntitledFile",
-    "editor.detectIndentation": false,
-    "editor.formatOnPaste": true,
-    "editor.formatOnSave": true,
+    "editor.formatOnPaste": false,
+    "editor.formatOnSave": false,
     "editor.formatOnType": true,
     "files.associations": {
         "*.xaml": "html"
@@ -73,11 +75,21 @@
     "html.suggest.angular1": false,
     "editor.parameterHints.enabled": false,
     "vsicons.projectDetection.disableDetect": true,
-    "omnisharp.loggingLevel": "critical",
+    "omnisharp.loggingLevel": "trace",
     "debug.internalConsoleOptions": "neverOpen",
     "vim.overrideCopy": false,
     "editor.copyWithSyntaxHighlighting": false,
     "window.nativeFullScreen": false,
     "window.restoreFullscreen": true,
-    "update.channel": "none"
+    "update.channel": "none",
+    "java.configuration.checkProjectSettingsExclusions": false,
+    "editor.fontFamily": "FiraCode-Retina",
+    "editor.fontLigatures": true,
+    "dotnet-test-explorer.pathForResultFile": "/Users/harrinm/tmp",
+    "csharp.referencesCodeLens.enabled": false,
+    "csharp.testsCodeLens.enabled": false,
+    "gitlens.codeLens.enabled": false,
+    "gitlens.views.compare.files.layout": "tree",
+    "gitlens.views.compare.files.compact": true,
+    "editor.detectIndentation": false
 }

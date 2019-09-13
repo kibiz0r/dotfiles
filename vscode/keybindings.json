@@ -1,6 +1,5 @@
 // Place your key bindings in this file to overwrite the defaults
-[
-    {
+[{
         "key": "enter",
         "command": "macros.openAndKeep",
         "when": "filesExplorerFocus && !inputFocus"
@@ -379,6 +378,10 @@
         "when": "!editorFocus"
     },
     {
+        "key": "shift+alt+cmd+c",  
+        "command": "copyRelativeFilePath"
+    },
+    {
         "key": "alt+cmd+c",
         "command": "-search.action.copyPath",
         "when": "fileMatchOrFolderMatchFocus"
@@ -545,6 +548,11 @@
     {
         "key": "shift+5",
         "command": "editor.emmet.action.matchTag",
+        "when": "editorLangId == html"
+    },
+    {
+        "key": "shift+5",
+        "command": "editor.emmet.action.matchTag",
         "when": "editorLangId == xml"
     },
     {
@@ -614,7 +622,7 @@
         "when": "listFocus"
     },
     {
-        "key": "shift+alt+h",
+        "key": "shift+cmd+a",
         "command": "editor.action.showHover",
         "when": "editorTextFocus"
     },
@@ -681,5 +689,45 @@
         "key": "ctrl+n",
         "command": "-extension.vim_ctrl+n",
         "when": "editorTextFocus && vim.active && vim.use<C-n> && !inDebugRepl"
+    },
+    {
+        "key": "shift+cmd+u",
+        "command": "-workbench.action.output.toggleOutput"
+    },
+    {
+        "key": "shift+cmd+t",
+        "command": "dotnetTestExplorer.focus"
+    },
+    {
+        "key": "shift+cmd+u",
+        "command": "workbench.action.reopenClosedEditor"
+    },
+    {
+        "key": "shift+cmd+t",
+        "command": "-workbench.action.reopenClosedEditor"
+    },
+    {
+        "key": "cmd+i",
+        "command": "-expandLineSelection",
+        "when": "textInputFocus"
+    },
+    {
+        "key": "alt+b",
+        "command": "gitlens.toggleFileBlame",
+        "when": "editorTextFocus && config.gitlens.keymap == 'chorded' && gitlens:activeFileStatus =~ /blameable/"
+    },
+    {
+        "key": "alt+cmd+g b",
+        "command": "-gitlens.toggleFileBlame",
+        "when": "editorTextFocus && config.gitlens.keymap == 'chorded' && gitlens:activeFileStatus =~ /blameable/"
+    },
+    {
+        "key": "shift+cmd+l",
+        "command": "workbench.view.extension.gitlens"
+    },
+    {
+        "key": "shift+cmd+l",
+        "command": "-editor.action.selectHighlights",
+        "when": "editorFocus"
     }
 ]

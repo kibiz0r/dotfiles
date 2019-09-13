@@ -56,4 +56,4 @@ git_custom_status() {
 local user_host='%{$reset_color%}%{$fg[green]%}%n%{$fg[green]%}@%m:'
 local current_dir='%{$fg[cyan]%}%~%{$reset_color%}'
 PROMPT="${user_host}${current_dir}\$(git_custom_status)%{$reset_color%} "
-RPROMPT="\$(unity_custom_status)\$(rbenv_custom_status)"
+# RPROMPT="\$(unity_custom_status)\$(rbenv_custom_status)"

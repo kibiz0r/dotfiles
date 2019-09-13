@@ -1,0 +1,129 @@
+#!/usr/bin/env ruby
+
+# WIP
+# Shows which files you've worked on, since <time>, that have been recently changed by "not you" on other branches
+# Sorted by...? How recently *you've* worked on them? Or how recently *they've* worked on them?
+# Probably how recently *they've* worked on them, since that's the most actionable
+
+require "date"
+
+ref = if ARGV.any?
+  if ARGV[0] =~ /^origin\//
+    ARGV[0]
+  else
+    "origin/#{ARGV[0]}"
+  end
+else
+  "origin/develop"
+end
+
+author = `git config --global --get user.name`.chomp
+
+since = "30 days ago"
+
+our_files = `git log --since "#{since}" --author="#{author}" --name-only --no-renames --format=""`.chomp.lines.map(&:chomp).uniq
+
+# puts our_files.join("\n")
+
+$COMMIT_BRANCHES = {}
+
+def get_commits(since)
+  log = `git log --since "#{since}" --remotes --name-only --no-renames --format=":commit: %H%n:author: %an%n:date: %at"`.chomp.lines.map(&:chomp).each
+
+  commits = []
+
+  while (log.peek rescue false)
+    if log.next =~ /^:commit: (.*)/
+      hash = $1
+
+      unless branches = $COMMIT_BRANCHES[hash]
+        branches = $COMMIT_BRANCHES[hash] =
+          `git branch -r --contains #{hash}`.chomp.lines.map { |l| l.strip.gsub(/^origin\//, "") }
+        # name_rev = `git name-rev --name-only "#{hash}"`.chomp.gsub(/^remotes\/origin\//, "")
+        #
+        # branches = $COMMIT_BRANCHES[hash] =
+        #   if name_rev !~ /~/
+        #     [name_rev]
+        #   else
+        #     `git branch -r --no-merged "#{ref}" --contains "#{hash}"`.chomp.lines.map { |l| l.strip.gsub(/^origin\//, "") }
+        #   end
+      end
+
+      if log.next =~ /^:author: (.*)/
+        author = $1
+
+        if log.next =~ /^:date: (.*)/
+          date = Time.at($1.to_i).to_datetime
+
+          files = []
+          while (log.peek !~ /^:commit: (.*)/ rescue false)
+            unless (file = log.next).empty?
+              files << file
+            end
+          end
+          commits << { hash: hash, branches: branches, author: author, files: files, date: date }
+        end
+      end
+    end
+  end
+
+  commits.sort_by { |c| c[:date] }.reverse
+end
+
+commits = get_commits since
+
+their_commits = commits.reject { |c| c[:author] == author || c[:files].empty? }
+
+overlap_files = our_files.inject [] do |o_files, file|
+  overlap_commits = their_commits.inject [] do |o_commits, commit|
+    if commit[:files].include? file
+      unless commit[:branches].include? ref.gsub(/^origin\//, "")
+        o_commits << commit
+      end
+    end
+    o_commits
+  end
+  if overlap_commits.any?
+    o_files << { file: file, commits: overlap_commits }
+  end
+  o_files
+end.sort_by do |file|
+  file[:commits].map { |c| c[:date] }.max
+end.reverse
+
+to_page = overlap_files.map do |file|
+  # next unless file[:commits].any? { |c| c[:branches].size == 1 }
+
+  messages = file[:commits].map do |commit|
+    branches = commit[:branches]
+
+    # next if branches.include? ref.gsub(/^origin\//, "")
+
+    b = branches.join ", "
+      # if branches.size > 1
+      #   "#{branches.size} branches"
+      # else
+      #   branches[0]
+      # end
+
+    "#{commit[:author]} at #{commit[:hash]} on #{commit[:date]} in #{b}"
+  end.compact
+
+  if messages.any?
+    puts file[:file]
+    messages.each do |message|
+      puts "  #{message}"
+    end
+    puts ""
+  end
+
+  file_branches = file[:commits].flat_map { |c| c[:branches] }.uniq
+  # puts "file_branches: #{file_branches.inspect}"
+  # `git log "#{ref}"..
+end
+
+# puts to_page
+
+# exec <<-EOS
+# git show --color #{overlap_files[0][:commits].map { |c| c[:hash] }.join " "} -- #{overlap_files[0][:file]}
+# EOS

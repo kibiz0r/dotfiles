@@ -13,7 +13,7 @@ browsh_supporter = "I have shown my support for Browsh"
 
 [firefox]
 # The path to your Firefox binary
-path = "/Users/kibiyama/Applications/Firefox.app/Contents/MacOS/firefox"
+path = "/Users/harrinm/Applications/Firefox.app/Contents/MacOS/firefox"
 # Browsh has its own profile, seperate from the normal user's. But you can change that.
 # profile = "browsh-default"
 # Don't let Browsh launch Firefox, but make it try to connect to an existing one. Note
