@@ -1,0 +1,21 @@
+In Windows, if you haven't paired at least once yet:
+
+- Pair the keyboard
+
+In macOS:
+
+- Pair the keyboard
+- sudo defaults read com.apple.bluetoothd.plist
+- Copy the LinkKeys info; the parent ID is the bluetooth dongle, the child keys are the bluetooth device IDs, and the values of those keys are the pairing tokens
+
+In Windows again:
+
+- Pair the keyboard
+- psexec -s -i regedit
+- HKLM\System\CurrentControlSet\services\BTHPORT\Parameters\Keys\<bluetooth device ID>
+- Enter the reverse of the pairing token, because they are opposite endianness
+
+Example:
+
+98542ff9 88e19449 475250e1 3943255b (What is shown in OS X)
+5B254339 E1505247 4994E188 F92F5498 (What you enter in Windows)

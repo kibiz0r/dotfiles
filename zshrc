@@ -72,7 +72,7 @@ if which rbenv > /dev/null; then
 fi
 
 # User configuration
-export PATH="$PATH:$HOME/bin:$HOME/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+export PATH="$PATH:$HOME/bin:$HOME/Applications/Visual Studio Code.app/Contents/Resources/app/bin:$HOME/.dotnet/tools"
 export EDITOR="mvim -f"
 export PAGER="tabless"
 export LESS="-Ri"

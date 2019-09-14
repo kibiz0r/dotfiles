@@ -32,3 +32,28 @@ USE_KIBIYAMA_CUSTOMIZATIONS to use my custom configs
 ```
 
 The default setup is rather idealistic and safe. It uses stable VSCode, avoids sudo, installs to global /Applications, installs Homebrew normally, and doesn't use my custom stuff.
+
+## TODO
+
+- brew cask install java before installing first round of brews; sleuthkit depends on it, osquery depends on sleuthkit
+- brew cask install xquartz too; feh requires it
+- ./per_user_host: line 15: ./write_defaults.kibiyama: No such file or directory
+- ./per_user_host: line 15: ./install_app_store_apps.kibiyama: No such file or directory
+- phantomjs is a cask now
+- Requested 'libusbmuxd >= 1.1.0' but version of libusbmuxd is 1.0.10 -- from installing libimobiledevice
+- sudo xcodebuild -license accept
+- "Opening Dropbox and waiting for /Users/kibiyama/Dropbox/license.dash-license in background"; but "The file /Applications/Dropbox.app does not exist."
+- Be quieter when unzipping
+- Roslynator.VisualStudio.vsix; End-of-central-directory signature not found
+- mysides is not installed; when running ./configure_finder_favorites.kibiyama
+- File Doesn't Exist, Will Create: /Users/kibiyama/Library/Preferences/com.apple.controlstrip.plist
+  Delete: Entry, ":MiniCustomized", Does Not Exist
+  Maybe configuring kibiyama's Spotlight [./require_kibiyama ./configure_spotlight]
+  Delete: Entry, ":orderedItems", Does Not Exist
+- rm: /Users/kibiyama/Library/LaunchAgents/com.kibiz0r.sync_music.plist: No such file or directory; after ./configure_linked_preferences
+- make killall NotificationCenter have a `; exit 0` on it
+- Chrome extensions
+- Caps Lock => Esc
+- iTerm should already know to check for updates automatically
+- Start BetterTouchTool on start-up
+- hide_spotlight_icon breaks Spotlight completely on Mojave

@@ -27,10 +27,24 @@
 	<dict>
 		<key>installed</key>
 		<dict>
+			<key>SFML/SFML</key>
+			<dict>
+				<key>date</key>
+				<date>2019-09-14T14:31:50Z</date>
+				<key>entry</key>
+				<dict>
+					<key>name</key>
+					<string>SFML/SFML</string>
+					<key>platform</key>
+					<string>github</string>
+					<key>uniqueIdentifier</key>
+					<string>SFML/SFML</string>
+				</dict>
+			</dict>
 			<key>eyworldwide/glsl-docset</key>
 			<dict>
 				<key>date</key>
-				<date>2018-04-01T05:40:25Z</date>
+				<date>2019-03-17T13:59:10Z</date>
 				<key>entry</key>
 				<dict>
 					<key>name</key>
@@ -43,7 +57,36 @@
 			</dict>
 		</dict>
 		<key>uninstalled</key>
-		<dict/>
+		<dict>
+			<key>SFML/SFML.Net</key>
+			<dict>
+				<key>date</key>
+				<date>2019-03-17T14:03:06Z</date>
+				<key>entry</key>
+				<dict>
+					<key>name</key>
+					<string>SFML/SFML.Net</string>
+					<key>platform</key>
+					<string>github</string>
+					<key>uniqueIdentifier</key>
+					<string>SFML/SFML.Net</string>
+				</dict>
+			</dict>
+			<key>tsoding/sfml-docset</key>
+			<dict>
+				<key>date</key>
+				<date>2019-03-17T14:04:02Z</date>
+				<key>entry</key>
+				<dict>
+					<key>name</key>
+					<string>tsoding/sfml-docset</string>
+					<key>platform</key>
+					<string>github</string>
+					<key>uniqueIdentifier</key>
+					<string>tsoding/sfml-docset</string>
+				</dict>
+			</dict>
+		</dict>
 	</dict>
 	<key>DHGoRepo</key>
 	<dict>
@@ -108,7 +151,7 @@
 			<key>React_Native</key>
 			<dict>
 				<key>date</key>
-				<date>2018-01-30T03:07:22Z</date>
+				<date>2019-03-17T13:58:59Z</date>
 				<key>entry</key>
 				<dict>
 					<key>aliases</key>
@@ -179,67 +222,72 @@
 			<key>http://kapeli.com/feeds/Apple_API_Reference.xml</key>
 			<dict>
 				<key>date</key>
-				<date>2017-11-08T19:00:03Z</date>
+				<date>2019-03-17T13:59:08Z</date>
 			</dict>
 			<key>http://kapeli.com/feeds/C++.xml</key>
 			<dict>
 				<key>date</key>
-				<date>2017-04-15T22:20:25Z</date>
+				<date>2019-03-17T13:59:25Z</date>
 			</dict>
 			<key>http://kapeli.com/feeds/C.xml</key>
 			<dict>
 				<key>date</key>
-				<date>2017-04-15T22:20:27Z</date>
+				<date>2019-03-17T13:59:13Z</date>
 			</dict>
 			<key>http://kapeli.com/feeds/JavaScript.xml</key>
 			<dict>
 				<key>date</key>
-				<date>2016-11-17T23:50:36Z</date>
+				<date>2019-03-17T13:59:49Z</date>
 			</dict>
 			<key>http://kapeli.com/feeds/Lo-Dash.xml</key>
 			<dict>
 				<key>date</key>
-				<date>2016-12-06T20:31:48Z</date>
+				<date>2019-03-17T13:59:25Z</date>
 			</dict>
 			<key>http://kapeli.com/feeds/Man_Pages.xml</key>
 			<dict>
 				<key>date</key>
-				<date>2017-12-04T16:43:03Z</date>
+				<date>2019-03-17T13:59:09Z</date>
 			</dict>
 			<key>http://kapeli.com/feeds/NET_Framework.xml</key>
 			<dict>
 				<key>date</key>
-				<date>2017-03-29T14:40:51Z</date>
+				<date>2019-03-17T13:59:44Z</date>
 			</dict>
 			<key>http://kapeli.com/feeds/OpenCV_C++.xml</key>
 			<dict>
 				<key>date</key>
-				<date>2017-04-14T21:44:24Z</date>
+				<date>2019-03-17T13:59:17Z</date>
 			</dict>
 			<key>http://kapeli.com/feeds/OpenGL_2.xml</key>
 			<dict>
 				<key>date</key>
-				<date>2017-04-14T17:41:27Z</date>
+				<date>2019-03-17T13:59:35Z</date>
 			</dict>
 			<key>http://kapeli.com/feeds/React.xml</key>
 			<dict>
 				<key>date</key>
-				<date>2016-11-17T23:40:57Z</date>
+				<date>2019-03-17T13:59:27Z</date>
 			</dict>
 			<key>http://kapeli.com/feeds/Ruby_2.xml</key>
 			<dict>
 				<key>date</key>
-				<date>2017-08-18T22:35:07Z</date>
+				<date>2019-03-17T13:59:46Z</date>
 			</dict>
 			<key>http://kapeli.com/feeds/Swift.xml</key>
 			<dict>
 				<key>date</key>
-				<date>2018-02-26T16:44:59Z</date>
+				<date>2019-03-17T13:59:34Z</date>
 			</dict>
 			<key>http://kapeli.com/feeds/Unity_3D.xml</key>
 			<dict>
 				<key>date</key>
-				<date>2017-03-13T16:31:45Z</date>
+				<date>2019-03-17T14:00:09Z</date>
+			</dict>
+			<key>https://raw.githubusercontent.com/tsoding/sfml-docset/master/SFML.xml</key>
+			<dict>
+				<key>date</key>
+				<date>2019-03-17T14:08:01Z</date>
 			</dict>
 		</dict>
 		<key>uninstalled</key>
@@ -280,7 +328,7 @@
 	<key>shouldRestoreTabs</key>
 	<false/>
 	<key>shouldShowStatusIcon</key>
-	<false/>
+	<true/>
 	<key>shouldStartAtLogin</key>
 	<true/>
 	<key>shouldSyncBookmarks</key>

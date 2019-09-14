@@ -119,3 +119,4 @@ brew "libimobiledevice", args: ["HEAD"]
 brew "dockutil"
 brew "git-when-merged"
 brew "yarn"
+brew "ghostscript"

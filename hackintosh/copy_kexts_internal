@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+hackintosh/mount_usb
+hackintosh/mount_internal
+
+rm -rf /Volumes/ESP-internal/EFI/CLOVER/kexts/Other/*
+cp -r /Volumes/ESP-USB/EFI/CLOVER/kexts/Other/* /Volumes/ESP-internal/EFI/CLOVER/kexts/Other
+

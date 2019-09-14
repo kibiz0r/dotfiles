@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+hackintosh/mount_internal
+
+rm -rf /Volumes/ESP-internal/EFI/CLOVER/themes
+cp -r hackintosh/themes /Volumes/ESP-internal/EFI/CLOVER/themes
+
+/usr/libexec/PlistBuddy -c 'set :Theme:Components:Label true' /Volumes/ESP-internal/EFI/CLOVER/themes/clover-theme-minimal/theme.plist
+/usr/libexec/PlistBuddy -c 'set :Theme:Components:Label true' /Volumes/ESP-internal/EFI/CLOVER/themes/clover-theme-next-black/theme.plist
+
