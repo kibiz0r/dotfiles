@@ -5,4 +5,5 @@ npm install -g npm
 npm install -g \
   appcenter-cli \
   ask-cli \
-  svg2vectordrawable
+  svg2vectordrawable \
+  memey

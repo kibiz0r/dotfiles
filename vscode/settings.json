@@ -17,7 +17,7 @@
     "editor.rulers": [
         100
     ],
-    "editor.tabSize": 4,
+    "editor.tabSize": 2,
     "[csharp]": {
         "editor.tabSize": 4
     },
@@ -91,5 +91,12 @@
     "gitlens.codeLens.enabled": false,
     "gitlens.views.compare.files.layout": "tree",
     "gitlens.views.compare.files.compact": true,
-    "editor.detectIndentation": false
+    "editor.detectIndentation": false,
+    "python.jediEnabled": false,
+    "[python]": {
+      "editor.insertSpaces": true,
+      "editor.detectIndentation": true,
+      "editor.tabSize": 4,
+      "editor.autoIndent": false
+    }
 }

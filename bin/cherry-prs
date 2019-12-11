@@ -1,0 +1,57 @@
+#!/usr/bin/env ruby
+
+require "ruby_vsts"
+require "json"
+
+if ARGV.size < 3
+  puts "Usage: ruby cherry-prs <access_token> <repo_name> <pr_id>..."
+  exit 0
+end
+
+access_token = ARGV.shift
+repo_name = ARGV.shift
+prs = ARGV
+
+VSTS.configure do |c|
+  c.personal_access_token = access_token
+  c.base_url = "https://dev.azure.com"
+  c.collection = "bissell"
+  c.team_project = "BISSELL_IoT"
+  c.api_version = "5.1"
+end
+
+results = prs.map do |pr|
+  result = VSTS::APIClient.get "/git/repositories/#{repo_name}/pullRequests/#{pr}/commits"
+  JSON.parse result.body
+end
+
+all_commits = results.flat_map do |result|
+  result["value"].reverse.map do |value|
+    value["commitId"]
+  end
+end
+
+non_merge_commits = all_commits.select do |sha|
+  sha_info = `git cat-file -p #{sha}`
+
+  if $? != 0 then next nil end
+
+  is_merge_sha = sha_info.lines.count do |line|
+    line.match?(/^parent/)
+  end > 1
+
+  if is_merge_sha
+    puts "skipping merge commit #{sha}"
+    next nil
+  end
+
+  sha
+end.compact
+
+non_merge_commits.each do |sha|
+  info = `git log -n 1 --format=format:%s #{sha}`
+  puts "using #{sha}: #{info}"
+end
+
+exec "git cherry-pick #{non_merge_commits.join ' '}"
+

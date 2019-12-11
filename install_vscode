@@ -11,26 +11,22 @@ app_path =
     "/Applications"
   end
 
-zip_app_path = 
+zip_app_path, link_id = 
   if UseBleedingEdge
-    "Visual Studio Code - Insiders.app"
+    puts "Using bleeding edge VSCode"
+    [
+      "Visual Studio Code - Insiders.app",
+      "723966"
+    ]
   else
-    "Visual Studio Code.app"
+    [
+      "Visual Studio Code.app",
+      "620882" # https://go.microsoft.com/fwlink/?LinkID=620882
+    ]
   end
 
 default_vscode_dir = "#{app_path}/#{zip_app_path}"
 target_vscode_dir = "#{app_path}/Visual Studio Code.app"
-
-link_id =
-  if UseBleedingEdge
-    "723966"
-  else
-    "620882"
-  end
-
-if UseBleedingEdge
-  puts "Using bleeding edge VSCode"
-end
 
 puts app_path
 

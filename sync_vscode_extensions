@@ -1,0 +1,39 @@
+#!/usr/bin/env ruby
+
+UseBleedingEdge = ENV["USE_VSCODE_INSIDERS"]
+
+vscode_dir =
+  if UseBleedingEdge
+    ".vscode-insiders"
+  else
+    ".vscode"
+  end
+
+
+
+extensions =
+  Dir
+  .children("#{ENV["HOME"]}/#{vscode_dir}/extensions")
+  .map do |extension|
+    components = extension.split "-"
+    components[0...-1].join "-"
+  end
+
+install_commands = extensions.map do |extension|
+  "    --install-extension #{extension}"
+end.join " \\\n"
+
+script = <<-END
+#!/usr/bin/env sh
+
+APPDIR="/Applications"
+
+if [ ! -z "$USE_HOME_APPDIR" ]; then
+  APPDIR="$HOME/Applications"
+fi
+
+$APPDIR/Visual\ Studio\ Code*.app/Contents/Resources/app/bin/code \
+#{install_commands}
+END
+
+File.write "install_vscode_extensions", script

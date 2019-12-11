@@ -91,8 +91,24 @@ alias mvim='/usr/local/bin/mvim $@ > /dev/null 2>&1'
 alias dot="cd $HOME/.dotfiles"
 alias reddit="RTV_BROWSER=lynx rtv --enable-media"
 alias csharp="$(command which csharp) -r:System.Reactive.Core,System.Reactive.Linq,System.Reactive.Interfaces -r:System.Net.Http -r:$HOME/.nuget/packages/newtonsoft.json/12.0.2/lib/net45/Newtonsoft.Json.dll"
+alias memes="cat /usr/local/lib/node_modules/memey/data/memes.json | jq '.[].name'"
+
+memecat() {
+  local memeout=$( meme $@ )
+  if [[ $memeout == '' ]]; then
+    echo "Meme not found."
+    return 1
+  fi
+  if echo $memeout | grep "not found" > /dev/null 2>&1; then
+    echo $memeout
+    return 1
+  fi
+  local memeurl=$( echo $memeout | rev | cut -d ' ' -f1 | rev )
+  curl -s $memeurl | imgcat
+}
 
 alias bis="cd $HOME/git/BISSELL_Xamarin_App"
+alias bis2="cd $HOME/git/BISSELL_Xamarin_App2"
 alias bisd="cd $HOME/git/BISSELL_Xamarin_App_Develop"
 alias bisr="cd $HOME/git/BISSELL_Xamarin_App_Release"
 alias bisp="cd $HOME/git/BISSELL_Xamarin_App_PR"
@@ -100,6 +116,7 @@ alias bispr="cd $HOME/git/BISSELL_Xamarin_App_PR"
 alias bisdrs="cd $HOME/git/BISSELL_Xamarin_App_DRS"
 alias ota="cd $HOME/git/OTATool"
 alias wiki="cd $HOME/git/TroubleshootingWiki"
+alias plat="cd $HOME/git/AWS_IoT"
 
 # Hackintosh
 alias esp_internal="$HOME/.dotfiles/hackintosh/mount_internal"

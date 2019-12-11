@@ -2,7 +2,19 @@
   name = Michael Harrington
   email = kibiz0r@gmail.com
 [alias]
-  head = reset --hard @{upstream}
+  remote-tag = !"git tag $1 && git push origin $1 #"
+  sho = log -p
+  sha = rev-parse --short HEAD
+  tags = !"git tag | cat"
+  delete-gone = !"git branch -vv | grep 'origin/.*: gone]' | awk '{print $1}' | xargs git branch -d"
+  branch-name = !"git branch --all | grep"
+  bn = branch-name
+  showr = !"git log -p --full-diff \"$(echo \"$1\" | perl -pe 's/(\\w+)\\.\\./$1^../')\" $2 $3 $4 $5 #"
+  cherry-pit = !"git rebase -p --onto $1^ $1 #"
+  cpc = cherry-pick --continue
+  cpa = cherry-pick --abort
+  it = reset --hard @{upstream}
+  head = it
   prs-since = !"git log --format='%C(white)%s%C(reset) %C(dim white)- %an%C(reset)' origin/$1..origin/develop --grep='^Merged PR' #"
   prs-since1 = !"git log --format='%C(bold blue)%h%C(reset) %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' origin/$1..origin/develop --grep='^Merged PR' #"
   prs-between = !"git log --format='%C(white)%s%C(reset) %C(dim white)- %an%C(reset)' origin/$1..origin/$2 --grep='^Merged PR' #"
@@ -32,8 +44,8 @@
   up = !"git pull && git submodule update --init --recursive"
   upr = pull --rebase
   cfg = !"/usr/local/bin/mvim $HOME/.gitconfig 2> /dev/null"
-  on = !"ON_BRANCH=\"$(echo \"$@\" | tr '[:upper:]' '[:lower:]' | sed -e \"s/'//g\" -e \"s/[^[:alnum:]\\/\\.]/-/g\" -e \"s/--*/-/g\" -e \"s/-\\././g\" -e \"s/[-.]*$//\")\"; git checkout -b \"$ON_BRANCH\"; git config branch.\"$ON_BRANCH\".remote origin; git config branch.\"$ON_BRANCH\".merge \"refs/heads/$ON_BRANCH\"; echo \"Got on $ON_BRANCH\" #"
-  with = !"if [[ \"$1\" == it ]]; then git fetch && git merge \"origin/develop\"; else git cherry-pick \"$1\"; fi #"
+  on = !"ON_BRANCH=\"$(echo \"$@\" | tr '[:upper:]' '[:lower:]' | perl -pe \"s/'//g; s/[^\\w\\/\\.]/-/g; s/--*/-/g; s/-\\././g; s/[-\\.]+$//\")\"; git checkout -b \"$ON_BRANCH\"; git config branch.\"$ON_BRANCH\".remote origin; git config branch.\"$ON_BRANCH\".merge \"refs/heads/$ON_BRANCH\"; echo \"Got on $ON_BRANCH\" #"
+  with = !"if [[ \"$1\" == it ]]; then git fetch && git merge \"origin/master\"; else git cherry-pick \"$1\"; fi #"
   with-it = with it
   amend = commit --amend
   amen = commit --amend

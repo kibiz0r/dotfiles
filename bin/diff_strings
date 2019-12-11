@@ -1,0 +1,41 @@
+#!/usr/bin/env ruby
+
+require "json"
+
+def parse_json file
+  json = JSON.parse File.read(file)
+  json["TokenRecords"].map do |record|
+    [record["Token"], record["StringValue"]]
+  end.to_h
+end
+
+file1, file2 = ARGV[0], ARGV[1]
+
+json1 = parse_json file1
+json2 = parse_json file2
+
+added = json2.keys - json1.keys
+removed = json1.keys - json2.keys
+changed = (json1.keys & json2.keys).select { |k| json1[k] != json2[k] }
+
+puts "=== Added #{added.size} in #{File.basename file2} ===\n"
+
+added.each do |a|
+  puts "#{a} : #{json2[a]}"
+end
+
+puts "\n" * 5
+
+puts "=== Removed #{removed.size} from #{File.basename file1} ===\n"
+
+removed.each do |r|
+  puts "#{r} : #{json1[r]}"
+end
+
+puts "\n" * 5
+
+puts "=== Changed #{changed.size} between #{File.basename file1} and #{File.basename file2} ===\n"
+
+changed.each do |c|
+  puts "#{c} : #{json1[c]} => #{json2[c]}"
+end
