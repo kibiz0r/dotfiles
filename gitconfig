@@ -15,8 +15,8 @@
   cpa = cherry-pick --abort
   it = reset --hard @{upstream}
   head = it
-  prs-since = !"git log --format='%C(white)%s%C(reset) %C(dim white)- %an%C(reset)' origin/$1..origin/develop --grep='^Merged PR' #"
-  prs-since1 = !"git log --format='%C(bold blue)%h%C(reset) %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' origin/$1..origin/develop --grep='^Merged PR' #"
+  prs-since = !"git log --format='%C(white)%s%C(reset) %C(dim white)- %an%C(reset)' $1..origin/master --grep='^Merged PR' #"
+  prs-since1 = !"git log --format='%C(bold blue)%h%C(reset) %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' $1..origin/master --grep='^Merged PR' #"
   prs-between = !"git log --format='%C(white)%s%C(reset) %C(dim white)- %an%C(reset)' origin/$1..origin/$2 --grep='^Merged PR' #"
   prs-between1 = !"git log --format='%C(bold blue)%h%C(reset) %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' origin/$1..origin/$2 --grep='^Merged PR' #"
   there = !"git pull --rebase && git push"
@@ -41,7 +41,7 @@
   curb = current-branch
   shwifty = !git-shwifty
   twirl = !git stash && git pull && git stash pop
-  up = !"git pull && git submodule update --init --recursive"
+  up = !"git pull --ff-only && git submodule update --init --recursive"
   upr = pull --rebase
   cfg = !"/usr/local/bin/mvim $HOME/.gitconfig 2> /dev/null"
   on = !"ON_BRANCH=\"$(echo \"$@\" | tr '[:upper:]' '[:lower:]' | perl -pe \"s/'//g; s/[^\\w\\/\\.]/-/g; s/--*/-/g; s/-\\././g; s/[-\\.]+$//\")\"; git checkout -b \"$ON_BRANCH\"; git config branch.\"$ON_BRANCH\".remote origin; git config branch.\"$ON_BRANCH\".merge \"refs/heads/$ON_BRANCH\"; echo \"Got on $ON_BRANCH\" #"

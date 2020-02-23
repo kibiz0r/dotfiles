@@ -25,7 +25,8 @@
         "editor.tabSize": 4
     },
     "[json]": {
-        "editor.tabSize": 2
+        "editor.tabSize": 2,
+        "editor.defaultFormatter": "vscode.json-language-features"
     },
     "[ruby]": {
         "editor.tabSize": 2
@@ -98,5 +99,11 @@
       "editor.detectIndentation": true,
       "editor.tabSize": 4,
       "editor.autoIndent": false
+    },
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "diffEditor.renderSideBySide": false,
+    "[javascript]": {
+      "editor.defaultFormatter": "HookyQR.beautify"
     }
 }

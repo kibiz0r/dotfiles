@@ -14,6 +14,7 @@ vscode_dir =
 extensions =
   Dir
   .children("#{ENV["HOME"]}/#{vscode_dir}/extensions")
+  .sort
   .map do |extension|
     components = extension.split "-"
     components[0...-1].join "-"
@@ -32,7 +33,7 @@ if [ ! -z "$USE_HOME_APPDIR" ]; then
   APPDIR="$HOME/Applications"
 fi
 
-$APPDIR/Visual\ Studio\ Code*.app/Contents/Resources/app/bin/code \
+$APPDIR/Visual\ Studio\ Code*.app/Contents/Resources/app/bin/code \\
 #{install_commands}
 END
 

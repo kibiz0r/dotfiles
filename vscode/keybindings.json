@@ -606,11 +606,11 @@
         "command": "search.focus.nextInputBox",
         "when": "inputBoxFocus && searchViewletVisible"
     },
-    {
-        "key": "ctrl+n",
-        "command": "search.focus.nextInputBox",
-        "when": "inputBoxFocus && searchViewletVisible"
-    },
+    // {
+    //     "key": "ctrl+n",
+    //     "command": "search.focus.nextInputBox",
+    //     "when": "inputBoxFocus && searchViewletVisible"
+    // },
     {
         "key": "ctrl+j",
         "command": "list.focusDown",
@@ -665,11 +665,11 @@
         "command": "-editor.action.previewDeclaration",
         "when": "editorHasDefinitionProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor"
     },
-    {
-        "key": "ctrl+n",
-        "command": "-cursorDown",
-        "when": "textInputFocus"
-    },
+    // {
+    //     "key": "ctrl+n",
+    //     "command": "-cursorDown",
+    //     "when": "textInputFocus"
+    // },
     // {
     //     "key": "ctrl+n",
     //     "command": "-selectNextSuggestion",
@@ -685,11 +685,11 @@
         "command": "-extension.vim_ctrl+p",
         "when": "suggestWidgetVisible && vim.active && vim.use<C-p>"
     },
-    {
-        "key": "ctrl+n",
-        "command": "-extension.vim_ctrl+n",
-        "when": "editorTextFocus && vim.active && vim.use<C-n> && !inDebugRepl"
-    },
+    // {
+    //     "key": "ctrl+n",
+    //     "command": "-extension.vim_ctrl+n",
+    //     "when": "editorTextFocus && vim.active && vim.use<C-n> && !inDebugRepl"
+    // },
     {
         "key": "shift+cmd+u",
         "command": "-workbench.action.output.toggleOutput"
@@ -729,5 +729,31 @@
         "key": "shift+cmd+l",
         "command": "-editor.action.selectHighlights",
         "when": "editorFocus"
+    },
+    {
+      "key": "shift+cmd+s",
+      "command": "workbench.action.files.saveAll"
+    },
+    {
+      "key": "alt+cmd+s",
+      "command": "-workbench.action.files.saveAll"
+    },
+    {
+      "key": "alt+cmd+s",
+      "command": "workbench.action.files.saveAs"
+    },
+    {
+      "key": "shift+cmd+s",
+      "command": "-workbench.action.files.saveAs"
+    },
+    {
+      "key": "alt+cmd+s",
+      "command": "workbench.action.files.saveLocalFile",
+      "when": "remoteFileDialogVisible"
+    },
+    {
+      "key": "shift+cmd+s",
+      "command": "-workbench.action.files.saveLocalFile",
+      "when": "remoteFileDialogVisible"
     }
 ]

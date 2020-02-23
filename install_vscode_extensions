@@ -6,30 +6,34 @@ if [ ! -z "$USE_HOME_APPDIR" ]; then
   APPDIR="$HOME/Applications"
 fi
 
-$APPDIR/Visual\ Studio\ Code*.app/Contents/Resources/app/bin/code \
+$APPDIR/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code \
     --install-extension donjayamanne.githistory \
     --install-extension dotjoshjohnson.xml \
-    --install-extension editorconfig.editorconfig \
     --install-extension eamodio.gitlens \
+    --install-extension editorconfig.editorconfig \
     --install-extension emeraldwalk.runonsave \
     --install-extension formulahendry.auto-close-tag \
     --install-extension formulahendry.dotnet-test-explorer \
     --install-extension geddski.macros \
     --install-extension hookyqr.beautify \
-    --install-extension Ionide.ionide-fake \
-    --install-extension Ionide.ionide-fsharp \
+    --install-extension ionide.ionide-fake \
+    --install-extension ionide.ionide-fsharp \
     --install-extension johannesrudolph.file-ext-switcher \
     --install-extension k--kato.docomment \
+    --install-extension letmaik.git-tree-compare \
+    --install-extension ms-python.python \
     --install-extension ms-vscode.cpptools \
     --install-extension ms-vscode.csharp \
     --install-extension ms-vscode.mono-debug \
     --install-extension redhat.java \
-    --install-extension robertohuertasm.vscode-icons \
     --install-extension twxs.cmake \
-    --install-extension Unity.unity-debug \
+    --install-extension unity.unity-debug \
     --install-extension vector-of-bool.cmake-tools \
+    --install-extension visualstudioexptteam.vscodeintellicode \
     --install-extension vscjava.vscode-java-debug \
+    --install-extension vscjava.vscode-java-dependency \
     --install-extension vscjava.vscode-java-pack \
     --install-extension vscjava.vscode-java-test \
     --install-extension vscjava.vscode-maven \
+    --install-extension vscode-icons-team.vscode-icons \
     --install-extension vscodevim.vim

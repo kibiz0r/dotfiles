@@ -83,6 +83,7 @@ alias less=$PAGER
 # export ANDROID_HOME=/usr/local/opt/android-sdk
 export ANDROID_HOME=$HOME/Library/Android/sdk
 export PATH=$PATH:$HOME/Library/Android/sdk/tools:$HOME/Library/Android/sdk/platform-tools
+export NODE_PATH=/usr/local/lib/node_modules
 
 # My stuff
 alias be='bundle exec'
@@ -91,7 +92,7 @@ alias mvim='/usr/local/bin/mvim $@ > /dev/null 2>&1'
 alias dot="cd $HOME/.dotfiles"
 alias reddit="RTV_BROWSER=lynx rtv --enable-media"
 alias csharp="$(command which csharp) -r:System.Reactive.Core,System.Reactive.Linq,System.Reactive.Interfaces -r:System.Net.Http -r:$HOME/.nuget/packages/newtonsoft.json/12.0.2/lib/net45/Newtonsoft.Json.dll"
-alias memes="cat /usr/local/lib/node_modules/memey/data/memes.json | jq '.[].name'"
+alias memes="cat /usr/local/lib/node_modules/memey/data/memes.json | jq '.[].name' | sort"
 
 memecat() {
   local memeout=$( meme $@ )
@@ -107,6 +108,25 @@ memecat() {
   curl -s $memeurl | imgcat
 }
 
+epoch() {
+  gdate -d @$1
+}
+
+epochms() {
+  gdate -d @$( echo "($1 + 500) / 1000" | bc )
+}
+
+curlcat() {
+  local output=$( curl -sw "\n%{http_code}" $@ )
+  local code=$( echo $output | tail -1 )
+  local response=$( echo $output | ghead -n -1 )
+  echo $response
+  if [[ ! -f $HOME/.httpcat$code ]]; then
+    curl -so $HOME/.httpcat$code https://http.cat/$code
+  fi
+  imgcat $HOME/.httpcat$code
+}
+
 alias bis="cd $HOME/git/BISSELL_Xamarin_App"
 alias bis2="cd $HOME/git/BISSELL_Xamarin_App2"
 alias bisd="cd $HOME/git/BISSELL_Xamarin_App_Develop"
@@ -117,6 +137,9 @@ alias bisdrs="cd $HOME/git/BISSELL_Xamarin_App_DRS"
 alias ota="cd $HOME/git/OTATool"
 alias wiki="cd $HOME/git/TroubleshootingWiki"
 alias plat="cd $HOME/git/AWS_IoT"
+alias wtools="cd $HOME/git/e_common_test_utils/wifi"
+alias wifi="cd $HOME/git/d_iot_p488"
+alias tobor="cd $HOME/git/d_donnybrook"
 
 # Hackintosh
 alias esp_internal="$HOME/.dotfiles/hackintosh/mount_internal"
@@ -131,3 +154,13 @@ export FrameworkPathOverride=$(dirname $(which mono))/../lib/mono/4.5/
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 export PATH="/usr/local/opt/qt/bin:$PATH"
+
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[[ -f /Users/harrinm/git/AWS_IoT/app/foundation/core/code/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/harrinm/git/AWS_IoT/app/foundation/core/code/node_modules/tabtab/.completions/serverless.zsh
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[[ -f /Users/harrinm/git/AWS_IoT/app/foundation/core/code/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/harrinm/git/AWS_IoT/app/foundation/core/code/node_modules/tabtab/.completions/sls.zsh
+# tabtab source for slss package
+# uninstall by removing these lines or running `tabtab uninstall slss`
+[[ -f /Users/harrinm/git/AWS_IoT/app/foundation/core/code/node_modules/tabtab/.completions/slss.zsh ]] && . /Users/harrinm/git/AWS_IoT/app/foundation/core/code/node_modules/tabtab/.completions/slss.zsh
