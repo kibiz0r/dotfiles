@@ -52,7 +52,7 @@
     "explorer.confirmDragAndDrop": false,
     "workbench.activityBar.visible": false,
     "git.ignoreLimitWarning": true,
-    "editor.renderWhitespace": "none",
+    "editor.renderWhitespace": "all",
     "editor.autoClosingBrackets": false,
     "omnisharp.disableMSBuildDiagnosticWarning": true,
     "workbench.startupEditor": "newUntitledFile",
@@ -105,5 +105,8 @@
     "diffEditor.renderSideBySide": false,
     "[javascript]": {
       "editor.defaultFormatter": "HookyQR.beautify"
-    }
+    },
+    "extensions.ignoreRecommendations": true,
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "html.format.indentHandlebars": true
 }

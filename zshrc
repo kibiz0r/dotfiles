@@ -74,10 +74,10 @@ fi
 # User configuration
 export PATH="$PATH:$HOME/bin:$HOME/Applications/Visual Studio Code.app/Contents/Resources/app/bin:$HOME/.dotnet/tools"
 export EDITOR="mvim -f"
-export PAGER="tabless"
+# export PAGER="tabless"
 export LESS="-Ri"
 
-alias less=$PAGER
+# alias less=$PAGER
 
 # Android Studio SDK
 # export ANDROID_HOME=/usr/local/opt/android-sdk
@@ -118,6 +118,7 @@ epochms() {
 
 curlcat() {
   local output=$( curl -sw "\n%{http_code}" $@ )
+  local exitcode=$?
   local code=$( echo $output | tail -1 )
   local response=$( echo $output | ghead -n -1 )
   echo $response
@@ -125,15 +126,16 @@ curlcat() {
     curl -so $HOME/.httpcat$code https://http.cat/$code
   fi
   imgcat $HOME/.httpcat$code
+  return $exitcode
 }
 
-alias bis="cd $HOME/git/BISSELL_Xamarin_App"
-alias bis2="cd $HOME/git/BISSELL_Xamarin_App2"
-alias bisd="cd $HOME/git/BISSELL_Xamarin_App_Develop"
-alias bisr="cd $HOME/git/BISSELL_Xamarin_App_Release"
-alias bisp="cd $HOME/git/BISSELL_Xamarin_App_PR"
-alias bispr="cd $HOME/git/BISSELL_Xamarin_App_PR"
-alias bisdrs="cd $HOME/git/BISSELL_Xamarin_App_DRS"
+alias xam="cd $HOME/git/BISSELL_Xamarin_App"
+alias xam2="cd $HOME/git/BISSELL_Xamarin_App2"
+alias xamd="cd $HOME/git/BISSELL_Xamarin_App_Develop"
+alias xamr="cd $HOME/git/BISSELL_Xamarin_App_Release"
+alias xamp="cd $HOME/git/BISSELL_Xamarin_App_PR"
+alias xampr="cd $HOME/git/BISSELL_Xamarin_App_PR"
+alias xamdrs="cd $HOME/git/BISSELL_Xamarin_App_DRS"
 alias ota="cd $HOME/git/OTATool"
 alias wiki="cd $HOME/git/TroubleshootingWiki"
 alias plat="cd $HOME/git/AWS_IoT"
@@ -141,9 +143,57 @@ alias wtools="cd $HOME/git/e_common_test_utils/wifi"
 alias wifi="cd $HOME/git/d_iot_p488"
 alias tobor="cd $HOME/git/d_donnybrook"
 
+mcurlcat() {
+  local base_url=''
+  local profile=".bissell-id-dev"
+
+  if [[ $1 == 'dev' ]]; then
+    base_url='https://mobileapi-dev.bissell.com'
+  elif [[ $1 == 'sbx' ]]; then
+    base_url='https://mobileapi-sandbox.bissell.com'
+  elif [[ $1 == 'uat' ]]; then
+    base_url='https://mobileapi-uat.bissell.com'
+    profile=".bissell-id"
+  elif [[ $1 == 'prod' ]]; then
+    base_url='https://mobileapi.bissell.com'
+    profile=".bissell-id"
+  elif [[ $1 == 'mh' ]]; then
+    base_url='https://i4empvoke8.execute-api.us-east-1.amazonaws.com/mh'
+  else
+    echo unrecognized env $1
+    return -1
+  fi
+
+  echo "authenticating..."
+
+  local tokens=$( curlcat -H "Content-Type: application/json" -d @$HOME/$profile "$base_url/tokens" )
+
+  echo $?
+
+  echo $tokens
+
+  local access_token=$( echo "$tokens" | jq .access_token )
+  echo access token $access_token
+
+  local path=${@: -1}
+  echo path $path
+  env
+
+  local rest=${@: 2:-1}
+  echo rest $rest
+
+  echo curlcat $rest -H "Authorization: Bearer $access_token" "$base_url$path"
+  # curlcat $rest -H "Authorization: Bearer $access_token" "$base_url$path"
+  curlcat
+}
+
 # Hackintosh
 alias esp_internal="$HOME/.dotfiles/hackintosh/mount_internal"
 alias esp_usb="$HOME/.dotfiles/hackintosh/mount_usb"
+
+# Docker
+eval $(docker-machine env default)
+export LOCALSTACK_HOST=$(docker-machine ip)
 
 # NOTE: Mono bugs
 # Prevent IOException: kqueue() FileSystemWatcher has reached the maximum nunmber of files to watch.
