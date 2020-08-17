@@ -2,6 +2,8 @@
 	name = Michael Harrington
   email = kibiz0r@gmail.com
 [alias]
+  on = !"ON_BRANCH=\"$(echo \"$@\" | tr '[:upper:]' '[:lower:]' | perl -pe \"s/'//g; s/[^\\w\\/\\.]/-/g; s/--*/-/g; s/-\\././g; s/[-\\.]+$//\")\"; git checkout -b \"$ON_BRANCH\"; git config branch.\"$ON_BRANCH\".remote origin; git config branch.\"$ON_BRANCH\".merge \"refs/heads/$ON_BRANCH\"; echo \"Got on $ON_BRANCH\" #"
+  cherry-pit = "!git rebase -p --onto $1^ $1 #"
   remote-tag = !"git tag $1 && git push origin $1 #"
   sho = log -p
   sha = rev-parse --short HEAD
@@ -11,9 +13,9 @@
   bn = branch-name
   showr = !"git log -p --full-diff \"$(echo \"$1\" | perl -pe 's/(\\w+)\\.\\./$1^../')\" $2 $3 $4 $5 $6 $7 $8 $9 #"
   showrstat = !"git log --stat -m --full-history \"$(echo \"$1\" | perl -pe 's/(\\w+)\\.\\./$1^../')\" $2 $3 $4 $5 $6 $7 $8 $9 #"
-  cherry-pit = !"git rebase -p --onto $1^ $1 #"
   cpc = cherry-pick --continue
   cpa = cherry-pick --abort
+  cps = cherry-pick --skip
   it = reset --hard @{upstream}
   head = it
   prs-since-plat = !"git log --format='%C(white)%s%C(reset) %C(dim white)- %an%C(reset)' $1..origin/Development --grep='^Merged PR' #"
@@ -47,7 +49,6 @@
   up = !"git pull --ff-only && git submodule update --init --recursive"
   upr = pull --rebase
   cfg = !"/usr/local/bin/mvim $HOME/.gitconfig 2> /dev/null"
-  on = !"ON_BRANCH=\"$(echo \"$@\" | tr '[:upper:]' '[:lower:]' | perl -pe \"s/'//g; s/[^\\w\\/\\.]/-/g; s/--*/-/g; s/-\\././g; s/[-\\.]+$//\")\"; git checkout -b \"$ON_BRANCH\"; git config branch.\"$ON_BRANCH\".remote origin; git config branch.\"$ON_BRANCH\".merge \"refs/heads/$ON_BRANCH\"; echo \"Got on $ON_BRANCH\" #"
   with = !"if [[ \"$1\" == it ]]; then git fetch && git merge \"origin/master\"; else git cherry-pick \"$1\"; fi #"
   with-it = with it
   amend = commit --amend

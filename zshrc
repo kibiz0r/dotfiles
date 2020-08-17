@@ -121,11 +121,15 @@ curlcat() {
   local exitcode=$?
   local code=$( echo $output | tail -1 )
   local response=$( echo $output | ghead -n -1 )
+
   echo $response
+
   if [[ ! -f $HOME/.httpcat$code ]]; then
     curl -so $HOME/.httpcat$code https://http.cat/$code
   fi
+
   imgcat $HOME/.httpcat$code
+
   return $exitcode
 }
 
@@ -151,6 +155,9 @@ mcurlcat() {
     base_url='https://mobileapi-dev.bissell.com'
   elif [[ $1 == 'sbx' ]]; then
     base_url='https://mobileapi-sandbox.bissell.com'
+  elif [[ $1 == 'pre-uat' ]]; then
+    base_url='https://pre-mobileapi-uat.bissell.com'
+    profile=".bissell-id"
   elif [[ $1 == 'uat' ]]; then
     base_url='https://mobileapi-uat.bissell.com'
     profile=".bissell-id"
@@ -166,7 +173,10 @@ mcurlcat() {
 
   echo "authenticating..."
 
-  local tokens=$( curlcat -H "Content-Type: application/json" -d @$HOME/$profile "$base_url/tokens" )
+  local tokens=$( curl -H "Content-Type: application/json" -d @$HOME/$profile "$base_url/tokens" )
+
+  env
+  return -1
 
   echo $?
 
