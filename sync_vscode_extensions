@@ -17,8 +17,13 @@ extensions =
   .sort
   .map do |extension|
     components = extension.split "-"
+
+    next if components.size < 2
+
     components[0...-1].join "-"
   end
+  .compact
+  .uniq
 
 install_commands = extensions.map do |extension|
   "    --install-extension #{extension}"
@@ -33,7 +38,7 @@ if [ ! -z "$USE_HOME_APPDIR" ]; then
   APPDIR="$HOME/Applications"
 fi
 
-$APPDIR/Visual\ Studio\ Code*.app/Contents/Resources/app/bin/code \\
+$APPDIR/Visual\\ Studio\\ Code.app/Contents/Resources/app/bin/code \\
 #{install_commands}
 END
 

@@ -7,6 +7,9 @@ if [ ! -z "$USE_HOME_APPDIR" ]; then
 fi
 
 $APPDIR/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code \
+    --install-extension alexkrechik.cucumberautocomplete \
+    --install-extension bierner.markdown-mermaid \
+    --install-extension bpruitt-goddard.mermaid-markdown-syntax-highlighting \
     --install-extension donjayamanne.githistory \
     --install-extension dotjoshjohnson.xml \
     --install-extension eamodio.gitlens \
@@ -21,14 +24,15 @@ $APPDIR/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code \
     --install-extension johannesrudolph.file-ext-switcher \
     --install-extension k--kato.docomment \
     --install-extension letmaik.git-tree-compare \
+    --install-extension ms-dotnettools.csharp \
     --install-extension ms-python.python \
     --install-extension ms-vscode.cpptools \
-    --install-extension ms-vscode.csharp \
     --install-extension ms-vscode.mono-debug \
+    --install-extension ms-vsliveshare.vsliveshare \
+    --install-extension orta.vscode-jest \
     --install-extension redhat.java \
     --install-extension twxs.cmake \
     --install-extension unity.unity-debug \
-    --install-extension vector-of-bool.cmake-tools \
     --install-extension visualstudioexptteam.vscodeintellicode \
     --install-extension vscjava.vscode-java-debug \
     --install-extension vscjava.vscode-java-dependency \
@@ -36,4 +40,5 @@ $APPDIR/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code \
     --install-extension vscjava.vscode-java-test \
     --install-extension vscjava.vscode-maven \
     --install-extension vscode-icons-team.vscode-icons \
-    --install-extension vscodevim.vim
+    --install-extension vscodevim.vim \
+    --install-extension vstirbu.vscode-mermaid-preview
