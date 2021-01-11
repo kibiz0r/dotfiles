@@ -20,11 +20,13 @@ GEM
     mustermann (1.0.2)
     nokogiri (1.8.5)
       mini_portile2 (~> 2.3.0)
-    pp (0.1.1)
+    pp (0.2.0)
+      prettyprint
+    prettyprint (0.1.0)
     rack (2.0.5)
     rack-protection (2.0.3)
       rack
-    redcarpet (3.4.0)
+    redcarpet (3.5.1)
     sinatra (2.0.3)
       mustermann (~> 1.0)
       rack (~> 2.0)
