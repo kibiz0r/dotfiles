@@ -11,7 +11,8 @@ GEM
     crass (1.0.4)
     i18n (1.0.1)
       concurrent-ruby (~> 1.0)
-    kramdown (1.17.0)
+    kramdown (2.3.1)
+      rexml
     loofah (2.2.2)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -20,11 +21,14 @@ GEM
     mustermann (1.0.2)
     nokogiri (1.8.5)
       mini_portile2 (~> 2.3.0)
-    pp (0.1.1)
+    pp (0.2.0)
+      prettyprint
+    prettyprint (0.1.0)
     rack (2.0.5)
     rack-protection (2.0.3)
       rack
     redcarpet (3.4.0)
+    rexml (3.2.4)
     sinatra (2.0.3)
       mustermann (~> 1.0)
       rack (~> 2.0)
