@@ -18,3 +18,5 @@
 /hackintosh/internal_config.plist.bak
 /browsh/*
 !/browsh/config.toml
+node_modules
+/vscode/globalStorage/vscodevim.vim/.*

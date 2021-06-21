@@ -73,7 +73,8 @@ fi
 
 # User configuration
 export PATH="$PATH:$HOME/bin:$HOME/Applications/Visual Studio Code.app/Contents/Resources/app/bin:$HOME/.dotnet/tools"
-export EDITOR="mvim -f"
+export EDITOR="code -n --wait"
+# export EDITOR="mvim -f"
 # export PAGER="tabless"
 export LESS="-Ri"
 
@@ -91,7 +92,8 @@ alias git=hub
 alias mvim='/usr/local/bin/mvim $@ > /dev/null 2>&1'
 alias dot="cd $HOME/.dotfiles"
 alias reddit="RTV_BROWSER=lynx rtv --enable-media"
-alias csharp="$(command which csharp) -r:System.Reactive.Core,System.Reactive.Linq,System.Reactive.Interfaces -r:System.Net.Http -r:$HOME/.nuget/packages/newtonsoft.json/12.0.2/lib/net45/Newtonsoft.Json.dll"
+alias csharp="$(command which csharp) -r:System.Reactive.Core,System.Reactive.Linq,System.Reactive.Interfaces -r:System.Net.Http -r:$HOME/.nuget/packages/newtonsoft.json/12.0.2/lib/net45/Newtonsoft.Json.dll -r:$HOME/.nuget/packages/yamldotnet/8.1.2/lib/net45/YamlDotNet.dll"
+alias meme="node --no-warnings $HOME/.dotfiles/node_modules/.bin/meme"
 alias memes="cat /usr/local/lib/node_modules/memey/data/memes.json | jq '.[].name' | sort"
 
 memecat() {
@@ -109,24 +111,19 @@ memecat() {
 }
 
 epoch() {
-  gdate -d @$1
+  if [[ -z $1 ]]; then
+    gdate +%s
+  else
+    gdate -d @$1
+  fi
 }
 
 epochms() {
-  gdate -d @$( echo "($1 + 500) / 1000" | bc )
-}
-
-curlcat() {
-  local output=$( curl -sw "\n%{http_code}" $@ )
-  local exitcode=$?
-  local code=$( echo $output | tail -1 )
-  local response=$( echo $output | ghead -n -1 )
-  echo $response
-  if [[ ! -f $HOME/.httpcat$code ]]; then
-    curl -so $HOME/.httpcat$code https://http.cat/$code
+  if [[ -z $1 ]]; then
+    echo "$(gdate +%s) * 1000" | bc
+  else
+    gdate -d @$( echo "($1 + 500) / 1000" | bc )
   fi
-  imgcat $HOME/.httpcat$code
-  return $exitcode
 }
 
 alias xam="cd $HOME/git/BISSELL_Xamarin_App"
@@ -142,58 +139,42 @@ alias plat="cd $HOME/git/AWS_IoT"
 alias wtools="cd $HOME/git/e_common_test_utils/wifi"
 alias wifi="cd $HOME/git/d_iot_p488"
 alias tobor="cd $HOME/git/d_donnybrook"
+alias cdf="cd $HOME/git/cdf-facade"
+alias cdff="cd $HOME/git/cdf-facade"
+alias cdfi="cd $HOME/git/cdf-infrastructure-bissell"
+alias cdfa="cd $HOME/git/cdf-facade/app"
+alias cdfm="cd $HOME/git/cdf-facade/packages/mobile-api"
+alias cdfp="cd $HOME/git/cdf-facade/packages/pairing"
+alias cdfs="cd $HOME/git/cdf-facade/packages/system-tests"
+alias cdfpa="cd $HOME/git/cdf-facade/packages/portal-api"
+alias cdfpu="cd $HOME/git/cdf-facade/packages/portal-ui"
+alias ni="npm install"
+alias nr="npm run"
+alias nrb="npm run build"
+alias nrt="npm run test"
+alias nrr="npm run reset"
+alias pn="pnpm"
+alias pni="pnpm install"
+alias pnu="rm pnpm-lock.yaml; pnpm update"
+alias pnr="pnpm run"
+alias pnrb="pnpm run build"
+alias pnrt="pnpm run test"
+alias aze="AWS_PROFILE=cdf_admin AWS_REGION=us-east-1"
+alias cdfe="CONFIG_LOCATION=$HOME/git/cdf-infrastructure-bissell aze"
 
-mcurlcat() {
-  local base_url=''
-  local profile=".bissell-id-dev"
-
-  if [[ $1 == 'dev' ]]; then
-    base_url='https://mobileapi-dev.bissell.com'
-  elif [[ $1 == 'sbx' ]]; then
-    base_url='https://mobileapi-sandbox.bissell.com'
-  elif [[ $1 == 'uat' ]]; then
-    base_url='https://mobileapi-uat.bissell.com'
-    profile=".bissell-id"
-  elif [[ $1 == 'prod' ]]; then
-    base_url='https://mobileapi.bissell.com'
-    profile=".bissell-id"
-  elif [[ $1 == 'mh' ]]; then
-    base_url='https://i4empvoke8.execute-api.us-east-1.amazonaws.com/mh'
-  else
-    echo unrecognized env $1
-    return -1
-  fi
-
-  echo "authenticating..."
-
-  local tokens=$( curlcat -H "Content-Type: application/json" -d @$HOME/$profile "$base_url/tokens" )
-
-  echo $?
-
-  echo $tokens
-
-  local access_token=$( echo "$tokens" | jq .access_token )
-  echo access token $access_token
-
-  local path=${@: -1}
-  echo path $path
-  env
-
-  local rest=${@: 2:-1}
-  echo rest $rest
-
-  echo curlcat $rest -H "Authorization: Bearer $access_token" "$base_url$path"
-  # curlcat $rest -H "Authorization: Bearer $access_token" "$base_url$path"
-  curlcat
-}
+alias nod="NODE_PATH=$HOME/.dotfiles/node_modules node --interactive --experimental-repl-await --eval=\"const _ = require('lodash'); const async = require('async'); const delay = require('delay'); const inversify = require('inversify'); const faker = require('faker'); const AWS = require('aws-sdk'); const moment = require('moment'); const pem = require('pem');\""
+alias ts-nod="NODE_PATH=$HOME/.dotfiles/node_modules ts-node --interactive --eval=\"import _ from 'lodash'; import async from 'async'; import delay from 'delay'; import * as inversify from 'inversify';\""
 
 # Hackintosh
 alias esp_internal="$HOME/.dotfiles/hackintosh/mount_internal"
 alias esp_usb="$HOME/.dotfiles/hackintosh/mount_usb"
 
 # Docker
-eval $(docker-machine env default)
-export LOCALSTACK_HOST=$(docker-machine ip)
+# eval $(docker-machine env default)
+# export LOCALSTACK_HOST=$(docker-machine ip)
+
+# npm executables
+export PATH="$PATH:$HOME/.dotfiles/node_modules/.bin"
 
 # NOTE: Mono bugs
 # Prevent IOException: kqueue() FileSystemWatcher has reached the maximum nunmber of files to watch.
@@ -214,3 +195,28 @@ export PATH="/usr/local/opt/qt/bin:$PATH"
 # tabtab source for slss package
 # uninstall by removing these lines or running `tabtab uninstall slss`
 [[ -f /Users/harrinm/git/AWS_IoT/app/foundation/core/code/node_modules/tabtab/.completions/slss.zsh ]] && . /Users/harrinm/git/AWS_IoT/app/foundation/core/code/node_modules/tabtab/.completions/slss.zsh
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+autoload -U add-zsh-hook
+load-nvmrc() {
+  local node_version="$(nvm version)"
+  local nvmrc_path="$(nvm_find_nvmrc)"
+
+  if [ -n "$nvmrc_path" ]; then
+    local nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
+
+    if [ "$nvmrc_node_version" = "N/A" ]; then
+      nvm install
+    elif [ "$nvmrc_node_version" != "$node_version" ]; then
+      nvm use
+    fi
+  elif [ "$node_version" != "$(nvm version default)" ]; then
+    echo "Reverting to nvm default version"
+    nvm use default
+  fi
+}
+add-zsh-hook chpwd load-nvmrc
+load-nvmrc

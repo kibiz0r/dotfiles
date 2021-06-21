@@ -1,0 +1,54 @@
+#!/usr/bin/env ruby
+
+require 'pathname'
+require 'json'
+
+stage, action, *args = ARGV
+
+@profile = '.bissell-id-dev'
+
+@action_curl = ENV['ACTION_CURL'] || 'curl'
+
+@base_url = case stage
+when 'dev'
+  'https://mobileapi-dev.bissell.com'
+when 'sbx'
+  'https://mobileapi-sandbox.bissell.com'
+when 'uat'
+  @profile = '.bissell-id'
+  'https://mobileapi-uat.bissell.com'
+when 'prod'
+  @profile = '.bissell-id'
+  'https://mobileapi.bissell.com'
+else
+  raise "unrecognized env #{$1}"
+end
+
+def curl_args(path, auth, *args)
+  if auth
+    args.unshift "-H", "Authorization: Bearer #{auth}"
+  end
+
+  ['-H', "Content-Type: application/json", *args, "#{URI.join @base_url, path}"]
+end
+
+auth_args = curl_args "tokens", nil, "-s", "-d", "@#{Pathname.new(ENV['HOME']).join @profile}"
+
+token_response = IO.popen ['curl', *auth_args] do |io| 
+  io.read
+end
+
+token = JSON.parse(token_response)['access_token']
+
+unless token
+  puts "auth failed:\n  #{token_response}"
+  exit -1
+end
+
+action_args = curl_args action, token, *args
+
+# action_response = IO.popen ['curl', *action_args] do |io| 
+#   io.read
+# end
+
+exec @action_curl, *action_args

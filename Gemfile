@@ -7,4 +7,5 @@ source "https://rubygems.org" do
   gem "loofah"
   gem "redcarpet"
   gem "kramdown"
+  gem "aws-sdk"
 end

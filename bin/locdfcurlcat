@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+ACTION_CURL=curlcat locdfcurl $@

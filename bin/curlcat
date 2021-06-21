@@ -1,0 +1,19 @@
+#!/usr/bin/env zsh
+
+output=$( curl -sw "\n%{http_code}" $@ )
+exitcode=$?
+response=$( echo $output | ghead -n -1 )
+
+if [[ $exitcode == 0 ]]; then
+  code=$( echo $output | tail -1 )
+
+  if [[ ! -f $HOME/.httpcat$code ]]; then
+    curl -so $HOME/.httpcat$code https://http.cat/$code
+  fi
+
+  imgcat $HOME/.httpcat$code
+fi
+
+echo $response
+
+exit $exitcode

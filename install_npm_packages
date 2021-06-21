@@ -6,4 +6,5 @@ npm install -g \
   appcenter-cli \
   ask-cli \
   svg2vectordrawable \
-  memey
+  memey \
+  repl

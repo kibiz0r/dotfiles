@@ -1,6 +1,6 @@
 {
     "git.countBadge": "off",
-    "macros": {
+    "macros.list": {
         "openAndKeep": [
             "list.select",
             "workbench.action.keepEditor",
@@ -10,6 +10,10 @@
             "workbench.action.joinAllGroups",
             "workbench.action.maximizeEditor",
             "workbench.action.closePanel"
+        ],
+        "focusFilesExplorerCollapsed": [
+          "workbench.files.action.focusFilesExplorer",
+          "workbench.files.action.collapseExplorerFolders",
         ]
     },
     "editor.minimap.enabled": false,
@@ -17,12 +21,12 @@
     "editor.rulers": [
         100
     ],
-    "editor.tabSize": 2,
+    "editor.tabSize": 8,
     "[csharp]": {
         "editor.tabSize": 4
     },
     "[xml]": {
-        "editor.tabSize": 4
+        "editor.tabSize": 2
     },
     "[json]": {
         "editor.tabSize": 2,
@@ -32,7 +36,8 @@
         "editor.tabSize": 2
     },
     "[html]": {
-        "editor.tabSize": 4
+        "editor.tabSize": 4,
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "editor.acceptSuggestionOnCommitCharacter": false,
     "vim.useSystemClipboard": true,
@@ -50,7 +55,6 @@
     "vsicons.dontShowNewVersionMessage": true,
     "explorer.confirmDelete": false,
     "explorer.confirmDragAndDrop": false,
-    "workbench.activityBar.visible": false,
     "git.ignoreLimitWarning": true,
     "editor.renderWhitespace": "all",
     "editor.autoClosingBrackets": false,
@@ -108,5 +112,30 @@
     },
     "extensions.ignoreRecommendations": true,
     "javascript.updateImportsOnFileMove.enabled": "always",
-    "html.format.indentHandlebars": true
+    "html.format.indentHandlebars": true,
+    "python.languageServer": "Microsoft",
+    "[jsonc]": {
+      "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "aws.telemetry": false,
+    "aws.profile": "profile:cdf_dev",
+    "[typescript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "workbench.editorAssociations": [
+	{
+		"viewType": "jupyter.notebook.ipynb",
+		"filenamePattern": "*.ipynb"
+	},
+	{
+		"viewType": "jupyter-notebook",
+		"filenamePattern": "*.ipynb"
+	}
+],
+"editor.cursorStyle": "line",
+"editor.insertSpaces": false,
+"editor.lineNumbers": "on",
+"editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
+"editor.wordWrap": "off",
+"workbench.activityBar.visible": false
 }

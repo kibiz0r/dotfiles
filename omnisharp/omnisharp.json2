@@ -1,0 +1,7 @@
+{
+    "RoslynExtensionsOptions": {
+        "LocationPaths": [
+            "/Users/harrinm/.omnisharp/Roslynator.VisualStudio"
+        ]
+    }
+}
