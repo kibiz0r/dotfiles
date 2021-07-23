@@ -1,6 +1,0 @@
-#!/usr/bin/env bash
-
-USE_SUDO=yes \
-USE_VSCODE_INSIDERS=yes \
-./install_base
-
