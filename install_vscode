@@ -39,4 +39,5 @@ system "curl -Lo vscode.zip https://go.microsoft.com/fwlink/?LinkId=#{link_id}"
 
 system "unzip vscode.zip '#{zip_app_path}/*' -d '#{app_path}'"
 
-FileUtils.mv default_vscode_dir, target_vscode_dir
+# Idk why this was ever here
+# FileUtils.mv default_vscode_dir, target_vscode_dir

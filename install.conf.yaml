@@ -95,6 +95,7 @@
       force: true
       create: true
       path: browsh
+    /usr/local/bin/code: /Applications/Visual Studio Code.app/Contents/Resources/app/bin/code
 
 - shell:
   - [./require_kibiyama ./launch_sync_music, "Maybe launching kibiyama's music sync"]
