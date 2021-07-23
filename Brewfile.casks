@@ -1,3 +1,5 @@
+tap "homebrew/cask-fonts"
+
 cask "bettertouchtool"
 cask "macvim"
 cask "postman"
@@ -13,3 +15,4 @@ cask "steam"
 cask "battle-net"
 cask "discord"
 cask "nvalt"
+cask "font-fira-code"

@@ -122,20 +122,14 @@
     "[typescript]": {
       "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
-    "workbench.editorAssociations": [
-	{
-		"viewType": "jupyter.notebook.ipynb",
-		"filenamePattern": "*.ipynb"
-	},
-	{
-		"viewType": "jupyter-notebook",
-		"filenamePattern": "*.ipynb"
-	}
-],
+    "workbench.editorAssociations": {
+	"*.ipynb": "jupyter-notebook"
+},
 "editor.cursorStyle": "line",
 "editor.insertSpaces": false,
 "editor.lineNumbers": "on",
 "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
 "editor.wordWrap": "off",
-"workbench.activityBar.visible": false
+"workbench.activityBar.visible": false,
+"workbench.editor.untitled.hint": "hidden"
 }
