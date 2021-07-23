@@ -108,7 +108,7 @@
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
     "diffEditor.renderSideBySide": false,
     "[javascript]": {
-      "editor.defaultFormatter": "HookyQR.beautify"
+      "editor.insertSpaces": true
     },
     "extensions.ignoreRecommendations": true,
     "javascript.updateImportsOnFileMove.enabled": "always",
@@ -120,7 +120,8 @@
     "aws.telemetry": false,
     "aws.profile": "profile:cdf_dev",
     "[typescript]": {
-      "editor.defaultFormatter": "esbenp.prettier-vscode"
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "editor.insertSpaces": true
     },
     "workbench.editorAssociations": [
 	{

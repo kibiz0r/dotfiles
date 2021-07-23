@@ -846,5 +846,25 @@
 	"key": "shift+f5",
 	"command": "-workbench.action.debug.stop",
 	"when": "inDebugMode"
+},
+{
+	"key": "shift+cmd+y",
+	"command": "workbench.view.debug",
+	"when": "viewContainer.workbench.view.debug.enabled"
+},
+{
+	"key": "shift+cmd+d",
+	"command": "-workbench.view.debug",
+	"when": "viewContainer.workbench.view.debug.enabled"
+},
+{
+	"key": "shift+alt+y",
+	"command": "workbench.debug.action.toggleRepl",
+	"when": "workbench.panel.repl.view.active"
+},
+{
+	"key": "shift+cmd+y",
+	"command": "-workbench.debug.action.toggleRepl",
+	"when": "workbench.panel.repl.view.active"
 }
 ]

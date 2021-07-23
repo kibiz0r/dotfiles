@@ -35,6 +35,7 @@ The default setup is rather idealistic and safe. It uses stable VSCode, avoids s
 
 ## TODO
 
+- defaults write com.apple.dock autohide-delay 31536000 && killall Dock # but need autohide toggle shortcut on cmd+shift+d
 - brew cask install java before installing first round of brews; sleuthkit depends on it, osquery depends on sleuthkit
 - brew cask install xquartz too; feh requires it
 - ./per_user_host: line 15: ./write_defaults.kibiyama: No such file or directory
