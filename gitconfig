@@ -24,6 +24,8 @@
   prs-between = !"git log --format='%C(white)%s%C(reset) %C(dim white)- %an%C(reset)' $1..$2 --grep='^Merged PR' #"
   prs-between1 = !"git log --format='%C(bold blue)%h%C(reset) %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' origin/$1..origin/$2 --grep='^Merged PR' #"
   it = reset --hard @{upstream}
+  main = reset --hard origin/main
+  master = reset --hard origin/master
   rename = branch -m
   remerge = checkout -m
   fixed = !"FIXED=$(git status --porcelain | grep \"^\\w\\{2\\}\" | sed \"s/[[:alpha:]][[:alpha:]] //\" | head -n1); if [[ -n $FIXED ]]; then echo git add \"$FIXED\"; git add \"$FIXED\"; fi; NEXT=$(git status --porcelain | grep \"^\\w\\{2\\}\" | sed \"s/[[:alpha:]][[:alpha:]] //\" | head -n1); if [[ -n $NEXT ]]; then echo Next is \"$NEXT\"; else echo 'All done!'; fi"
@@ -49,7 +51,7 @@
   twirl = !git stash && git pull && git stash pop
   up = !"git pull --ff-only && git submodule update --init --recursive"
   upr = pull --rebase
-  cfg = !"/usr/local/bin/mvim $HOME/.gitconfig 2> /dev/null"
+  cfg = !"code $HOME/.gitconfig 2> /dev/null"
   on = !"if [[ \"$1\" == it ]]; then git fetch && git rebase origin/main; else ON_BRANCH=\"$(echo \"$@\" | tr '[:upper:]' '[:lower:]' | perl -pe \"s/'//g; s/[^\\w\\/\\.]/-/g; s/--*/-/g; s/-\\././g; s/[-\\.]+$//\")\"; git checkout -b \"$ON_BRANCH\"; git config branch.\"$ON_BRANCH\".remote origin; git config branch.\"$ON_BRANCH\".merge \"refs/heads/$ON_BRANCH\"; echo \"Got on $ON_BRANCH\"; fi #"
   on-it = on it
   with = !"if [[ \"$1\" == it ]]; then git fetch && git merge \"origin/main\"; else git cherry-pick \"$1\"; fi #"
