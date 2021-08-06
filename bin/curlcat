@@ -5,13 +5,13 @@ exitcode=$?
 response=$( echo $output | ghead -n -1 )
 
 if [[ $exitcode == 0 ]]; then
-  code=$( echo $output | tail -1 )
+  statuscode=$( echo $output | tail -1 )
 
-  if [[ ! -f $HOME/.httpcat$code ]]; then
-    curl -so $HOME/.httpcat$code https://http.cat/$code
+  if [[ ! -f $HOME/.httpcat$statuscode ]]; then
+    curl -so $HOME/.httpcat$statuscode https://http.cat/$statuscode
   fi
 
-  imgcat $HOME/.httpcat$code
+  imgcat $HOME/.httpcat$statuscode 1>&2
 fi
 
 echo $response

@@ -126,6 +126,13 @@ epochms() {
   fi
 }
 
+atoken() {
+  local login_response=$( $@ )
+  local token=$( echo $login_response | jq -r .access_token )
+  export ATOKEN=$token
+  echo 'echo $ATOKEN:' $token
+}
+
 alias xam="cd $HOME/git/BISSELL_Xamarin_App"
 alias xam2="cd $HOME/git/BISSELL_Xamarin_App2"
 alias xamd="cd $HOME/git/BISSELL_Xamarin_App_Develop"
@@ -163,7 +170,7 @@ alias pnrt="pnpm run test"
 alias aze="AWS_PROFILE=cdf_admin AWS_REGION=us-east-1"
 alias cdfe="CONFIG_LOCATION=$HOME/git/cdf-infrastructure-bissell aze"
 
-alias nod="NODE_PATH=$HOME/.dotfiles/node_modules node --interactive --experimental-repl-await --eval=\"const _ = require('lodash'); const async = require('async'); const delay = require('delay'); const inversify = require('inversify'); const faker = require('faker'); const AWS = require('aws-sdk'); const moment = require('moment'); const pem = require('pem');\""
+alias nod="NODE_PATH=$HOME/.dotfiles/node_modules node --interactive --experimental-repl-await --eval=\"const _ = require('lodash'); const async = require('async'); const delay = require('delay'); const inversify = require('inversify'); const faker = require('faker'); const AWS = require('aws-sdk'); const moment = require('moment'); const pem = require('pem'); const convert = require('convert-units');\""
 alias ts-nod="NODE_PATH=$HOME/.dotfiles/node_modules ts-node --interactive --eval=\"import _ from 'lodash'; import async from 'async'; import delay from 'delay'; import * as inversify from 'inversify';\""
 
 # Hackintosh
@@ -200,6 +207,27 @@ export PATH="/usr/local/opt/qt/bin:$PATH"
 [[ -f /Users/harrinm/git/AWS_IoT/app/foundation/core/code/node_modules/tabtab/.completions/slss.zsh ]] && . /Users/harrinm/git/AWS_IoT/app/foundation/core/code/node_modules/tabtab/.completions/slss.zsh
 
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
+# place this after nvm initialization!
+autoload -U add-zsh-hook
+load-nvmrc() {
+  local node_version="$(nvm version)"
+  local nvmrc_path="$(nvm_find_nvmrc)"
+
+  if [ -n "$nvmrc_path" ]; then
+    local nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
+
+    if [ "$nvmrc_node_version" = "N/A" ]; then
+      nvm install
+    elif [ "$nvmrc_node_version" != "$node_version" ]; then
+      nvm use
+    fi
+  elif [ "$node_version" != "$(nvm version default)" ]; then
+    echo "Reverting to nvm default version"
+    nvm use default
+  fi
+}
+add-zsh-hook chpwd load-nvmrc
+load-nvmrc

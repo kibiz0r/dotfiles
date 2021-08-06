@@ -21,7 +21,10 @@
     "editor.rulers": [
         100
     ],
-    "editor.tabSize": 8,
+    "editor.tabSize": 4,
+    "[shellscript]": {
+        "editor.tabSize": 2
+    },
     "[csharp]": {
         "editor.tabSize": 4
     },
@@ -127,7 +130,7 @@
 	"*.ipynb": "jupyter-notebook"
 },
 "editor.cursorStyle": "line",
-"editor.insertSpaces": false,
+"editor.insertSpaces": true,
 "editor.lineNumbers": "on",
 "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
 "editor.wordWrap": "off",

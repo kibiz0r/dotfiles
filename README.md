@@ -35,6 +35,7 @@ The default setup is rather idealistic and safe. It uses stable VSCode, avoids s
 
 ## TODO
 
+- ~/Library/KeyBindings/DefaultKeyBinding.dict with fixes from https://github.com/microsoft/vscode/issues/44070#issuecomment-799716362
 - defaults write com.apple.dock autohide-delay 31536000 && killall Dock # but need autohide toggle shortcut on cmd+shift+d
 - defaults write com.apple.dock no-bouncing -bool TRUE
 - Set hotkey for enable/disable autohide-dock to cmd+shift+d

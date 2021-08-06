@@ -25,6 +25,7 @@
     "appcenter-cli": "^2.6.7",
     "ask-cli": "^2.15.0",
     "async": "^3.2.0",
+    "convert-units": "^2.3.4",
     "delay": "^5.0.0",
     "faker": "^5.5.3",
     "inversify": "^5.1.1",

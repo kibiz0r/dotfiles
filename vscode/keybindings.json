@@ -343,7 +343,7 @@
         "when": "fileMatchFocus && replaceActive && searchViewletVisible"
     },
     {
-        "key": "cmd+enter",
+        "key": "alt+cmd+enter",
         "command": "workbench.action.debug.start",
         "when": "!inDebugMode"
     },
@@ -866,5 +866,25 @@
 	"key": "shift+cmd+y",
 	"command": "-workbench.debug.action.toggleRepl",
 	"when": "workbench.panel.repl.view.active"
+},
+{
+    "key": "cmd+enter",
+    "command": "editor.action.replaceAll",
+    "when": "editorFocus && findWidgetVisible"
+},
+{
+    "key": "alt+cmd+enter",
+    "command": "-editor.action.replaceAll",
+    "when": "editorFocus && findWidgetVisible"
+},
+{
+    "key": "cmd+enter",
+    "command": "search.action.replaceAll",
+    "when": "replaceActive && searchViewletVisible && !findWidgetVisible"
+},
+{
+    "key": "alt+cmd+enter",
+    "command": "-search.action.replaceAll",
+    "when": "replaceActive && searchViewletVisible && !findWidgetVisible"
 }
 ]

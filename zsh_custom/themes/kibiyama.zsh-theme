@@ -38,6 +38,15 @@ rbenv_custom_status() {
   fi
 }
 
+nvm_custom_status() {
+  if which nvm &> /dev/null; then
+    local node=$(nvm current)
+    if [[ $node != "system" ]]; then
+      echo "%{$reset_color%}%{$fg[red]%}[node:$node]%{$reset_color%}"
+    fi
+  fi
+}
+
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$reset_color%}%{$fg[yellow]%}|"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[red]%}>"
@@ -56,4 +65,5 @@ git_custom_status() {
 local user_host='%{$reset_color%}%{$fg[green]%}%n%{$fg[green]%}@%m:'
 local current_dir='%{$fg[cyan]%}%~%{$reset_color%}'
 PROMPT="${user_host}${current_dir}\$(git_custom_status)%{$reset_color%} "
+RPROMPT="\$(nvm_custom_status)"
 # RPROMPT="\$(unity_custom_status)\$(rbenv_custom_status)"
