@@ -333,5 +333,6 @@
   "Yitzchok (rainglow)",
   "Zacks (rainglow)"
 ],
-"typescript.updateImportsOnFileMove.enabled": "always"
+"typescript.updateImportsOnFileMove.enabled": "always",
+"workbench.activityBar.visible": false
 }
