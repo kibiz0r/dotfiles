@@ -1,6 +1,7 @@
 {
   "shifty.shiftMode": "discovery",
   "shifty.colorThemes.ignoreLightColorThemes": true,
+  "shifty.shiftInterval.shiftFontFamilyIntervalMin": 0,
     "git.countBadge": "off",
     "macros.list": {
         "openAndKeep": [
@@ -334,5 +335,6 @@
   "Zacks (rainglow)"
 ],
 "typescript.updateImportsOnFileMove.enabled": "always",
-"workbench.activityBar.visible": false
+"workbench.activityBar.visible": false,
+"workbench.colorTheme": "Kibi Colors"
 }
