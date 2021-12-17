@@ -197,21 +197,10 @@ here() {
   $args
 }
 
-# alcurl() {
-#   aze here $HOME/bin/alcurl $@
-# }
-
-# alias ni="npm install"
-# alias nr="npm run"
-# alias nrb="npm run build"
-# alias nrt="npm run test"
-# alias nrr="npm run reset"
-# alias pn="pnpm"
-# alias pni="pnpm install"
-# alias pnu="rm pnpm-lock.yaml; pnpm update"
-# alias pnr="pnpm run"
-# alias pnrb="pnpm run build"
-# alias pnrt="pnpm run test"
+alias ni="npm install"
+alias nr="npm run"
+alias nrb="npm run build"
+alias nrt="npm run test"
 
 if [[ -f $HOME/git/cdf-facade/shell-aliases.bash ]]; then
   source $HOME/git/cdf-facade/shell-aliases.bash
