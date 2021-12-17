@@ -213,7 +213,9 @@ here() {
 # alias pnrb="pnpm run build"
 # alias pnrt="pnpm run test"
 
-source $HOME/git/cdf-facade/shell-aliases.bash
+if [[ -f $HOME/git/cdf-facade/shell-aliases.bash ]]; then
+  source $HOME/git/cdf-facade/shell-aliases.bash
+fi
 
 alias nod="NODE_PATH=$HOME/.dotfiles/node_modules node --interactive --experimental-repl-await --eval=\"const _ = require('lodash'); const async = require('async'); const fs = require('fs').promises; const delay = require('delay'); const inversify = require('inversify'); const faker = require('faker'); const AWS = require('aws-sdk'); const moment = require('moment'); const momentTZ = require('moment-timezone'); const pem = require('pem'); const convert = require('convert-units'); const chrono = require('chrono-node'); const inflection = require('inflection'); const CryptoJS = require('crypto-js');\""
 alias nodd="NODE_PATH=$HOME/.dotfiles/node_modules node"
