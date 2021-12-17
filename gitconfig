@@ -150,3 +150,5 @@
 # 	command = imgdiff
 [pull]
 	ff = only
+[init]
+	defaultBranch = main
