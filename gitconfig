@@ -44,13 +44,14 @@
   a = add
   df = diff --ws-error-highlight=all
   d = df
-  forked-by = !"git remote set-url origin `git remote get-url origin | sed \"s/:[^/]*/:$1/\"` # git forked-by kibiz0r"
+  forked-up = !"git fetch --all && git pull upstream `git current-branch` #"
+  forked-by = !"git remote set-url upstream `git remote get-url origin`; git remote set-url origin `git remote get-url origin | sed \"s/:[^/]*/:$1/\"` # git forked-by kibiz0r"
   current-branch = !"git branch | grep '*' | sed 's/* //'"
   curb = current-branch
   shwifty = !git-shwifty
   twirl = !git stash && git pull && git stash pop
   up = !"git pull --ff-only && git submodule update --init --recursive"
-  upr = pull --rebase
+  upr = !"git pull --rebase && git submodule update --init --recursive"
   cfg = !"code $HOME/.gitconfig 2> /dev/null"
   on = !"if [[ \"$1\" == it ]]; then git fetch && git rebase origin/main; else ON_BRANCH=\"$(echo \"$@\" | tr '[:upper:]' '[:lower:]' | perl -pe \"s/'//g; s/[^\\w\\/\\.]/-/g; s/--*/-/g; s/-\\././g; s/[-\\.]+$//\")\"; git checkout -b \"$ON_BRANCH\"; git config branch.\"$ON_BRANCH\".remote origin; git config branch.\"$ON_BRANCH\".merge \"refs/heads/$ON_BRANCH\"; echo \"Got on $ON_BRANCH\"; fi #"
   on-it = on it
@@ -147,3 +148,5 @@
 # [diff "image"]
 # 	textconv = imgcat
 # 	command = imgdiff
+[pull]
+	ff = only

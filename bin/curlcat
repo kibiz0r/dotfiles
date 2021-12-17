@@ -1,11 +1,11 @@
 #!/usr/bin/env zsh
 
-output=$( curl -sw "\n%{http_code}" $@ )
+stdoutfile=$( mktemp )
+curl -sw "\n%{http_code}" $@ > $stdoutfile
 exitcode=$?
-response=$( echo $output | ghead -n -1 )
 
 if [[ $exitcode == 0 ]]; then
-  statuscode=$( echo $output | tail -1 )
+  statuscode=$( cat $stdoutfile | tail -1 )
 
   if [[ ! -f $HOME/.httpcat$statuscode ]]; then
     curl -so $HOME/.httpcat$statuscode https://http.cat/$statuscode
@@ -14,6 +14,6 @@ if [[ $exitcode == 0 ]]; then
   imgcat $HOME/.httpcat$statuscode 1>&2
 fi
 
-echo $response
+cat $stdoutfile | ghead -n -1
 
 exit $exitcode

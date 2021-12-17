@@ -309,7 +309,7 @@
         "command": "-dotnet-test-explorer.rerunLastCommand"
     },
     {
-        "key": "shift+alt+x",
+        "key": "shift+cmd+b",
         "command": "workbench.action.toggleActivityBarVisibility"
     },
     {
@@ -520,7 +520,7 @@
         "command": "merge-conflict.previous"
     },
     {
-        "key": "shift+alt+0",
+        "key": "alt+cmd+v",
         "command": "workbench.action.toggleEditorGroupLayout"
     },
     {
@@ -886,5 +886,103 @@
     "key": "alt+cmd+enter",
     "command": "-search.action.replaceAll",
     "when": "replaceActive && searchViewletVisible && !findWidgetVisible"
+},
+{
+  "key": "shift+alt+cmd+[",
+  "command": "editor.foldAll",
+  "when": "editorTextFocus && foldingEnabled"
+},
+{
+  "key": "cmd+k cmd+0",
+  "command": "-editor.foldAll",
+  "when": "editorTextFocus && foldingEnabled"
+},
+{
+  "key": "alt+cmd+1",
+  "command": "editor.foldLevel1",
+  "when": "editorTextFocus && foldingEnabled"
+},
+{
+  "key": "cmd+k cmd+1",
+  "command": "-editor.foldLevel1",
+  "when": "editorTextFocus && foldingEnabled"
+},
+{
+  "key": "alt+cmd+2",
+  "command": "editor.foldLevel2",
+  "when": "editorTextFocus && foldingEnabled"
+},
+{
+  "key": "cmd+k cmd+2",
+  "command": "-editor.foldLevel2",
+  "when": "editorTextFocus && foldingEnabled"
+},
+{
+  "key": "alt+cmd+3",
+  "command": "editor.foldLevel3",
+  "when": "editorTextFocus && foldingEnabled"
+},
+{
+  "key": "cmd+k cmd+3",
+  "command": "-editor.foldLevel3",
+  "when": "editorTextFocus && foldingEnabled"
+},
+{
+  "key": "alt+cmd+4",
+  "command": "editor.foldLevel4",
+  "when": "editorTextFocus && foldingEnabled"
+},
+{
+  "key": "cmd+k cmd+4",
+  "command": "-editor.foldLevel4",
+  "when": "editorTextFocus && foldingEnabled"
+},
+{
+  "key": "alt+cmd+5",
+  "command": "editor.foldLevel5",
+  "when": "editorTextFocus && foldingEnabled"
+},
+{
+  "key": "cmd+k cmd+5",
+  "command": "-editor.foldLevel5",
+  "when": "editorTextFocus && foldingEnabled"
+},
+{
+  "key": "alt+cmd+6",
+  "command": "editor.foldLevel6",
+  "when": "editorTextFocus && foldingEnabled"
+},
+{
+  "key": "cmd+k cmd+6",
+  "command": "-editor.foldLevel6",
+  "when": "editorTextFocus && foldingEnabled"
+},
+{
+  "key": "alt+cmd+7",
+  "command": "editor.foldLevel7",
+  "when": "editorTextFocus && foldingEnabled"
+},
+{
+  "key": "cmd+k cmd+7",
+  "command": "-editor.foldLevel7",
+  "when": "editorTextFocus && foldingEnabled"
+},
+{
+  "key": "alt+cmd+0",
+  "command": "-workbench.action.toggleEditorGroupLayout"
+},
+{
+  "key": "alt+cmd+0",
+  "command": "editor.foldRecursively",
+  "when": "editorTextFocus && foldingEnabled"
+},
+{
+  "key": "cmd+k cmd+[",
+  "command": "-editor.foldRecursively",
+  "when": "editorTextFocus && foldingEnabled"
+},
+{
+  "key": "shift+cmd+b",
+  "command": "-workbench.action.tasks.build"
 }
 ]

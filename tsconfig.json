@@ -1,7 +1,14 @@
 {
   "compilerOptions": {
-    "target": "es2020",
-    "module": "commonjs",
-    "esModuleInterop": true
+    "target": "ES2020",
+    "module": "CommonJS",
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
+    "noUnusedLocals": false
+  },
+  "ts-node": {
+    "compilerOptions": {
+      "noUnusedLocals": false
+    }
   }
 }

@@ -1,4 +1,6 @@
 {
+  "shifty.shiftMode": "discovery",
+  "shifty.colorThemes.ignoreLightColorThemes": true,
     "git.countBadge": "off",
     "macros.list": {
         "openAndKeep": [
@@ -21,7 +23,7 @@
     "editor.rulers": [
         100
     ],
-    "editor.tabSize": 4,
+    "editor.tabSize": 2,
     "[shellscript]": {
         "editor.tabSize": 2
     },
@@ -111,7 +113,9 @@
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
     "diffEditor.renderSideBySide": false,
     "[javascript]": {
-      "editor.insertSpaces": true
+      "editor.insertSpaces": true,
+      "editor.tabSize": 2,
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "extensions.ignoreRecommendations": true,
     "javascript.updateImportsOnFileMove.enabled": "always",
@@ -134,6 +138,201 @@
 "editor.lineNumbers": "on",
 "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
 "editor.wordWrap": "off",
-"workbench.activityBar.visible": false,
-"workbench.editor.untitled.hint": "hidden"
+"workbench.editor.untitled.hint": "hidden",
+"security.workspace.trust.untrustedFiles": "open",
+"rest-client.enableCustomVariableReferencesCodeLens": false,
+"editor.tokenColorCustomizations": {
+  "[ColorCode]": {
+    "textMateRules": [
+      {
+        "scope": [
+          "keyword"
+        ],
+        "settings": {
+          "foreground": "#66C0FF"
+        }
+      },
+      {
+        "scope": [
+          "keyword.operator.arithmetic.js"
+        ],
+        "settings": {
+          "foreground": "#F7E36E"
+        }
+      },
+      {
+        "scope": [
+          "keyword.operator.new"
+        ],
+        "settings": {
+          "foreground": "#FF6D33",
+          "fontStyle": "bold"
+        }
+      },
+      {
+        "scope": [
+          "variable.other.property",
+          "storage.type.property.js",
+          "storage.type.property.ts",
+          "storage.type.property.tsx"
+        ],
+        "settings": {
+          "foreground": "#F7E36E",
+          "fontStyle": "italic"
+        }
+      },
+      {
+        "scope": [
+          "storage.type.class"
+        ],
+        "settings": {
+          "foreground": "#F55C3D",
+          "fontStyle": "bold"
+        }
+      },
+      {
+        "scope": [
+          "keyword.other.class, entity.name.type.class"
+        ],
+        "settings": {
+          "foreground": "#F5DA3D"
+        }
+      },
+      {
+        "scope": [
+          "storage.modifier"
+        ],
+        "settings": {
+          "foreground": "#9EFA9E"
+        }
+      },
+      {
+        "scope": [
+          "constant.language"
+        ],
+        "settings": {
+          "foreground": "#FFB699",
+          "fontStyle": "italic"
+        }
+      },
+      {
+        "scope": [
+          "support.type.property-name.json"
+        ],
+        "settings": {
+          "foreground": "#66C0FF"
+        }
+      },
+      {
+        "scope": [
+          "support.constant.json"
+        ],
+        "settings": {
+          "foreground": "#F94B06"
+        }
+      },
+      {
+        "scope": [
+          "meta.structure.dictionary.json meta.structure.dictionary.value constant.language"
+        ],
+        "settings": {
+          "foreground": "#F55C3D"
+        }
+      }
+    ],
+    "comments": "#0A76C2",
+    "functions": "#CCAE00",
+    "keywords": "#66C0FF",
+    "numbers": "#CCAE00",
+    "strings": "#3DF53D",
+    "types": "#0AC20A",
+    "variables": "#F94B06"
+  }
+},
+"workbench.colorCustomizations": {
+  "[ColorCode]": {
+    "foreground": "#F4B2A4",
+    "editor.foreground": "#F7856E",
+    "descriptionForeground": "#7D2210",
+    "sideBar.foreground": "#F4B2A4",
+    "input.background": "#070B0E",
+    "input.foreground": "#F7856E",
+    "quickInput.background": "#070B0E",
+    "quickInput.foreground": "#F7856E",
+    "sideBar.background": "#0D161B",
+    "sideBar.border": "#070B0E",
+    "editor.background": "#0D161B",
+    "editorGroupHeader.tabsBackground": "#142029",
+    "activityBar.background": "#070B0E",
+    "tab.activeBackground": "#0D161B",
+    "tab.inactiveBackground": "#070B0E",
+    "terminal.background": "#070B0E",
+    "selection.background": "#F4B2A4",
+    "badge.background": "#142029",
+    "panel.background": "#142029",
+    "widget.shadow": "#192933",
+    "focusBorder": "#192933"
+  }
+},
+"shifty.colorThemes.favoriteColorThemes": [
+  "Darkside (rainglow)",
+  "Darkside Contrast (rainglow)",
+  "GitHub Dark Default",
+  "Hawaii Contrast (rainglow)",
+  "Hyrule Contrast (rainglow)",
+  "Mud Contrast (rainglow)",
+  "Solarflare (rainglow)",
+  "Stark Contrast (rainglow)",
+  "Tonic Contrast (rainglow)"
+],
+"shifty.colorThemes.ignoreColorThemes": [
+  "Allure (rainglow)",
+  "Arstotzka Contrast (rainglow)",
+  "Banner Contrast (rainglow)",
+  "Box UK (rainglow)",
+  "Box UK Contrast (rainglow)",
+  "Carbonight (rainglow)",
+  "Chocolate (rainglow)",
+  "Chocolate Contrast (rainglow)",
+  "Coffee Contrast (rainglow)",
+  "Dare (rainglow)",
+  "Downpour Contrast (rainglow)",
+  "Earthsong (rainglow)",
+  "Earthsong Contrast (rainglow)",
+  "Fodder (rainglow)",
+  "Fodder Contrast (rainglow)",
+  "Frantic Contrast (rainglow)",
+  "Freshcut Contrast (rainglow)",
+  "Friction Contrast (rainglow)",
+  "Github (rainglow)",
+  "Gloom (rainglow)",
+  "Glowfish Contrast (rainglow)",
+  "Halflife (rainglow)",
+  "Halflife Contrast (rainglow)",
+  "Heroku Contrast (rainglow)",
+  "Iceberg (rainglow)",
+  "Jingle (rainglow)",
+  "Joker Contrast (rainglow)",
+  "Laracasts (rainglow)",
+  "Lavender Contrast (rainglow)",
+  "Mintchoc (rainglow)",
+  "Monzo (rainglow)",
+  "Otakon (rainglow)",
+  "Overflow Contrast (rainglow)",
+  "Pastel Contrast (rainglow)",
+  "Patriot (rainglow)",
+  "Penitent (rainglow)",
+  "Pleasure (rainglow)",
+  "Scorch Contrast (rainglow)",
+  "Service Contrast (rainglow)",
+  "Snappy (rainglow)",
+  "Spitfire Contrast (rainglow)",
+  "Super (rainglow)",
+  "Tickle (rainglow)",
+  "Tribal Contrast (rainglow)",
+  "Yitzchok (rainglow)",
+  "Zacks (rainglow)"
+],
+"typescript.updateImportsOnFileMove.enabled": "always",
+"workbench.activityBar.visible": false
 }

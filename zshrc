@@ -110,28 +110,28 @@ memecat() {
   curl -s $memeurl | imgcat
 }
 
-epoch() {
-  if [[ -z $1 ]]; then
-    gdate +%s
-  else
-    gdate -d @$1
-  fi
-}
+# epoch() {
+#   if [[ -z $1 ]]; then
+#     gdate +%s
+#   else
+#     gdate -d @$1
+#   fi
+# }
 
-epochms() {
-  if [[ -z $1 ]]; then
-    echo "$(gdate +%s) * 1000" | bc
-  else
-    gdate -d @$( echo "($1 + 500) / 1000" | bc )
-  fi
-}
+# epochms() {
+#   if [[ -z $1 ]]; then
+#     echo "$(gdate +%s) * 1000" | bc
+#   else
+#     gdate -d @$( echo "($1 + 500) / 1000" | bc )
+#   fi
+# }
 
-atoken() {
-  local login_response=$( $@ )
-  local token=$( echo $login_response | jq -r .access_token )
-  export ATOKEN=$token
-  echo 'echo $ATOKEN:' $token
-}
+# atoken() {
+#   local login_response=$( $@ )
+#   local token=$( echo $login_response | jq -r .access_token )
+#   export ATOKEN=$token
+#   echo 'echo $ATOKEN:' $token
+# }
 
 alias xam="cd $HOME/git/BISSELL_Xamarin_App"
 alias xam2="cd $HOME/git/BISSELL_Xamarin_App2"
@@ -146,32 +146,80 @@ alias plat="cd $HOME/git/AWS_IoT"
 alias wtools="cd $HOME/git/e_common_test_utils/wifi"
 alias wifi="cd $HOME/git/d_iot_p488"
 alias tobor="cd $HOME/git/d_donnybrook"
+
 alias cdf="cd $HOME/git/cdf-facade"
 alias cdff="cd $HOME/git/cdf-facade"
 alias cdfi="cd $HOME/git/cdf-infrastructure-bissell"
 alias cdfa="cd $HOME/git/cdf-facade/app"
-alias cdfm="cd $HOME/git/cdf-facade/packages/mobile-api"
-alias cdfp="cd $HOME/git/cdf-facade/packages/pairing"
+alias cdfpp="cd $HOME/git/cdf-facade/packages/pairing"
 alias cdfd="cd $HOME/git/cdf-facade/packages/durable-api"
-alias cdfs="cd $HOME/git/cdf-facade/packages/system-tests"
+alias cdfst="cd $HOME/git/cdf-facade/packages/system-tests"
+alias cdfp="cd $HOME/git/cdf-facade/packages/portal-api"
 alias cdfpa="cd $HOME/git/cdf-facade/packages/portal-api"
 alias cdfpu="cd $HOME/git/cdf-facade/packages/portal-ui"
-alias ni="npm install"
-alias nr="npm run"
-alias nrb="npm run build"
-alias nrt="npm run test"
-alias nrr="npm run reset"
-alias pn="pnpm"
-alias pni="pnpm install"
-alias pnu="rm pnpm-lock.yaml; pnpm update"
-alias pnr="pnpm run"
-alias pnrb="pnpm run build"
-alias pnrt="pnpm run test"
-alias aze="AWS_PROFILE=cdf_admin AWS_REGION=us-east-1"
-alias cdfe="CONFIG_LOCATION=$HOME/git/cdf-infrastructure-bissell aze"
+alias cdfm="cd $HOME/git/cdf-facade/packages/mobile-api"
+alias cdfsd="cd $HOME/git/cdf-facade/packages/seed-data"
 
-alias nod="NODE_PATH=$HOME/.dotfiles/node_modules node --interactive --experimental-repl-await --eval=\"const _ = require('lodash'); const async = require('async'); const delay = require('delay'); const inversify = require('inversify'); const faker = require('faker'); const AWS = require('aws-sdk'); const moment = require('moment'); const pem = require('pem'); const convert = require('convert-units');\""
-alias ts-nod="NODE_PATH=$HOME/.dotfiles/node_modules ts-node --interactive --eval=\"import _ from 'lodash'; import async from 'async'; import delay from 'delay'; import * as inversify from 'inversify';\""
+alias cdf2="cd $HOME/git/cdf-facade2"
+alias cdff2="cd $HOME/git/cdf-facade2"
+alias cdfi2="cd $HOME/git/cdf-infrastructure-bissell"
+alias cdfa2="cd $HOME/git/cdf-facade2/app"
+alias cdfp2="cd $HOME/git/cdf-facade2/packages/pairing"
+alias cdfd2="cd $HOME/git/cdf-facade2/packages/durable-api"
+alias cdfst2="cd $HOME/git/cdf-facade2/packages/system-tests"
+alias cdfpa2="cd $HOME/git/cdf-facade2/packages/portal-api"
+alias cdfp2u="cd $HOME/git/cdf-facade2/packages/portal-ui"
+alias cdfm2="cd $HOME/git/cdf-facade2/packages/mobile-api"
+alias cdfsd2="cd $HOME/git/cdf-facade2/packages/seed-data"
+
+# alias azcdfa="AWS_PROFILE=cdf_admin AWS_REGION=us-east-1"
+# alias azcdf="AWS_PROFILE=cdf_dev AWS_REGION=us-east-1"
+# alias azdev="AWS_PROFILE=bhidev AWS_REGION=us-east-1"
+# alias azsbx="AWS_PROFILE=sbx AWS_REGION=us-east-1"
+# alias azuat="AWS_PROFILE=uat AWS_REGION=us-east-1"
+# alias azprod="AWS_PROFILE=prod AWS_REGION=us-east-1"
+
+# alias cdfe="CONFIG_LOCATION=$HOME/git/cdf-infrastructure-bissell azcdf"
+# alias sbxe="CONFIG_LOCATION=$HOME/git/cdf-infrastructure-bissell azsbx"
+
+here() {
+  declare -a args
+
+  for ((i=1; i<=$#; i++)); do
+    local a=$@[i]
+    if [[ $a == - ]]; then
+      args[i]=`cat`
+    else
+      args[i]=$a
+    fi
+  done
+
+  $args
+}
+
+# alcurl() {
+#   aze here $HOME/bin/alcurl $@
+# }
+
+# alias ni="npm install"
+# alias nr="npm run"
+# alias nrb="npm run build"
+# alias nrt="npm run test"
+# alias nrr="npm run reset"
+# alias pn="pnpm"
+# alias pni="pnpm install"
+# alias pnu="rm pnpm-lock.yaml; pnpm update"
+# alias pnr="pnpm run"
+# alias pnrb="pnpm run build"
+# alias pnrt="pnpm run test"
+
+source $HOME/git/cdf-facade/shell-aliases.bash
+
+alias nod="NODE_PATH=$HOME/.dotfiles/node_modules node --interactive --experimental-repl-await --eval=\"const _ = require('lodash'); const async = require('async'); const fs = require('fs').promises; const delay = require('delay'); const inversify = require('inversify'); const faker = require('faker'); const AWS = require('aws-sdk'); const moment = require('moment'); const momentTZ = require('moment-timezone'); const pem = require('pem'); const convert = require('convert-units'); const chrono = require('chrono-node'); const inflection = require('inflection'); const CryptoJS = require('crypto-js');\""
+alias nodd="NODE_PATH=$HOME/.dotfiles/node_modules node"
+alias ts-nod="(cd $HOME/.dotfiles && exec ts-node --interactive --project $HOME/.dotfiles/tsconfig.json --cwd $HOME/.dotfiles $HOME/.dotfiles/ts-nod.ts)"
+
+export CDF_V1_TYPE="application/vnd.aws-cdf-v1.0+json"
 
 # Hackintosh
 alias esp_internal="$HOME/.dotfiles/hackintosh/mount_internal"
