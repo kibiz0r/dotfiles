@@ -47,12 +47,12 @@
     "editor.acceptSuggestionOnCommitCharacter": false,
     "vim.useSystemClipboard": true,
     "files.exclude": {
-        "**/.git": true,
-        "**/.svn": true,
-        "**/.hg": true,
-        "**/CVS": true,
-        "**/.DS_Store": true,
-        "**/*.meta": true
+      "**/.git": true,
+      "**/.svn": true,
+      "**/.hg": true,
+      "**/CVS": true,
+      "**/.DS_Store": true,
+      "**/*.meta": true
     },
     "workbench.editor.enablePreview": false,
     "window.zoomLevel": 0,
@@ -333,6 +333,5 @@
   "Yitzchok (rainglow)",
   "Zacks (rainglow)"
 ],
-"typescript.updateImportsOnFileMove.enabled": "always",
-"workbench.activityBar.visible": false
+"typescript.updateImportsOnFileMove.enabled": "always"
 }

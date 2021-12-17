@@ -984,5 +984,13 @@
 {
   "key": "shift+cmd+b",
   "command": "-workbench.action.tasks.build"
+},
+{
+  "key": "shift+alt+right",
+  "command": "cursorWordRightSelect"
+},
+{
+  "key": "shift+alt+e",
+  "command": "extension.toggleFiles"
 }
 ]
