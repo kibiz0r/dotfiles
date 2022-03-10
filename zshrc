@@ -71,22 +71,30 @@ if which rbenv > /dev/null; then
   alias rubies="rbenv install -l"
 fi
 
+
 # User configuration
-export PATH="$PATH:$HOME/bin:$HOME/Applications/Visual Studio Code.app/Contents/Resources/app/bin:$HOME/.dotnet/tools"
+export PATH="$PATH:$HOME/bin"
 export EDITOR="code -n --wait"
-# export EDITOR="mvim -f"
+# alias less=$PAGER
 # export PAGER="tabless"
 export LESS="-Ri"
-
-# alias less=$PAGER
 
 # Android Studio SDK
 # export ANDROID_HOME=/usr/local/opt/android-sdk
 export ANDROID_HOME=$HOME/Library/Android/sdk
-export PATH=$PATH:$HOME/Library/Android/sdk/tools:$HOME/Library/Android/sdk/platform-tools
+export PATH="$PATH:$HOME/Library/Android/sdk/tools:$HOME/Library/Android/sdk/platform-tools"
 export NODE_PATH=/usr/local/lib/node_modules
 
-# My stuff
+# VSCode
+export PATH="$PATH:$HOME/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+
+# .NET
+export PATH="$PATH:$HOME/.dotnet/tools"
+
+# Homebrew
+export PATH="/usr/local/sbin:$PATH"
+
+# My aliases
 alias be='bundle exec'
 alias git=hub
 alias mvim='/usr/local/bin/mvim $@ > /dev/null 2>&1'
@@ -197,16 +205,30 @@ here() {
   $args
 }
 
-alias ni="npm install"
-alias nr="npm run"
-alias nrb="npm run build"
-alias nrt="npm run test"
+# alcurl() {
+#   aze here $HOME/bin/alcurl $@
+# }
+
+alias y="yarn"
+alias yw="yarn workspace"
+
+# alias ni="npm install"
+# alias nr="npm run"
+# alias nrb="npm run build"
+# alias nrt="npm run test"
+# alias nrr="npm run reset"
+# alias pn="pnpm"
+# alias pni="pnpm install"
+# alias pnu="rm pnpm-lock.yaml; pnpm update"
+# alias pnr="pnpm run"
+# alias pnrb="pnpm run build"
+# alias pnrt="pnpm run test"
 
 if [[ -f $HOME/git/cdf-facade/shell-aliases.bash ]]; then
   source $HOME/git/cdf-facade/shell-aliases.bash
 fi
 
-alias nod="NODE_PATH=$HOME/.dotfiles/node_modules node --interactive --experimental-repl-await --eval=\"const _ = require('lodash'); const async = require('async'); const fs = require('fs').promises; const delay = require('delay'); const inversify = require('inversify'); const faker = require('faker'); const AWS = require('aws-sdk'); const moment = require('moment'); const momentTZ = require('moment-timezone'); const pem = require('pem'); const convert = require('convert-units'); const chrono = require('chrono-node'); const inflection = require('inflection'); const CryptoJS = require('crypto-js');\""
+alias nod="NODE_PATH=$HOME/.dotfiles/node_modules node --interactive --experimental-repl-await --eval=\"const _ = require('lodash'); const async = require('async'); const fs = require('fs').promises; const delay = require('delay'); const inversify = require('inversify'); const faker = require('faker'); const AWS = require('aws-sdk'); const moment = require('moment'); const momentTZ = require('moment-timezone'); const pem = require('pem'); const convert = require('convert-units'); const chrono = require('chrono-node'); const inflection = require('inflection'); const CryptoJS = require('crypto-js'); const cronParser = require('cron-parser');\""
 alias nodd="NODE_PATH=$HOME/.dotfiles/node_modules node"
 alias ts-nod="(cd $HOME/.dotfiles && exec ts-node --interactive --project $HOME/.dotfiles/tsconfig.json --cwd $HOME/.dotfiles $HOME/.dotfiles/ts-nod.ts)"
 
@@ -270,3 +292,6 @@ load-nvmrc() {
 }
 add-zsh-hook chpwd load-nvmrc
 load-nvmrc
+
+# yarn
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"

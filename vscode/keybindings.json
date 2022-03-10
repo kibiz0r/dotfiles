@@ -987,7 +987,8 @@
 },
 {
   "key": "shift+alt+right",
-  "command": "cursorWordRightSelect"
+  "command": "cursorWordRightSelect",
+  "when": "textInputFocus"
 },
 {
   "key": "shift+alt+e",

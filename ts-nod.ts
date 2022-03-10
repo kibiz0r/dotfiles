@@ -19,6 +19,7 @@ import * as inflection from 'inflection';
 import * as z from 'zod';
 import ow from 'ow';
 import "reflect-metadata";
+import * as cronParser from 'cron-parser';
 `;
 
 const repl = tsNode.createRepl();
