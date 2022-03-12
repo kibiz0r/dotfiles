@@ -30,7 +30,7 @@
 			<key>SFML/SFML</key>
 			<dict>
 				<key>date</key>
-				<date>2019-09-14T14:31:50Z</date>
+				<date>2022-03-11T13:22:36Z</date>
 				<key>entry</key>
 				<dict>
 					<key>name</key>
@@ -148,6 +148,37 @@
 	<dict>
 		<key>installed</key>
 		<dict>
+			<key>Jest</key>
+			<dict>
+				<key>date</key>
+				<date>2022-03-12T02:02:31Z</date>
+				<key>entry</key>
+				<dict>
+					<key>aliases</key>
+					<array>
+						<string>Jest</string>
+						<string>React</string>
+						<string>Webpack</string>
+						<string>jQuery</string>
+						<string>CoffeeScript</string>
+						<string>Facebook</string>
+						<string>JavaScript</string>
+						<string>Reactjs</string>
+						<string>UI</string>
+						<string>Unit Test</string>
+					</array>
+					<key>authorLinkHref</key>
+					<string>https://github.com/Kapeli/Dash-User-Contributions/tree/master/docsets/Jest#readme</string>
+					<key>authorLinkText</key>
+					<string>Xianming Zhong</string>
+					<key>name</key>
+					<string>Jest</string>
+					<key>platform</key>
+					<string>usercontribJest</string>
+					<key>uniqueIdentifier</key>
+					<string>Jest</string>
+				</dict>
+			</dict>
 			<key>React_Native</key>
 			<dict>
 				<key>date</key>
@@ -199,6 +230,8 @@
 			<string>man</string>
 			<key>~/Library/Application Support/Dash/DocSets/NET_Framework/NET Framework.docset</key>
 			<string>n</string>
+			<key>~/Library/Application Support/Dash/DocSets/NodeJS/NodeJS.docset</key>
+			<string>js</string>
 			<key>~/Library/Application Support/Dash/DocSets/OpenCV_C++/OpenCV C++.docset</key>
 			<string>cv</string>
 			<key>~/Library/Application Support/Dash/DocSets/OpenGL_2/OpenGL2.docset</key>
@@ -211,6 +244,8 @@
 			<string>s</string>
 			<key>~/Library/Application Support/Dash/DocSets/Unity_3D/Unity 3D.docset</key>
 			<string>u</string>
+			<key>~/Library/Application Support/Dash/User Contributed/Jest/Jest.docset</key>
+			<string>j</string>
 			<key>~/Library/Application Support/Dash/User Contributed/React Native/React_Native.docset</key>
 			<string>j</string>
 		</dict>

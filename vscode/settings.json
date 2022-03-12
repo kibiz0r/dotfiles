@@ -17,7 +17,23 @@
     "focusFilesExplorerCollapsed": [
       "workbench.files.action.focusFilesExplorer",
       "workbench.files.action.collapseExplorerFolders",
-    ]
+    ],
+    "switchToSettingsJson": [
+      "workbench.action.closeActiveEditor",
+      "workbench.action.openSettingsJson"
+    ],
+    "switchToSettingsUi": [
+      "workbench.action.closeActiveEditor",
+      "workbench.action.openSettings2"
+    ],
+    "switchToKeybindingsJson": [
+      "workbench.action.closeActiveEditor",
+      "workbench.action.openGlobalKeybindingsFile"
+    ],
+    "switchToKeybindingsUi": [
+      "workbench.action.closeActiveEditor",
+      "workbench.action.openGlobalKeybindings"
+    ],
   },
   "editor.minimap.enabled": false,
   "editor.codeLens": true,
@@ -143,6 +159,38 @@
   "security.workspace.trust.untrustedFiles": "open",
   "rest-client.enableCustomVariableReferencesCodeLens": false,
   "editor.tokenColorCustomizations": {
+    "[Kibi Colors]": {
+      "textMateRules": [
+        {
+          "scope": [
+            // "keyword.operator.comparison",
+          ],
+          "settings": {
+            // "fontStyle": "",
+            // "foreground": "#FFFFFF"
+            // "foreground": "#B573D3"
+            // "foreground": "#EE60BF"
+            // "foreground": "#FDA242"
+            // "foreground": "#3DFBFE"
+          }
+        },
+        {
+          "scope": [
+            // "keyword.operator.logical",
+            // "keyword.operator.ternary",
+            // "entity.other.attribute-name",
+          ],
+          "settings": {
+            // "fontStyle": "",
+            // "foreground": "#FFFFFF"
+            // "foreground": "#B573D3"
+            // "foreground": "#EE60BF"
+            // "foreground": "#FDA242"
+            // "foreground": "#3DFBFE"
+          }
+        },
+      ]
+    },
     "[ColorCode]": {
       "textMateRules": [
         {
@@ -339,5 +387,11 @@
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "workbench.activityBar.visible": false
+  "editor.accessibilitySupport": "off",
+  "workbench.activityBar.visible": false,
+  "liveshare.launcherClient": "visualStudioCode",
+  "liveshare.anonymousGuestApproval": "accept",
+  "liveshare.presence": true,
+  "liveshare.publishWorkspaceInfo": true,
+  "liveshare.showReadOnlyUsersInEditor": "always"
 }
