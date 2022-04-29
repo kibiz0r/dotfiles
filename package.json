@@ -24,7 +24,7 @@
     "@types/node": "^16.9.6",
     "appcenter-cli": "^2.10.0",
     "ask-cli": "^2.24.1",
-    "async": "^3.2.1",
+    "async": "^3.2.2",
     "chrono-node": "^2.3.1",
     "convert-units": "^2.3.4",
     "cron-parser": "3.5.0",
