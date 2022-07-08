@@ -35,7 +35,7 @@
     "inversify": "^5.1.1",
     "json-diff": "^0.5.4",
     "memey": "^1.0.10",
-    "moment": "^2.29.1",
+    "moment": "^2.29.4",
     "moment-timezone": "^0.5.33",
     "ow": "^0.28.0",
     "pem": "^1.14.4",
