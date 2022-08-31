@@ -36,7 +36,7 @@
     "json-diff": "^0.5.4",
     "memey": "^1.0.10",
     "moment": "^2.29.1",
-    "moment-timezone": "^0.5.33",
+    "moment-timezone": "^0.5.35",
     "ow": "^0.28.0",
     "pem": "^1.14.4",
     "reflect-metadata": "^0.1.13",
