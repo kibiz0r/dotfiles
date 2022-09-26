@@ -22,7 +22,7 @@
     "@types/delay": "^3.1.0",
     "@types/lodash": "^4.14.169",
     "@types/node": "^16.9.6",
-    "appcenter-cli": "^2.10.0",
+    "appcenter-cli": "^2.11.0",
     "ask-cli": "^2.24.1",
     "async": "^3.2.1",
     "chrono-node": "^2.3.1",
