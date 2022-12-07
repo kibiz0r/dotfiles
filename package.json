@@ -23,7 +23,7 @@
     "@types/lodash": "^4.14.169",
     "@types/node": "^16.9.6",
     "appcenter-cli": "^2.10.0",
-    "ask-cli": "^2.24.1",
+    "ask-cli": "^2.28.0",
     "async": "^3.2.1",
     "chrono-node": "^2.3.1",
     "convert-units": "^2.3.4",
