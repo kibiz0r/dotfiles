@@ -13,9 +13,10 @@
   bn = branch-name
   showr = !"git log -p --full-diff \"$(echo \"$1\" | perl -pe 's/(\\w+)\\.\\./$1^../')\" $2 $3 $4 $5 $6 $7 $8 $9 #"
   showrstat = !"git log --stat -m --full-history \"$(echo \"$1\" | perl -pe 's/(\\w+)\\.\\./$1^../')\" $2 $3 $4 $5 $6 $7 $8 $9 #"
-  cherry-pit = !"git rebase -p --onto $1^ $1 #"
+  cherry-pit = !"git rebase -r --onto $1^ $1 #"
   cpc = cherry-pick --continue
   cpa = cherry-pick --abort
+  contributors = !"git ls-files $@ | while read f; do if file -0 "$f" | gcut -d $'\\0' -f2 | grep 'ASCII text' > /dev/null; then git blame -w -M -C -C --line-porcelain \"$f\" | grep -I '^author '; fi; done | sort -f | uniq -ic | sort -n --reverse #"
   there = !"git fetch && git reset --hard @{upstream}"
   prs-since-plat = !"git log --format='%C(white)%s%C(reset) %C(dim white)- %an%C(reset)' $1..origin/main --grep='^Merged PR' #"
   prs-since-plat1 = !"git log --format='%C(bold blue)%h%C(reset) %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' $1..origin/main --grep='^Merged PR' #"
@@ -46,24 +47,36 @@
   d = df
   forked-up = !"git fetch --all && git pull upstream `git current-branch` #"
   forked-by = !"git remote set-url upstream `git remote get-url origin`; git remote set-url origin `git remote get-url origin | sed \"s/:[^/]*/:$1/\"` # git forked-by kibiz0r"
-  current-branch = !"git branch | grep '*' | sed 's/* //'"
+  guess-branch = !"git current-branch | perl -pe 's/^\\(no branch, rebasing (.*)\\)$/$1/' #"
+  guessb = guess-branch
+  current-branch = !"git branch | grep '*' | sed 's/* //' #"
   curb = current-branch
   shwifty = !git-shwifty
   twirl = !git stash && git pull && git stash pop
   up = !"git pull --ff-only && git submodule update --init --recursive"
   upr = !"git pull --rebase && git submodule update --init --recursive"
   cfg = !"code $HOME/.gitconfig 2> /dev/null"
-  on = !"if [[ \"$1\" == it ]]; then git fetch && git rebase origin/main; else ON_BRANCH=\"$(echo \"$@\" | tr '[:upper:]' '[:lower:]' | perl -pe \"s/'//g; s/[^\\w\\/\\.]/-/g; s/--*/-/g; s/-\\././g; s/[-\\.]+$//\")\"; git checkout -b \"$ON_BRANCH\"; git config branch.\"$ON_BRANCH\".remote origin; git config branch.\"$ON_BRANCH\".merge \"refs/heads/$ON_BRANCH\"; echo \"Got on $ON_BRANCH\"; fi #"
+  what-is-fleek = !"( git branch -a --list origin/development; git branch -a --list origin/beta; git branch -a --list origin/main; git branch -a --list origin/master ) | head -1 | sed 's/^[[:blank:]]*remotes\\///'"
+  what-is-it = !"( git branch -a --list origin/master; git branch -a --list origin/main; git branch -a --list origin/beta; git branch -a --list origin/development ) | head -1 | sed 's/^[[:blank:]]*remotes\\///'"
+  what-is-up = !"( git branch -a --list upstream/beta; git branch -a --list upstream/development; git branch -a --list upstream/main; git branch -a --list upstream/master ) | head -1 | sed 's/^[[:blank:]]*remotes\\///'"
+  on-branch = !"ON_BRANCH=\"$(echo \"$@\" | tr '[:upper:]' '[:lower:]' | perl -pe \"s/'//g; s/[^\\w\\/\\.]/-/g; s/--*/-/g; s/-\\././g; s/[-\\.]+$//\")\"; git checkout -b \"$ON_BRANCH\"; git config branch.\"$ON_BRANCH\".remote origin; git config branch.\"$ON_BRANCH\".merge \"refs/heads/$ON_BRANCH\"; echo \"Got on $ON_BRANCH\" #"
+  on = !"if [[ \"$1\" == it ]]; then git fetch --all && git rebase $( git what-is-it ); elif [[ \"$1\" == fleek ]]; then git fetch --all && git rebase $( git what-is-fleek ); elif [[ \"$1\" == up ]]; then git fetch --all && git rebase $( git what-is-up ); else git on-branch $@; fi #"
   on-it = on it
-  with = !"if [[ \"$1\" == it ]]; then git fetch && git merge \"origin/main\"; else git cherry-pick \"$1\"; fi #"
+  on-fleek = on fleek
+  with = !"if [[ \"$1\" == it ]]; then git fetch && git merge $( git what-is-it ); else git cherry-pick \"$1\"; fi #"
   with-it = with it
+  ancestor = !"git merge-base $( git what-is-it ) \"$( git guess-branch )\" #"
+  from = !"git show \"$( git ancestor )\"..\"$( git what-is-it )\" -- "
   amend = commit --amend
-  amen = commit --amend
+  amen = commit --amend --no-edit
+  amendn = commit --amend --no-verify
+  amenn = commit --amend --no-edit --no-verify
   b = branch
   ba = branch -a
   bd = branch -d
   bdr = !"git branch -d \"$1\" 2> /dev/null; git push origin --delete \"$1\" #"
   ci = commit
+  cin = commit --no-verify
   co = checkout
   st = status
   su = submodule update --init --recursive
@@ -71,7 +84,7 @@
   dc = diffc
   cleanall = !"git clean -fdx && git submodule foreach --recursive git clean -fdx"
   rbi = rebase --interactive
-  rbc = rebase --continue
+  rbc = "-c core.editor=true rebase --continue"
   rbs = rebase --skip
   rba = rebase --abort
   rvc = revert --continue
@@ -88,7 +101,7 @@
   submodules = submodule foreach --recursive git status
   bruh = branch -vv
   logh = !"git log --color \"$@\" | sed \"s/\\([\\(]HEAD[^\\)]*[\\)]\\)/`git config --get-color '' reverse`\\\\1`git config --get-color '' reset`/\" | less #"
-  logp = logh --graph --decorate
+  logp = logh --graph --decorate -p
   loga = logh --graph --decorate --all
   logs = logh --graph --decorate --all --max-count=16
   logf = !"git logh --graph --abbrev-commit --decorate --color --format=format:\"$@\" #"
@@ -152,3 +165,5 @@
 	ff = only
 [init]
 	defaultBranch = main
+[remote "origin"]
+  fetch = +refs/notes/*:refs/notes/*

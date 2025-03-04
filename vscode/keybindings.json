@@ -578,7 +578,9 @@
                 ".xaml",
                 ".xaml.cs",
                 ".ts",
-                ".spec.ts"
+                ".spec.ts",
+                ".tsx",
+                ".spec.tsx"
             ]
         },
         "when": "editorTextFocus"
@@ -693,10 +695,6 @@
     {
         "key": "shift+cmd+u",
         "command": "-workbench.action.output.toggleOutput"
-    },
-    {
-        "key": "shift+cmd+t",
-        "command": "dotnetTestExplorer.focus"
     },
     {
         "key": "shift+cmd+u",
@@ -993,5 +991,38 @@
 {
   "key": "shift+alt+e",
   "command": "extension.toggleFiles"
+},
+{
+  "key": "shift+cmd+d",
+  "command": "editor.action.peekDefinition"
+},
+{
+  "key": "shift+cmd+t",
+  "command": "workbench.view.testing.focus"
+},
+{
+  "key": "cmd+l",
+  "command": "workbench.action.gotoSymbol",
+  "when": "!accessibilityHelpIsShown && !accessibleViewIsShown"
+},
+{
+  "key": "shift+cmd+o",
+  "command": "-workbench.action.gotoSymbol",
+  "when": "!accessibilityHelpIsShown && !accessibleViewIsShown"
+},
+{
+  "key": "shift+l",
+  "command": "-notebook.toggleLineNumbers",
+  "when": "notebookEditorFocused && !inputFocus && !notebookOutputInputFocused"
+},
+{
+  "key": "cmd+.",
+  "command": "-editor.action.quickFix",
+  "when": "editorHasCodeActionsProvider && textInputFocus && !editorReadonly"
+},
+{
+  "key": "cmd+.",
+  "command": "breadcrumbs.focusAndSelect",
+  "when": "breadcrumbsPossible && breadcrumbsVisible"
 }
 ]

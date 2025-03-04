@@ -71,7 +71,6 @@ if which rbenv > /dev/null; then
   alias rubies="rbenv install -l"
 fi
 
-
 # User configuration
 export PATH="$PATH:$HOME/bin"
 export EDITOR="code -n --wait"
@@ -79,17 +78,26 @@ export EDITOR="code -n --wait"
 # export PAGER="tabless"
 export LESS="-Ri"
 
+# Java
+export JAVA_HOME=/usr/local/opt/openjdk@21/libexec/openjdk.jdk/Contents/Home/
+
 # Android Studio SDK
 # export ANDROID_HOME=/usr/local/opt/android-sdk
+# export ANDROID_HOME=$HOME/Library/Android/sdk
+# export PATH="$PATH:$HOME/Library/Android/sdk/tools:$HOME/Library/Android/sdk/platform-tools"
 export ANDROID_HOME=$HOME/Library/Android/sdk
-export PATH="$PATH:$HOME/Library/Android/sdk/tools:$HOME/Library/Android/sdk/platform-tools"
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+
+# Node
 export NODE_PATH=/usr/local/lib/node_modules
 
 # VSCode
 export PATH="$PATH:$HOME/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
 # .NET
-export PATH="$PATH:$HOME/.dotnet/tools"
+# export PATH="$PATH:$HOME/.dotnet/tools"
+export PATH="/usr/local/share/dotnet:$PATH"
 
 # Homebrew
 export PATH="/usr/local/sbin:$PATH"
@@ -180,6 +188,13 @@ alias cdfp2u="cd $HOME/git/cdf-facade2/packages/portal-ui"
 alias cdfm2="cd $HOME/git/cdf-facade2/packages/mobile-api"
 alias cdfsd2="cd $HOME/git/cdf-facade2/packages/seed-data"
 
+alias cdf3="cd $HOME/git/cdf-facade3"
+
+alias mob="cd $HOME/git/MobileFoundations"
+alias mob2="cd $HOME/git/MobileFoundations2"
+
+alias ut="cd $HOME/git/udm-tool-expo"
+
 # alias azcdfa="AWS_PROFILE=cdf_admin AWS_REGION=us-east-1"
 # alias azcdf="AWS_PROFILE=cdf_dev AWS_REGION=us-east-1"
 # alias azdev="AWS_PROFILE=bhidev AWS_REGION=us-east-1"
@@ -205,12 +220,38 @@ here() {
   $args
 }
 
+avg_time() {
+    #
+    # usage: avg_time n command ...
+    #
+    n=$1; shift
+    (($# > 0)) || return                   # bail if no command given
+    for ((i = 0; i < n; i++)); do
+        ( /usr/bin/time -p "$@" > /dev/null ) 2>&1 # ignore the output of the command
+                                           # but collect time's output in stdout
+    done | awk '
+        /real/ { real = real + $2; nr++ }
+        /user/ { user = user + $2; nu++ }
+        /sys/  { sys  = sys  + $2; ns++}
+        END    {
+                if (nr>0) printf("real %f\n", real/nr);
+                if (nu>0) printf("user %f\n", user/nu);
+                if (ns>0) printf("sys %f\n",  sys/ns)
+              }'
+}
+
 # alcurl() {
 #   aze here $HOME/bin/alcurl $@
 # }
 
 alias y="yarn"
 alias yw="yarn workspace"
+alias ys="yarn start"
+alias yi="yarn ios:sandbox"
+alias yis="yarn ios:sandbox"
+alias ya="yarn android:sandbox"
+alias yas="yarn android:sandbox"
+alias ysb="yarn storybook"
 
 # alias ni="npm install"
 # alias nr="npm run"
@@ -228,7 +269,34 @@ if [[ -f $HOME/git/cdf-facade/shell-aliases.bash ]]; then
   source $HOME/git/cdf-facade/shell-aliases.bash
 fi
 
-alias nod="NODE_PATH=$HOME/.dotfiles/node_modules node --interactive --experimental-repl-await --eval=\"const _ = require('lodash'); const async = require('async'); const fs = require('fs').promises; const delay = require('delay'); const inversify = require('inversify'); const faker = require('faker'); const AWS = require('aws-sdk'); const moment = require('moment'); const momentTZ = require('moment-timezone'); const pem = require('pem'); const convert = require('convert-units'); const chrono = require('chrono-node'); const inflection = require('inflection'); const CryptoJS = require('crypto-js'); const cronParser = require('cron-parser');\""
+alias nod="NODE_PATH=$HOME/.dotfiles/node_modules node --interactive --experimental-repl-await --eval=\"
+const _ = require('lodash');
+const async = require('async');
+const fs = require('fs');
+const fsp = fs.promises;
+const delay = require('delay');
+const inversify = require('inversify');
+const faker = require('faker');
+const moment = require('moment');
+const momentTZ = require('moment-timezone');
+const pem = require('pem');
+const convert = require('convert-units');
+const chrono = require('chrono-node');
+const inflection = require('inflection');
+const CryptoJS = require('crypto-js');
+const cronParser = require('cron-parser');
+const later = require('@breejs/later');
+const immer = require('immer');
+const rtk = require('@reduxjs/toolkit');
+const redux = require('redux');
+const reduxSaga = require('redux-saga');
+const dateFns = require('date-fns');
+const XLSX = require('xlsx');
+const xml = require('fast-xml-parser');
+const xml2js = require('xml2js');
+const mobx = require('mobx');
+const semver = require('semver');
+const ES_data = require('$HOME/.dotfiles/es_data');\""
 alias nodd="NODE_PATH=$HOME/.dotfiles/node_modules node"
 alias ts-nod="(cd $HOME/.dotfiles && exec ts-node --interactive --project $HOME/.dotfiles/tsconfig.json --cwd $HOME/.dotfiles $HOME/.dotfiles/ts-nod.ts)"
 
@@ -242,6 +310,8 @@ alias esp_usb="$HOME/.dotfiles/hackintosh/mount_usb"
 # eval $(docker-machine env default)
 # export LOCALSTACK_HOST=$(docker-machine ip)
 
+export LOCALSTACK_AUTH_TOKEN=$( cat $HOME/.localstack-auth-token )
+
 # npm executables
 export PATH="$PATH:$HOME/.dotfiles/node_modules/.bin"
 
@@ -254,44 +324,116 @@ if which mono > /dev/null; then
   export FrameworkPathOverride=$(dirname $(which mono))/../lib/mono/4.5/
 fi
 
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+# Not sure I need any of these PATH mods...
+# qt
 export PATH="/usr/local/opt/qt/bin:$PATH"
-
-# tabtab source for serverless package
-# uninstall by removing these lines or running `tabtab uninstall serverless`
-[[ -f /Users/harrinm/git/AWS_IoT/app/foundation/core/code/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/harrinm/git/AWS_IoT/app/foundation/core/code/node_modules/tabtab/.completions/serverless.zsh
-# tabtab source for sls package
-# uninstall by removing these lines or running `tabtab uninstall sls`
-[[ -f /Users/harrinm/git/AWS_IoT/app/foundation/core/code/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/harrinm/git/AWS_IoT/app/foundation/core/code/node_modules/tabtab/.completions/sls.zsh
-# tabtab source for slss package
-# uninstall by removing these lines or running `tabtab uninstall slss`
-[[ -f /Users/harrinm/git/AWS_IoT/app/foundation/core/code/node_modules/tabtab/.completions/slss.zsh ]] && . /Users/harrinm/git/AWS_IoT/app/foundation/core/code/node_modules/tabtab/.completions/slss.zsh
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
-
-# place this after nvm initialization!
-autoload -U add-zsh-hook
-load-nvmrc() {
-  local node_version="$(nvm version)"
-  local nvmrc_path="$(nvm_find_nvmrc)"
-
-  if [ -n "$nvmrc_path" ]; then
-    local nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
-
-    if [ "$nvmrc_node_version" = "N/A" ]; then
-      nvm install
-    elif [ "$nvmrc_node_version" != "$node_version" ]; then
-      nvm use
-    fi
-  elif [ "$node_version" != "$(nvm version default)" ]; then
-    echo "Reverting to nvm default version"
-    nvm use default
-  fi
-}
-add-zsh-hook chpwd load-nvmrc
-load-nvmrc
 
 # yarn
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+# python
+export PATH=/usr/local/opt/python/libexec/bin:$PATH
+
+# iTerm2 stuff
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+# iterm2_print_user_vars() {
+#   iterm2_set_user_var nodeVersion "$(node --version)"
+#   iterm2_set_user_var rubyVersion "$(rbenv version-name)"
+# }
+
+DISABLE_AUTO_TITLE="true"
+
+precmd() {
+  # sets the tab title to current dir
+  echo -ne "\e]1;${PWD##*/}\a"
+}
+
+update_iterm2_vars() {
+  iterm2_set_user_var nodeVersion "$( set -o pipefail && asdf current nodejs | cut -w -f2 || node --version )"
+  iterm2_set_user_var rubyVersion "$( set -o pipefail && asdf current ruby 2> /dev/null | cut -w -f2 || rbenv version-name )"
+  iterm2_set_user_var pythonVersion "$( set -o pipefail && asdf current python 2> /dev/null | cut -w -f2 || python --version | sed 's/^Python //' )"
+}
+
+(update_iterm2_vars &)
+
+function check_is_versioned() {
+  local is_versioned=false
+  for version_manager_file in $version_manager_files; do
+    if [[ -r "$PWD/$version_manager_file" ]]; then
+      return 0
+    fi
+  done
+  return 1
+}
+
+# Keep asdf settings in sync with cwd
+version_manager_files=(.tool-versions .nvmrc .ruby-version)
+function chpwd {
+  (update_iterm2_vars &)
+  # if ! check_is_versioned; then
+  #   return
+  # fi
+  # if [[ -r "$PWD/.tool-versions" ]]; then
+  #   local installed=$( asdf plugin list )
+  #   local wanted=$( cut -d' ' -f1 .tool-versions )
+  #   local missing=$( echo $wanted $installed $installed | tr ' ' '\n' | sort | uniq -u )
+  #   for missing in $missing; do
+  #     asdf plugin add $missing
+  #   done
+  # fi
+  # (asdf current 2>&1 | grep "Not installed") && asdf install
+}
+
+# asdf shell integration
+source /usr/local/opt/asdf/libexec/asdf.sh
+
+# Trying to avoid non-asdf managers...
+
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+# # [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+
+# # place this after nvm initialization!
+# autoload -U add-zsh-hook
+# load-nvmrc() {
+#   local nvmrc_path
+#   nvmrc_path="$(nvm_find_nvmrc)"
+
+#   if [ -n "$nvmrc_path" ]; then
+#     local nvmrc_node_version
+#     nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
+
+#     if [ "$nvmrc_node_version" = "N/A" ]; then
+#       nvm install
+#     elif [ "$nvmrc_node_version" != "$(nvm version)" ]; then
+#       nvm use
+#     fi
+#   elif [ -n "$(PWD=$OLDPWD nvm_find_nvmrc)" ] && [ "$(nvm version)" != "$(nvm version default)" ]; then
+#     echo "Reverting to nvm default version"
+#     nvm use default
+#   fi
+# }
+# add-zsh-hook chpwd load-nvmrc
+# load-nvmrc
+
+# # In zsh, the chpwd will run a command every time you change directories.
+# function chpwd {
+#   # Check if a .ruby-version file exists
+#   if [[ -f "$PWD/.ruby-version" ]]; then
+#     ruby_version=`cat .ruby-version`
+#     if [[ ! -d "$HOME/.rbenv/versions/$ruby_version" ]]; then
+#       while true; do
+#         read REPLY\?"Ruby $ruby_version is not installed. Install it? [Yn] "
+#         case $REPLY in
+#           [Yy]* ) rbenv install $ruby_version; break;;
+#           [Nn]* ) break;;
+#           * ) echo "Please answer y or n.";;
+#         esac
+#       done
+#     fi
+#   fi
+# }
+
+export DIRENV_LOG_FORMAT=""
+source "${XDG_CONFIG_HOME:-$HOME/.config}/asdf-direnv/zshrc"

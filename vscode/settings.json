@@ -1,7 +1,4 @@
 {
-  "shifty.shiftMode": "discovery",
-  "shifty.colorThemes.ignoreLightColorThemes": true,
-  "shifty.shiftInterval.shiftFontFamilyIntervalMin": 0,
   "git.countBadge": "off",
   "macros.list": {
     "openAndKeep": [
@@ -56,25 +53,24 @@
     "**/*.meta": true
   },
   "workbench.editor.enablePreview": false,
-  "window.zoomLevel": 0,
   "workbench.iconTheme": "vscode-icons",
   "vsicons.dontShowNewVersionMessage": true,
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
   "git.ignoreLimitWarning": true,
   "editor.renderWhitespace": "all",
-  "editor.autoClosingBrackets": false,
-  "omnisharp.disableMSBuildDiagnosticWarning": true,
+  "editor.autoClosingBrackets": "never",
   "workbench.startupEditor": "newUntitledFile",
   "editor.formatOnPaste": false,
   "editor.formatOnSave": false,
   "editor.formatOnType": true,
   "files.associations": {
-    "*.xaml": "html"
+    "*.xaml": "html",
+    "*.cform": "yaml",
+    "rush.json": "jsonc"
   },
   "html.format.wrapAttributes": "force-aligned",
   "html.suggest.html5": false,
-  "html.suggest.ionic": false,
   "html.validate.scripts": false,
   "html.validate.styles": false,
   "gitlens.advanced.messages": {
@@ -83,36 +79,29 @@
   "window.newWindowDimensions": "maximized",
   "workbench.settings.editor": "json",
   "html.autoClosingTags": false,
-  "html.suggest.angular1": false,
   "editor.parameterHints.enabled": false,
   "vsicons.projectDetection.disableDetect": true,
-  "omnisharp.loggingLevel": "trace",
   "debug.internalConsoleOptions": "neverOpen",
   "vim.overrideCopy": false,
   "editor.copyWithSyntaxHighlighting": false,
   "window.nativeFullScreen": false,
   "window.restoreFullscreen": true,
-  "update.channel": "none",
+  "update.mode": "default",
   "java.configuration.checkProjectSettingsExclusions": false,
   "editor.fontFamily": "FiraCode-Retina",
   "editor.fontLigatures": true,
-  "dotnet-test-explorer.pathForResultFile": "/Users/harrinm/tmp",
-  "csharp.referencesCodeLens.enabled": false,
-  "csharp.testsCodeLens.enabled": false,
   "gitlens.codeLens.enabled": false,
-  "gitlens.views.compare.files.layout": "tree",
-  "gitlens.views.compare.files.compact": true,
   "editor.detectIndentation": false,
-  "python.jediEnabled": false,
   "[python]": {
     "editor.insertSpaces": true,
     "editor.detectIndentation": true,
     "editor.tabSize": 4,
-    "editor.autoIndent": false
+    "editor.autoIndent": "advanced",
+    "editor.formatOnType": true
   },
   "editor.suggestSelection": "first",
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-  "diffEditor.renderSideBySide": false,
+  "diffEditor.renderSideBySide": true,
   "[javascript]": {
     "editor.insertSpaces": true,
     "editor.tabSize": 2,
@@ -121,12 +110,10 @@
   "extensions.ignoreRecommendations": true,
   "javascript.updateImportsOnFileMove.enabled": "always",
   "html.format.indentHandlebars": true,
-  "python.languageServer": "Microsoft",
+  "python.languageServer": "Default",
   "[jsonc]": {
     "editor.defaultFormatter": "vscode.json-language-features"
   },
-  "aws.telemetry": false,
-  "aws.profile": "profile:cdf_dev",
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.insertSpaces": true
@@ -139,7 +126,6 @@
   "editor.lineNumbers": "on",
   "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
   "editor.wordWrap": "off",
-  "workbench.editor.untitled.hint": "hidden",
   "security.workspace.trust.untrustedFiles": "open",
   "rest-client.enableCustomVariableReferencesCodeLens": false,
   "editor.tokenColorCustomizations": {
@@ -275,69 +261,24 @@
       "focusBorder": "#192933"
     }
   },
-  "shifty.colorThemes.favoriteColorThemes": [
-    "Darkside (rainglow)",
-    "Darkside Contrast (rainglow)",
-    "GitHub Dark Default",
-    "Hawaii Contrast (rainglow)",
-    "Hyrule Contrast (rainglow)",
-    "Mud Contrast (rainglow)",
-    "Solarflare (rainglow)",
-    "Stark Contrast (rainglow)",
-    "Tonic Contrast (rainglow)"
-  ],
-  "shifty.colorThemes.ignoreColorThemes": [
-    "Allure (rainglow)",
-    "Arstotzka Contrast (rainglow)",
-    "Banner Contrast (rainglow)",
-    "Box UK (rainglow)",
-    "Box UK Contrast (rainglow)",
-    "Carbonight (rainglow)",
-    "Chocolate (rainglow)",
-    "Chocolate Contrast (rainglow)",
-    "Coffee Contrast (rainglow)",
-    "Dare (rainglow)",
-    "Downpour Contrast (rainglow)",
-    "Earthsong (rainglow)",
-    "Earthsong Contrast (rainglow)",
-    "Fodder (rainglow)",
-    "Fodder Contrast (rainglow)",
-    "Frantic Contrast (rainglow)",
-    "Freshcut Contrast (rainglow)",
-    "Friction Contrast (rainglow)",
-    "Github (rainglow)",
-    "Gloom (rainglow)",
-    "Glowfish Contrast (rainglow)",
-    "Halflife (rainglow)",
-    "Halflife Contrast (rainglow)",
-    "Heroku Contrast (rainglow)",
-    "Iceberg (rainglow)",
-    "Jingle (rainglow)",
-    "Joker Contrast (rainglow)",
-    "Laracasts (rainglow)",
-    "Lavender Contrast (rainglow)",
-    "Mintchoc (rainglow)",
-    "Monzo (rainglow)",
-    "Otakon (rainglow)",
-    "Overflow Contrast (rainglow)",
-    "Pastel Contrast (rainglow)",
-    "Patriot (rainglow)",
-    "Penitent (rainglow)",
-    "Pleasure (rainglow)",
-    "Scorch Contrast (rainglow)",
-    "Service Contrast (rainglow)",
-    "Snappy (rainglow)",
-    "Spitfire Contrast (rainglow)",
-    "Super (rainglow)",
-    "Tickle (rainglow)",
-    "Tribal Contrast (rainglow)",
-    "Yitzchok (rainglow)",
-    "Zacks (rainglow)"
-  ],
   "typescript.updateImportsOnFileMove.enabled": "always",
-  "workbench.colorTheme": "Kibi Colors",
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "workbench.activityBar.visible": false
+  "editor.accessibilitySupport": "off",
+  "editor.autoClosingQuotes": "never",
+  "editor.autoSurround": "never",
+  "hediet.vscode-drawio.theme": "Kennedy",
+  "git.openRepositoryInParentFolders": "never",
+  "workbench.editor.empty.hint": "hidden",
+  "window.customTitleBarVisibility": "windowed",
+  "[yaml]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "cfnLint.path": "/Users/harrinm/git/cdf-facade2/packages/timestream-repartitioner/.venv/bin/cfn-lint",
+  "[markdown]": {
+    "editor.defaultFormatter": "darkriszty.markdown-table-prettify"
+  },
+  "amazonQ.telemetry": false,
+  "aws.telemetry": false
 }
